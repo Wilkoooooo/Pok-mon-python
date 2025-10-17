@@ -60,3 +60,4 @@ elif Poké_dep_choix == 3:
 	print(f"Stats pokemon") 
 print(f"Homme mystérieux : Bravo ! Tu viens d'obtenir ton tout premier Pokémon, ton aventure va enfin pouvoir commencer. Cependant tu dois savoir plusieurs choses avant de te lacer dans ton aventure.\nPremièrement, ")
 
+
