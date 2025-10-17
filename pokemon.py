@@ -28,7 +28,16 @@ if int(response_1) == 1:
 	print("Homme mystérieux : Tu ne connais pas la ligue Pokémon ?")
 	print("{prenom_1} : Non, c'est quoi ?")
 	print("Homme mystérieux : C'est une ligue connue à l'internationale où tout les combattants pokémon s'affrontent pour savoir qui est le meilleur dresseur, ça t'intéresse ?")
-
+	print("Que voulez vous faire :")
+	print("1)Oui je veux me lancer dans le monde Pokémon!\n 2)Non merci ça ne m'intéresse pas") 
+	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+#branche 1-1
+	if int(response_2) == 1:
+		print("Oui je veux entrer dans le monde Pokémon !")
+		print("Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
+	elif int(response_2) == 2:
+		print("Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
+		quit()
 #Branche 2
 elif int(response_1) == 2: 
 	print("Ash : ")
