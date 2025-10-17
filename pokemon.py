@@ -26,6 +26,8 @@ if int(response_1) == 1:
 	print("Homme mystérieux : Je suis le tout nouveau maitre Pokémon. Je viens de gagner le combat final de la ligue Pokémon")
 	print("{prenom_1} : La ligue Pokémon ? C'est quoi ? ")	
 	print("Homme mystérieux : Tu ne connais pas la ligue Pokémon ?")
+	print("{prenom_1} : Non, c'est quoi ?")
+	print("Homme mystérieux : C'est une ligue connue à l'internationale où tout les combattants pokémon s'affrontent pour savoir qui est le meilleur dresseur, ça t'intéresse ?")
 
 #Branche 2
 elif int(response_1) == 2: 
