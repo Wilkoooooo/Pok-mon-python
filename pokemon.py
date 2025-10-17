@@ -32,3 +32,6 @@ elif int(response_1) == 2:
 	print("Ash : ")
 
 #Branche 
+#Choix Pokémon de départ 
+Print("Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) ")
+Poké_dep = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
