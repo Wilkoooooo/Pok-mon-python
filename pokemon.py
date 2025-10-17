@@ -35,5 +35,12 @@ elif int(response_1) == 2:
 
 #Branche 
 #Choix Pokémon de départ 
-Print("Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
-Poké_dep = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro) : "))
+Print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
+Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+if Poké_dep_choix == 1:
+	print("Arcko a été ajouté à ton Pokédex !")
+elif Poké_dep_choix == 2:
+	print("Poussifeu a été ajouté à ton Pokédex !")
+elif Poké_dep_choix == 3:
+	print("Gobou a été ajouté à ton Pokédex ! ")
+
