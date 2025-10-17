@@ -35,5 +35,5 @@ elif int(response_1) == 2:
 
 #Branche 
 #Choix Pokémon de départ 
-Print("Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) ")
-Poké_dep = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+Print("Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
+Poké_dep = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro) : "))
