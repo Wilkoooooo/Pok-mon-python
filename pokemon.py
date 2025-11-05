@@ -2,7 +2,7 @@ import random
 from math import * 
 #variables de tout le programme :
 monnaie = 0
-XP = 0
+xp = 0
 
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
@@ -130,12 +130,15 @@ while not Poké_dep_choix in {1,2,3} :
     print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
     Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
 if Poké_dep_choix == 1:
-    print("Arcko a été ajouté à ton Pokédex !")
+	xp = xp + 20
+    print(f"Arcko a été ajouté à ton Pokédex ! Tu as gagné 20 XP ! tu as maintenant {xp} XP !")
     print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 elif Poké_dep_choix == 2:
-    print("Poussifeu a été ajouté à ton Pokédex !")
+	xp = xp + 20
+    print(f"Poussifeu a été ajouté à ton Pokédex ! Tu as gagné 20 XP ! tu as maintenant {xp} XP !")
     print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 elif Poké_dep_choix == 3:
-    print("Gobou a été ajouté à ton Pokédex !")
+	xp = xp + 20
+    print(f"Gobou a été ajouté à ton Pokédex ! Tu as gagné 20 XP ! tu as maintenant {xp} XP !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 
