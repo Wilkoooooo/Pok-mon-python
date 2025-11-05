@@ -7,7 +7,7 @@ XP = 0
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
 print(f"Homme mystérieux : Comment t'appelles tu ? ") 
-prenom_1 = input("Indiquez votre nom :")
+prenom_1 = input("Indiquez votre nom : ")
 print(f"Homme mystérieux : Viens {prenom_1}, je vais te ramener chez tes parents, c'est dangereux ici !")
 print(f"10 jours plus tard, alors que vous vous promenez dans Perdium, vous croisez une foule entourant l'homme que vous aviez croisé dans la forêt.") 
 
