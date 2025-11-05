@@ -31,11 +31,11 @@ if int(response_1) == 1:
 	print(f"Que voulez vous faire :")
 	print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-#branche 1-1 (il accepte le défi de devenir dresseur) 
+	#branche 1-1 (il accepte le défi de devenir dresseur) 
 	if int(response_2) == 1:
 		print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 		print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
-#Branche 1-2 (il renonce au défi fin du jeu) 
+	#Branche 1-2 (il renonce au défi fin du jeu) 
 	elif int(response_2) == 2:
 		print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
 		quit()
