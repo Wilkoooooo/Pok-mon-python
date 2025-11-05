@@ -21,6 +21,10 @@ print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé")
 response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 
 #Branche 1 (direct foule) 
+while not response_1 in {1,2} : 
+    print("Vous vous êtes trompés de numéro")
+	print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
+	response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 if int(response_1) == 1:
 	print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
 	input("↓")
@@ -46,6 +50,11 @@ if int(response_1) == 1:
 	print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	#branche 1-1 (il accepte le défi de devenir dresseur) 
+	while not response_2 in {1,2} : 
+    print("Vous vous êtes trompés de numéro")
+	print(f"Que voulez vous faire :")
+	print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
+	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if int(response_2) == 1:
 		print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 		input("↓")
@@ -63,11 +72,21 @@ elif int(response_1) == 2:
 	print(f"Que voulez vous faire :")
 	print(f"1)Faire connaissance\n2)L'ignorer") 
 	response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_3 in {1,2} : 
+    print("Vous vous êtes trompés de numéro")
+	print(f"Que voulez vous faire :")
+	print(f"1)Faire connaissance\n2)L'ignorer") 
+	response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if int(response_3)== 1:
 		print(f"{prenom_1} : Je m'appelle {prenom_1}, je suis de retour ici, et toi comment tu t'appelles?")
 		input("↓")
 		print(f"jeune garçon : Je m'appelle Victor, ça te dit qu'on devienne potes?")
 		input("↓")
+		print(f"Que voulez vous faire :")
+		print(f"1)devenir amis\n2)Le repousser")
+		response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+		while not response_4 in {1,2} : 
+   	 	print("Vous vous êtes trompés de numéro")
 		print(f"Que voulez vous faire :")
 		print(f"1)devenir amis\n2)Le repousser")
 		response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -99,6 +118,11 @@ elif int(response_1) == 2:
 			print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 			response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 			#branche 1-1 (il accepte le défi de devenir dresseur) 
+			while not response_4 in {1,2} : 
+   	 		print("Vous vous êtes trompés de numéro")
+			print(f"Que voulez vous faire :")
+			print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
+			response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 			if int(response_2) == 1:
 				print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 				print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
@@ -123,6 +147,11 @@ elif int(response_1) == 2:
 				print(f"Que voulez vous faire :")
 				print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 				response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+				while not response_4 in {1,2} : 
+   	 			print("Vous vous êtes trompés de numéro")
+				print(f"Que voulez vous faire :")
+				print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
+				response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 				if int(response_2) == 1:
 					print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 					print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
@@ -143,6 +172,11 @@ elif int(response_1) == 2:
 		print(f"Homme mystérieux : Tu ne connais pas la ligue Pokémon ?")
 		print(f"{prenom_1} : Non, c'est quoi ?")
 		print(f"Homme mystérieux : C'est une ligue connue à l'internationale où tout les combattants pokémon s'affrontent pour savoir qui est le meilleur dresseur, ça t'intéresse ?")
+		print(f"Que voulez vous faire :")
+		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
+		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+		while not response_4 in {1,2} : 
+   	 	print("Vous vous êtes trompés de numéro")
 		print(f"Que voulez vous faire :")
 		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
