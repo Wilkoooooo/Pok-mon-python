@@ -116,12 +116,12 @@ elif int(response_1) == 2:
 		print(f"Que voulez vous faire :")
 		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-			if int(response_2) == 1:
-				print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
-				print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
-			elif int(response_2) == 2:
-				print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
-				quit()
+		if int(response_2) == 1:
+			print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
+			print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
+		elif int(response_2) == 2:
+			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
+			quit()
 
 print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1)Arcko (Type Plante)\n2)Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
 Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
