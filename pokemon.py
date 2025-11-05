@@ -55,8 +55,17 @@ print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure
 Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
 if Poké_dep_choix == 1:
 	print("Arcko a été ajouté à ton Pokédex !")
+	print(f"{Poké_dep_choix} est une pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 elif Poké_dep_choix == 2:
 	print("Poussifeu a été ajouté à ton Pokédex !")
+	print(f"{Poké_dep_choix} est une pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 elif Poké_dep_choix == 3:
-	print("Gobou a été ajouté à ton Pokédex ! ")
+	print("Gobou a été ajouté à ton Pokédex !")
+	print(f"{Poké_dep_choix} est une pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+else 
+
+
+	
+
+
 
