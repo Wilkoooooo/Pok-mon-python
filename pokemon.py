@@ -16,7 +16,7 @@ print("Que voulez vous faire :")
 print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
 response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 
-#Branche 1 
+#Branche 1 (direct foule) 
 if int(response_1) == 1:
 	print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
 	print(f"Homme mystérieux : Comment ça va depuis notre dernière rencontre ?")
@@ -31,15 +31,15 @@ if int(response_1) == 1:
 	print(f"Que voulez vous faire :")
 	print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-#branche 1-1
+#branche 1-1 (il accepte le défi de devenir dresseur) 
 	if int(response_2) == 1:
 		print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 		print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
-#Branche 1-2
+#Branche 1-2 (il renonce au défi fin du jeu) 
 	elif int(response_2) == 2:
 		print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
 		quit()
-#Branche 2
+#Branche 2 (il va dans l'autre sens et rencontre son meilleur pote) 
 elif int(response_1) == 2: 
 	print("Quelqu'un vous tape à l'épaule et vous vous retournez")
 	print("jeune garçon : Salut comment tu t'appelles ? Tu es nouveau ici ?")
@@ -51,8 +51,6 @@ elif int(response_1) == 2:
 	
 	print(f"{prenom_1} : Je m'appelle {prenom_1} 
 
-#Branche 
-#Choix Pokémon de départ 
 print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
 Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
 if Poké_dep_choix == 1:
