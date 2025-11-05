@@ -1,7 +1,7 @@
 import random 
 from math import * 
 #variables de tout le programme :
-monnaie = 0
+monnaie = 50
 xp = 0
 
 #Introduction
