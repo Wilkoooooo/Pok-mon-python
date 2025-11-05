@@ -17,9 +17,7 @@ input("↓")
 
 #Premier choix 
 print("Que voulez vous faire :")
-input("↓")
 print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
-input("↓")
 response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 
 #Branche 1 (direct foule) 
