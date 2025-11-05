@@ -134,7 +134,7 @@ elif int(response_1) == 2:
 					quit()
 	elif int(response_3)== 2:
 		print(f"{prenom_1} : Non désolé je suis trop occupé, à la prochaine")
-		print(f"Vous regretterez sans doute ce choix...")
+		print(f"Vous regretterez sans doute ce choix...") 
 		print(f"Attiré par les bruits de la foule, vous vous rapprochez")
 		print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
 		print(f"Homme mystérieux : Comment ça va depuis notre dernière rencontre ?")
