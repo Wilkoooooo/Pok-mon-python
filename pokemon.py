@@ -3,6 +3,11 @@ from math import *
 #variables de tout le programme :
 monnaie = 50
 XP = 0
+hp_poke_joueur = 60 
+hppokefightinitial = 50 
+nbrattaque1 = 15
+nbrattaque2 = 20
+nbrattaque3 = 10
 
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
@@ -21,10 +26,6 @@ print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé")
 response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 
 #Branche 1 (direct foule) 
-while not response_1 in {1,2} : 
-    print("Vous vous êtes trompés de numéro")
-	print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
-	response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 if int(response_1) == 1:
 	print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
 	input("↓")
@@ -50,11 +51,6 @@ if int(response_1) == 1:
 	print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	#branche 1-1 (il accepte le défi de devenir dresseur) 
-	while not response_2 in {1,2} : 
-   	 	print("Vous vous êtes trompés de numéro")
-		print(f"Que voulez vous faire :")
-		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
-		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if int(response_2) == 1:
 		print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 		input("↓")
@@ -72,11 +68,6 @@ elif int(response_1) == 2:
 	print(f"Que voulez vous faire :")
 	print(f"1)Faire connaissance\n2)L'ignorer") 
 	response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-	while not response_3 in {1,2} : 
-    	print("Vous vous êtes trompés de numéro")
-		print(f"Que voulez vous faire :")
-		print(f"1)Faire connaissance\n2)L'ignorer") 
-		response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if int(response_3)== 1:
 		print(f"{prenom_1} : Je m'appelle {prenom_1}, je suis de retour ici, et toi comment tu t'appelles?")
 		input("↓")
@@ -85,11 +76,6 @@ elif int(response_1) == 2:
 		print(f"Que voulez vous faire :")
 		print(f"1)devenir amis\n2)Le repousser")
 		response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-		while not response_4 in {1,2} : 
-   	 		print("Vous vous êtes trompés de numéro")
-			print(f"Que voulez vous faire :")
-			print(f"1)devenir amis\n2)Le repousser")
-			response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if int(response_4)== 1:
 			print(f"{prenom_1} : Oui bien sûr, ça te dit qu'on se rapproche de la foule ?")
 			input("↓")
@@ -118,11 +104,6 @@ elif int(response_1) == 2:
 			print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 			response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 			#branche 1-1 (il accepte le défi de devenir dresseur) 
-			while not response_4 in {1,2} : 
-   	 			print("Vous vous êtes trompés de numéro")
-				print(f"Que voulez vous faire :")
-				print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
-				response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 			if int(response_2) == 1:
 				print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 				print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
@@ -147,11 +128,6 @@ elif int(response_1) == 2:
 				print(f"Que voulez vous faire :")
 				print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 				response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-				while not response_4 in {1,2} : 
-   	 				print("Vous vous êtes trompés de numéro")
-					print(f"Que voulez vous faire :")
-					print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
-					response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 				if int(response_2) == 1:
 					print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 					print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
@@ -175,11 +151,6 @@ elif int(response_1) == 2:
 		print(f"Que voulez vous faire :")
 		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-		while not response_4 in {1,2} : 
-   	 		print("Vous vous êtes trompés de numéro")
-			print(f"Que voulez vous faire :")
-			print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
-			response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if int(response_2) == 1:
 			print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
 			print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
@@ -202,37 +173,25 @@ elif Poké_dep_choix == 2:
 elif Poké_dep_choix == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-
-hp_poke_joueur = 60 
-hppokefightinitial = 50 
-nbrattaque1 = 15
-nbrattaque2 = 20
-nbrattaque3 = 10
-while hppokefightinitial > 0 
+while hppokefightinitial > 0:
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
-	while not choix in {1,2,3} : 
-    	print("Vous vous êtes trompés de numéro")
-		choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? n/1)Nom attaque 1 (-15 hp) {nbrattaque1}/15 n/2)Nom attaque 2 (-10 hp) {nbrattaque2}/20 n/1)Nom attaque 3 (-20 hp) {nbrattaque3}/10 ")
-		attaque?=int(input("choisissez le bon numéro "))
-		while not attaque? in {1,2,3} : 
-   			print("Vous vous êtes trompés de numéro")
-			attaque?=int(input("choisissez le bon numéro "))
-		if attaque? == 1:
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
 			if nbrattaque1 > 0:
 				hppokefightinitial = hppokefightinitial - 15 
 				nbrattaque1 = nbrattaque1 - 1
 			else:
 				print("Vous n'avez plus d'attaque 1 veuillez en chosir une autre ")
-		elif attaque? == 2: 
+		elif quelle_attaque == 2: 
 			if nbrattaque2 > 0:
 				hppokefightinitial = hppokefightinitial - 10 
 				nbrattaque2 = nbrattaque2 - 1
 			else:
 				print("Vous n'avez plus d'attaque 2 veuillez en chosir une autre ")
-		elif attaque? == 3: 
+		elif quelle_attaque == 3: 
 			if nbrattaque3 > 0:
 				hppokefightinitial = hppokefightinitial - 20 
 				nbrattaque3 = nbrattaque3 - 1
@@ -241,23 +200,20 @@ while hppokefightinitial > 0
 	elif choix == 2: 
 		print("Quelle objet pour se soigner ? n\1)Objet 1 n\2)Objet 2 ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
-		while not choixsoin in {1,2} : 
-    		print("Vous vous êtes trompés de numéro")
-			choixsoin=int(input("choisissez le bon numéro "))
 		if choixsoin == 1: 
 			hp_poke_joueur = hp_poke_joueur + 20
 		elif choixsoin == 2: 
 			hp_poke_joueur = 60 
 
 	else: 
-		#À CODER !!!!!!!!!!!!!!!!
+		print("tu n'as pas le droit")
 	if hppokefightinitial < 10:
-		proba_soin=randomrandit(1,3)
+		proba_soin=random.randint(1,3)
 		if proba_soin == 1:
 			print("le pokemon adverse se soigne ! Il regénère 10 hp")
 			hppokefightinitial = hppokefightinitial + 1 
 		else: 
-			proba_attaque=randomrandit(1,2)
+			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
 				print("il utilise l'attaque 1")
 				hp_poke_joueur = hp_poke_joueur - 10 
@@ -269,7 +225,7 @@ while hppokefightinitial > 0
 				hp_poke_joueur = hp_poke_joueur - 5
 
 	else: 
-			proba_attaque=randomrandit(1,2)
+			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
 				print("il utilise l'attaque 1")
 				hp_poke_joueur = hp_poke_joueur - 10 
