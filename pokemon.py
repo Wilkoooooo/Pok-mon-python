@@ -203,7 +203,7 @@ elif Poké_dep_choix == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 
-
+hp_poke_joueur = 60 
 hppokefightinitial = 50 
 nbrattaque1 = 15
 nbrattaque2 = 20
@@ -246,6 +246,41 @@ while hppokefightinitial > 0
 			choixsoin=int(input("choisissez le bon numéro "))
 		if choixsoin == 1: 
 			hp_poke_joueur = hp_poke_joueur + 20
+		elif choixsoin == 2: 
+			hp_poke_joueur = 60 
+
+	else: 
+		#À CODER !!!!!!!!!!!!!!!!
+	if hppokefightinitial < 10:
+		proba_soin=randomrandit(1,3)
+		if proba_soin == 1:
+			print("le pokemon adverse se soigne ! Il regénère 10 hp")
+			hppokefightinitial = hppokefightinitial + 1 
+		else: 
+			proba_attaque=randomrandit(1,2)
+			if proba_attaque == 1:
+				print("il utilise l'attaque 1")
+				hp_poke_joueur = hp_poke_joueur - 10 
+			elif proba_attaque == 2:
+				print("il utilise l'attaque 2")
+				hp_poke_joueur = hp_poke_joueur - 15
+			elif proba_attaque == 3:
+				print("il utilise l'attaque 3")
+				hp_poke_joueur = hp_poke_joueur - 5
+
+	else: 
+			proba_attaque=randomrandit(1,2)
+			if proba_attaque == 1:
+				print("il utilise l'attaque 1")
+				hp_poke_joueur = hp_poke_joueur - 10 
+			elif proba_attaque == 2:
+				print("il utilise l'attaque 2")
+				hp_poke_joueur = hp_poke_joueur - 15
+			elif proba_attaque == 3:
+				print("il utilise l'attaque 3")
+				hp_poke_joueur = hp_poke_joueur - 5
+			
+	
 			
 
 
