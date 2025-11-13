@@ -281,8 +281,11 @@ def menu_combat_poussifeu ():
 				
 	else: 
 		print("tu n'as pas le droit")
-	
-			
+
+
+
+
+
 
 
 				
