@@ -238,6 +238,7 @@ print("Bravo ! Tu as gagné ton premier combat (tu ne pouvais pas perdre donc pr
 print("")
 
 
+
 def menu_combat_poussifeu ():
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n 1) Attaquer \n 2) Se soigner \n 3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
