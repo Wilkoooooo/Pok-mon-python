@@ -283,6 +283,9 @@ def menu_combat_poussifeu ():
 		print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
 
 
+print("Tu rencontres un Aspicot ")
+
+
 
 
 
