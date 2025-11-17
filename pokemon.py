@@ -235,7 +235,8 @@ while hppokefightinitial > 0:
 				print("il utilise l'attaque 3")
 				hp_poke_joueur = hp_poke_joueur - 5
 print("Bravo ! Tu as gagné ton premier combat (tu ne pouvais pas perdre donc prend pas trop la confiance sale merde")
-print("")
+print("homme mystérieux : Tu es maintenant un dresseur pokémon ! Différents choix s'offrent à toi. Tu peux par exemple partir pour les arènes pokémons pour essayer de gagner des récompenses et faire évoluer ton pokémon")
+print("homme mystérieux : tu peux aussi partir pour la forêt pangorn à proximité pour obtenir de nouveaux pokémons mais fais attention à prendre des pokéballs avec toi")
 
 
 
