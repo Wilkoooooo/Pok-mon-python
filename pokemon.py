@@ -204,7 +204,6 @@ while hppokefightinitial > 0:
 			hp_poke_joueur = hp_poke_joueur + 20
 		elif choixsoin == 2: 
 			hp_poke_joueur = 60 
-
 	else: 
 		print("tu n'as pas le droit")
 	if hppokefightinitial < 10:
@@ -216,10 +215,10 @@ while hppokefightinitial > 0:
 			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
 				print("il utilise l'attaque 1")
-				hp_poke_joueur = hp_poke_joueur - 10 
+				hp_poke_joueur = hp_poke_joueur - 1 
 			elif proba_attaque == 2:
 				print("il utilise l'attaque 2")
-				hp_poke_joueur = hp_poke_joueur - 15
+				hp_poke_joueur = hp_poke_joueur - 1
 			elif proba_attaque == 3:
 				print("il utilise l'attaque 3")
 				hp_poke_joueur = hp_poke_joueur - 5
@@ -228,14 +227,15 @@ while hppokefightinitial > 0:
 			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
 				print("il utilise l'attaque 1")
-				hp_poke_joueur = hp_poke_joueur - 10 
+				hp_poke_joueur = hp_poke_joueur - 1 
 			elif proba_attaque == 2:
 				print("il utilise l'attaque 2")
-				hp_poke_joueur = hp_poke_joueur - 15
+				hp_poke_joueur = hp_poke_joueur - 1
 			elif proba_attaque == 3:
 				print("il utilise l'attaque 3")
 				hp_poke_joueur = hp_poke_joueur - 5
-
+print("Bravo ! Tu as gagné ton premier combat (tu ne pouvais pas perdre donc prend pas trop la confiance sale merde")
+print("")
 
 
 def menu_combat_poussifeu ():
