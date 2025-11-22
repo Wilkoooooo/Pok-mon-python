@@ -426,19 +426,10 @@ choix ():
 
 
 print("Tu rencontres un Aspicot ")
-
-
-
-
-
-
-
-				
-
-				
-
 	
-				
+	
+	
+
 		
 
 
