@@ -56,6 +56,9 @@ def choix():
 	print("Que voulez vous faire :")
 	print("1)Partir pour les arènes pokémons\n2)Explorer la forêt Pangorn\3)Visiter les villes à proximité\4)Explorer les environs") 
 	response_7 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_7 in {1,2,3,4}
+	print("vous vous êtes trompées de numéro")
+	choix ()
 	if response_7 = 1 :
 		arènes_pokémons():
 	if response_7 = 2 :
@@ -96,7 +99,7 @@ def forêt_pangorn ():
 		if response_10 = 1 :
 			Croco_griffe = random.randint(1,2)
 			if Croco_griffe == 1:
-				print("Le croco vous érafle le dos mais vous êtes légèrment blessé, il va falloir soigner cela avant que ça ne s'infecte")
+				print("Le crocodil vous érafle le dos mais vous êtes légèrment blessé, il va falloir soigner cela avant que ça ne s'infecte")
 				print("Le Crocodil se dresse devant vous, préparez vous au combat !")
 			
 			if Croco_griffe == 2:
@@ -105,6 +108,7 @@ def forêt_pangorn ():
 		if response_10 = 2 :
 		print(" Vous vous retrouvez au bord de la rivière et un léviator surgit et vous mange tout cru !")
 		print("Game over")
+		quit()
 	
 	if response_9 = 2 :
 		print("Au fur et à mesure que vous vous approchez de la lumière vous sentez une odeur de brûlé")
@@ -113,20 +117,75 @@ def forêt_pangorn ():
 		response_11 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 		if response_11 = 1 :
 			print("Vous avez trop avancé et vous êtes maintenant encerclés par des flammes. Vite il faut s'échapper !")
-			print("En vous retournant vous vous retruvez face à un ouisticram qui vous bloque le passage. Préparez-vous au combat !")
+			print("En vous retournant vous vous retrouvez face à un ouisticram qui vous bloque le passage. Préparez-vous au combat !")
+			
 		if response_11 = 2 :
 			print("Vous vous retrouvez à l'entrée de la forêt")
 			print("Que voulez vous faire ?")
 			print("1)quitter la forêt\n2)continuer d'explorer la forêt")
+			response_12 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 			if response_12 = 1 :
 				choix ():
 			if response_12 = 2 :
 				forêt_pangorn ():
-			
-
-
-
-
+	if response_9 = 3 :
+		print("Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
+		print("cependant à cause des secousses vous trébuchez et vous vous retrouvez par terre")
+		print("à cause des coups donnés par onix sur la falaise des rochers tombent droit sur vous !")
+		print("Que voulez vous faire ?")
+		print("1)se cacher derrière un arbre\n 2)plonger en avant")
+		response_13 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+		if response_13 = 1:
+			arbre = random.randint(1,4)
+			if arbre = 1 :
+				print("Un rocher vous à éraflé dans sa chute, vous êtes plutôt sérieusement blessé, il va falloir se rendre chez un médecin")
+			else :
+				print("Vous avez réussi à esquiver la chute de rochers, mais pourquoi le Onix est-il aussi intrigué par cette falaise ?")
+				onix_secret()
+		if response_13 = 2:
+			print("vous vous êtes foulé la cheville mais vous avez esquivé la chute de rochers, cependant il va falloir se rendre chez un médecin")
+			onix_secret()
+def onix_secret ():
+	
+	print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
+	-> combat onix
+	print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
+	print("Que voulez-vous faire ?")
+	print("1) Grimper la falaise\n2)Rebrousser chemin")
+	response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+	if response_14 = 1 :
+		print("{prenom_1} : c'est parti pour une petite séance d'escalade !")
+		while not bonnes_prises = 5 :
+			chutes = 0
+			bonnes_prises = 0
+			print("Que voulez vous faire ?")
+			print("1)Monter la main gauche\n2)Monter la main droite")
+			response_15 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+			escalade_1 = random.randint(1,4)
+			escalade_2 = random.randint(1,5)
+			if response_15 = 1:
+				if escalade_1 = 1 :
+					print("La prise ne tient pas, vous êtes tombé")
+					chutes += 1
+				else : 
+					print("La prise tient, reste plus qu'à continuer comme ça !")
+					bonnes_prises += 1
+			if response_15 = 2 :
+				if escalade_2 = 1 :
+					print("La prise ne tient pas, vous êtes tombé")
+					chutes += 1
+				else : 
+					print("La prise tient, reste plus qu'à continuer comme ça !")
+					bonnes_prises += 1
+			if chutes = 5 :
+				print("vous êtes tombés trop de fois, vous êtes morts de chute")
+				print("Game Over")
+				quit()
+			if bonnes_prises = 5 :
+				print("{prenom_1} : Pas simple cette ascension mais je suis enfin arrivé dans cette grotte qui intrguait le Onix")
+				print("Vous avancez jusqu'au fond de la grotte et un caillou avec une forme étrange se trouve au centre de la grotte")
+				print("Vous venez de trouver un fossile mâchoire ! Ce fossile, si les conditions sont réunies, va se transformer en un ptyranidur !") 
+				print("{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
 
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
