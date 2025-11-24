@@ -105,13 +105,13 @@ def choix ():
 	while not response_7 in {1,2,3,4}
 	print("vous vous êtes trompées de numéro")
 	choix ()
-	if response_7 = 1 :
+	if response_7 == 1 :
 		arènes_pokémons():
-	if response_7 = 2 :
+	if response_7 == 2 :
 		forêt_pangorn ():
-	if response_7 = 3 :
+	if response_7 == 3 :
 		ville_donjon ():
-	if response_7 = 4 :
+	if response_7 == 4 :
 		grotte_boss ():
 
 
