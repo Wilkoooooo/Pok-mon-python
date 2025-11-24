@@ -52,7 +52,7 @@ def menu_combat_poussifeu ():
 	else: 
 		print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
 
-def choix():
+def choix ():
 	print("Que voulez vous faire :")
 	print("1)Partir pour les arènes pokémons\n2)Explorer la forêt Pangorn\3)Visiter les villes à proximité\4)Explorer les environs") 
 	response_7 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
