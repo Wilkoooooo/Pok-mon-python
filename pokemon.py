@@ -5,10 +5,56 @@ monnaie = 50
 XP = 0
 hp_poke_joueur = 60 
 hppokefightinitial = 50 
-nbrattaque1 = 15
-nbrattaque2 = 20
-nbrattaque3 = 10
+nbr_Flammèche = 15
+nbr_Lance-Flammes = 20
+nbr_Rebondifeu = 10
+nbr_Pistolet_à_O = 15
+nbr_Siphon = 20
+nbr_Hydrocanon = 10
 
+def menu_combat_gobou ():
+	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n 1) Attaquer \n 2) Se soigner \n 3) Changer de pokémon")
+	choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Pistolet_à_O > 0:
+				hppokefightinitial = hppokefightinitial - 15 
+				nbr_Pistolet_à_O = nbr_Pistolet_à_O - 1
+			else:
+				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_Siphon > 0:
+				hppokefightinitial = hppokefightinitial - 10 
+				nbr_Siphon = nbr_Siphon - 1
+			else:
+				print("Vous n'avez plus de Siphon, faites attention la prochaine fois ")
+		elif quelle_attaque == 3: 
+			if nbr_Hydrocanon > 0:
+				hppokefightinitial = hppokefightinitial - 20 
+				nbr_Hydrocanon = nbr_Hydrocanon - 1
+			else:
+				print("Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			hp_poke_joueur = hp_poke_joueur + 20
+		elif choixsoin == 2: 
+			hp_poke_joueur = 60 
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+			reponse_pp=int(input(f"Quel attaque choisissez vous ?")
+			if reponse_pp == 1: 
+				nbr_Pistolet_à_O = nbr_Pistolet_à_O - nbr_Pistolet_à_O + 15
+			elif reponse_pp == 2: 
+				nbr_Siphon = nbr_Siphon - nbr_Siphon + 20
+			elif reponse_pp == 3: 
+				nbr_Hydrocanon = nbr_Hydrocanon - nbr_Hydrocanon + 10
+	else: 
+		print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
+		
 def menu_combat_poussifeu ():
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n 1) Attaquer \n 2) Se soigner \n 3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
