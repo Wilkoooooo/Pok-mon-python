@@ -115,4 +115,39 @@ def menu_combat_poussifeu ():
 				print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
   	else:
     	print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
+
+
+
+
+
+while hppokefightinitial > 0 or fuir = False: 
+	menu_combat_poussifeu ():
+	if hppokefightinitial < 10:
+		proba_soin=random.randint(1,3)
+		if proba_soin == 1:
+			print("le pokemon adverse se soigne ! Il regénère 10 hp")
+			hppokefightinitial = hppokefightinitial + 1 
+		else: 
+			proba_attaque=random.randint(1,2)
+			if proba_attaque == 1:
+				print("il utilise l'attaque 1")
+				hp_poke_joueur = hp_poke_joueur - 1 
+			elif proba_attaque == 2:
+				print("il utilise l'attaque 2")
+				hp_poke_joueur = hp_poke_joueur - 1
+			elif proba_attaque == 3:
+				print("il utilise l'attaque 3")
+				hp_poke_joueur = hp_poke_joueur - 5
+
+	else: 
+			proba_attaque=random.randint(1,2)
+			if proba_attaque == 1:
+				print("il utilise l'attaque 1")
+				hp_poke_joueur = hp_poke_joueur - 1 
+			elif proba_attaque == 2:
+				print("il utilise l'attaque 2")
+				hp_poke_joueur = hp_poke_joueur - 1
+			elif proba_attaque == 3:
+				print("il utilise l'attaque 3")
+				hp_poke_joueur = hp_poke_joueur - 5
     
