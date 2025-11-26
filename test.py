@@ -1,11 +1,21 @@
-nbr_pokeball = 5
-nbr_superball = 0
-nbr_hyperball = 0
+import random 
+from math import * 
+#variables de tout le programme :
+monnaie = 50
+XP = 0
+hp_poke_joueur = 60 
+hppokefightinitial = 50 
+nbr_Flammèche = 15
+nbr_LanceFlammes = 20
+nbr_Rebondifeu = 10
+nbr_Pistolet_à_O = 15
+nbr_Siphon = 20
+nbr_Hydrocanon = 10
 def menu_combat_poussifeu ():
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
-		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-10 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
 		quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbr_Flammèche > 0:
@@ -14,9 +24,9 @@ def menu_combat_poussifeu ():
 			else:
 				print("Vous n'avez plus de Flammèche, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
-			if nbr_Lance-Flammes > 0:
+			if nbr_LanceFlammes > 0:
 				hppokefightinitial = hppokefightinitial - 10 
-				nbr_Lance-Flammes = nbr_Lance-Flammes - 1
+				nbr_LanceFlammes = nbr_LanceFlammes - 1
 			else:
 				print("Vous n'avez plus de Lance-Flammes, veuillez en chosir une autre ")
 		elif quelle_attaque == 3: 
