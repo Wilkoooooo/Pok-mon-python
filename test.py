@@ -47,17 +47,17 @@ def menu_combat_poussifeu ():
 			hp_poke_joueur = 60 
 		elif choixsoin == 3: 
 			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
-			reponse_pp=int(input(f"Quel attaque choisissez vous ?")
-			if reponse_pp == 1: 
-				nbr_Flammèche = nbr_Flammèche - nbr_Flammèche + 15
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Flammèche = nbr_Flammèche - nbr_Flammèche + 15
 			elif reponse_pp == 2: 
-				nbr_Lance-Flammes = nbr_Lance-Flammes - nbr_Lance-Flammes + 20
-			elif reponse_pp == 3: 
-				nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
-  	elif choix == 3:
-		fuir = False
-		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-		fuir = True 
+			    nbr_LanceFlammes = nbr_LanceFlammes - nbr_LanceFlammes + 20
+			else:
+                            nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
+	elif choix == 3:
+            fuir = False
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
 		
  	elif choix == 4: 
     	print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
