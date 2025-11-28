@@ -112,7 +112,7 @@ def menu_combat_gobou ():
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:  
 			print("Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
-			reponse_pp=int(input(f"Quel attaque choisissez vous ?")
+			reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 			if reponse_pp == 1: 
 				nbr_Pistolet_à_O = nbr_Pistolet_à_O - nbr_Pistolet_à_O + 15
 			elif reponse_pp == 2: 
