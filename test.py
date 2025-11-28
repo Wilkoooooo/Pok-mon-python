@@ -116,7 +116,7 @@ def menu_combat_poussifeu ():
                 print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
 
 
-while hppokefightinitial > 0 or fuir == False: 
+while hppokefightinitial > 0 or not fuir: 
 	menu_combat_poussifeu ()
 	if hppokefightinitial < 10:
 		proba_soin=random.randint(1,3)
