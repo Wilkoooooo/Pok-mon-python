@@ -7,15 +7,24 @@ duree_1 = 1
 XP = 0
 hp_poke_joueur = 60 
 hppokefightinitial = 50 
+#Variable PP des Pokémons : 
+#Variable PP Poussifeu
 nbr_Flammèche = 15
 nbr_LanceFlammes = 20
 nbr_Rebondifeu = 10
+#Variable PP Gobou
 nbr_Pistolet_à_O = 15
 nbr_Siphon = 20
 nbr_Hydrocanon = 10
+#Variable PP Arcko
+nbr_Désherbaffe = 15
+nbr_FouetsLiannes = 20
+nbr_LammeFeuille = 10
+#Variable Pokéballs
 nbr_pokeball = 0
 nbr_superball = 0
 nbr_hyperball = 0
+#Variable Potions
 nbr_superpotion = 0
 nbr_hyperpotion = 0
 #fonction boutique
