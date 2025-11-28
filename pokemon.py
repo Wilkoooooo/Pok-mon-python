@@ -1,7 +1,7 @@
 import random 
 import time
 from math import * 
-#variables de tout le programme :
+#variables de tout le programme : 
 monnaie = 50
 duree_1 = 1
 XP = 0
