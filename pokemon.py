@@ -6,7 +6,7 @@ XP = 0
 hp_poke_joueur = 60 
 hppokefightinitial = 50 
 nbr_Flammèche = 15
-nbr_Lance-Flammes = 20
+nbr_LanceFlammes = 20
 nbr_Rebondifeu = 10
 nbr_Pistolet_à_O = 15
 nbr_Siphon = 20
@@ -129,7 +129,7 @@ def menu_combat_poussifeu ():
 				hppokefightinitial = hppokefightinitial - 10 
 				nbr_LanceFlammes = nbr_LanceFlammes - 1
 			else:
-				print("Vous n'avez plus de Lance-Flammes, veuillez en chosir une autre ")
+				print("Vous n'avez plus de Lance Flammes, veuillez en chosir une autre ")
 		elif quelle_attaque == 3: 
 			if nbr_Rebondifeu > 0:
 				hppokefightinitial = hppokefightinitial - 20 
