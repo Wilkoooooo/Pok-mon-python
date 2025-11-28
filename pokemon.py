@@ -13,6 +13,67 @@ nbr_Rebondifeu = 10
 nbr_Pistolet_à_O = 15
 nbr_Siphon = 20
 nbr_Hydrocanon = 10
+nbr_pokeball = 0
+nbr_superball = 0
+nbr_hyperball = 0
+nbr_superpotion = 0
+nbr_hyperpotion = 0
+
+def boutique ():
+	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
+	print(f"1)acheter des pokéballs\n2)acheter des potions")
+	achatboutique = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
+	if achatboutique = 1 :
+		print(f"Quelle pokéball voulez-vous acheter ?")
+		print(f"1)Pokéball\n2)Superball\n3)Hyperball")
+		achatpoke = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
+		if achatpoke = 1 :
+			if monnaie >= 5 :
+				monnaie -= 5
+				print(f"Vous venez d'acheter une pokéball !")
+				nbr_pokeball += 1
+			if monnaie < 5 :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+
+		if achatpoke = 2 :
+			if monnaie >= 10 :
+				print(f"Vous venez d'acheter une superball !")
+				monnaie -= 10
+				nbr_superball += 1
+			if monnaie < 10 :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+
+		if achatpoke = 3 :
+			if monnaie >= 15 :
+				print(f"Vous venez d'acheter une hyperball !")
+				monnaie -= 15
+				nbr_hyperball += 1
+			if monnaie < 15 :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+				
+	if 	achatboutique = 2 :
+		print(f"Quelle potion voulez-vous acheter ?")
+		print(f"1)super potion\n2)hyper potion")
+		achatpotion = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
+		if achatpotion = 1 :
+			if monnaie >= 10 :
+				print(f"Vous venez d'acheter une super potion !")
+				monnaie -= 10
+				nbr_superpotion += 1
+			if monnaie < 10 :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+
+		if achatpotion = 2 :
+			if monnaie >= 15 :
+				print(f"Vous venez d'acheter une hyper potion !")
+				monnaie -= 15
+				nbr_hyperpotion += 1
+			if monnaie < 15 :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+
+
+			
+
 
 def menu_combat_gobou ():
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n 1) Attaquer \n 2) Se soigner \n 3) Changer de pokémon")
@@ -42,9 +103,17 @@ def menu_combat_gobou ():
 		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
-			hp_poke_joueur = hp_poke_joueur + 20
+			if nbr_superpotion > 0 :
+				hp_poke_joueur = hp_poke_joueur + 20
+				nbr_superpotion -= 1
+			if nbr_superpotion = 0 :
+				print(f"Vous n'avez plus de super potion...")
 		elif choixsoin == 2: 
-			hp_poke_joueur = 60 
+			if nbr_hyperpotion > 0:
+				hp_poke_joueur = 60 
+				nbr_hyperpotion -= 1
+			if nbr_hyperpotion = 0 :
+				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:  
 			print("Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
 			reponse_pp=int(input(f"Quel attaque choisissez vous ?")
@@ -142,9 +211,19 @@ def menu_combat_poussifeu ():
 		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
-			hp_poke_joueur = hp_poke_joueur + 20
+			if nbr_superption > 0 :
+				hp_poke_joueur = hp_poke_joueur + 20
+				nbr_superpotion -= 1
+			if nbr_superpotion = 0 :
+				print(f"Vous n'avez plus de super potion...")
+				
 		elif choixsoin == 2: 
-			hp_poke_joueur = 60 
+			if nbr_hyperpotion > 0 :
+				hp_poke_joueur = 60 
+				nbr_hyperpotion -= 1
+			if nbr_hyperpotion = 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				
 		elif choixsoin == 3: 
 			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
 			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
@@ -233,47 +312,57 @@ def ville_donjon ():
 	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
 		
 def grotte_boss (): 
-	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve etre de plus en plus instable récemment")
-	print(f"")
-
+	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve être de plus en plus instable récemment")
+	print(f"En te rapprochant du volcan tu te retrouves face à une grotte")
+	print("Que voulez vous faire :")
+	print("1)rentrer dans la grotte\n2)faire demi-tour")
+	response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	if response_17 = 1 :
+		print(f"Vous avez décidé de rentrer dans la grotte, vous marchez pendant de longues minutes jusqu'à vous retrouver dans une salle souterraine")
+		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
+		#combat pokémon mystérieux
+	if response_17 = 2 :
+		choix ()
+		
+		
 def arènes_pokémons ():
-		print("Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
-		print("quelqu'un à l'entrée de l'arène vous attend pour vous expliquer les règles de l'arène pokémon")
-		print("organisateur : Bonjour jeune homme, vous êtes arrivé à l'arène pokémon, ici de nombreux dresseurs s'affrontent en espérant atteindre la finale du tournoi pour gagner un pokémon rarissime !")
-		print("organisateur : Le fonctionnement est très simple, vous démarrez quand 32 dresseurs pokémons arrivent dans l'arène et dès que vous perdez vous devez attendre le prochain tournoi, par contre à chaque fois que vous gagnez vous passez à l'étape supérieure et vous affrontez de noueaux dresseurs. Vous avez le droit d'utliser des potions de soins sur vos pokémons seulement entre chaque combat; Bonne chance !")
-		print("Organisateur : Alors ça te tente ?")
+		print(f"Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
+		print(f"quelqu'un à l'entrée de l'arène vous attend pour vous expliquer les règles de l'arène pokémon")
+		print(f"organisateur : Bonjour jeune homme, vous êtes arrivé à l'arène pokémon, ici de nombreux dresseurs s'affrontent en espérant atteindre la finale du tournoi pour gagner un pokémon rarissime !")
+		print(f"organisateur : Le fonctionnement est très simple, vous démarrez quand 32 dresseurs pokémons arrivent dans l'arène et dès que vous perdez vous devez attendre le prochain tournoi, par contre à chaque fois que vous gagnez vous passez à l'étape supérieure et vous affrontez de noueaux dresseurs. Vous avez le droit d'utliser des potions de soins sur vos pokémons seulement entre chaque combat; Bonne chance !")
+		print(f"Organisateur : Alors ça te tente ?")
 		print("Que voulez vous faire :")
 		print("1)S'inscrire au tournoi\n2)partir de l'arène pokémon")
 		response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if response_8 = 1:
-			print("votre premer combat commence !")
+			print(f"votre premier combat commence !")
 		if response_8 = 2:
-			print("Vous sortez des arènes pokémons")
+			print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
 
 def forêt_pangorn ():
-	print("Après quelques dizaines de minutes de marche, vous arrivez à l'entrée de la forêt Pangorn")
-	print("{prenom_1} : j'entends de l'eau qui coule vers l'ouest. J'aprçois une lueur pas loin devant moi. J'entends aussi la terre qui tremble à quelques centaines de mètres à ma droite")
+	print(f"Après quelques dizaines de minutes de marche, vous arrivez à l'entrée de la forêt Pangorn")
+	print(f"{prenom_1} : j'entends de l'eau qui coule vers l'ouest. J'aprçois une lueur pas loin devant moi. J'entends aussi la terre qui tremble à quelques centaines de mètres à ma droite")
 	print("Que voulez vous faire :")
 	print("1)Se diriger vers les bruits de l'eau\n2)S'approcher de la lueur\n3)Se rendre aux lieux des tremblements de terre")
 	response_9 : int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_9 = 1 :
-		print("Vous êtes émerveillé par une magnifique cascade cependant vous ne vous rendez même pas compte qu'un Crocodil vous observe")
-		print("Le Crocodil vous saute dessus seulement vous le voyez au dernier moment et vus avez le choix entre esquiver en vous baissant ou en sautant vers la rivière")
+		print(f"Vous êtes émerveillé par une magnifique cascade cependant vous ne vous rendez même pas compte qu'un Crocodil vous observe")
+		print(f"Le Crocodil vous saute dessus seulement vous le voyez au dernier moment et vus avez le choix entre esquiver en vous baissant ou en sautant vers la rivière")
 		print("que voulez vous faire ?")
 		print("1)esquiver en se baissant\n2)esquiver en sautant vers la rivière")
 		response_10 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 		if response_10 = 1 :
 			Croco_griffe = random.randint(1,2)
 			if Croco_griffe == 1:
-				print("Le crocodil vous érafle le dos mais vous êtes légèrment blessé, il va falloir soigner cela avant que ça ne s'infecte")
-				print("Le Crocodil se dresse devant vous, préparez vous au combat !")
+				print(f"Le crocodil vous érafle le dos mais vous êtes légèrment blessé, il va falloir soigner cela avant que ça ne s'infecte")
+				print(f"Le Crocodil se dresse devant vous, préparez vous au combat !")
 			
 			if Croco_griffe == 2:
-				print("vous avez esquivé de justesse, préparez vous au combat !")
+				print(f"vous avez esquivé de justesse, préparez vous au combat !")
 		
 		if response_10 = 2 :
-		print(" Vous vous retrouvez au bord de la rivière et un léviator surgit et vous mange tout cru !")
-		print("Game over")
+		print(f"Vous vous retrouvez au bord de la rivière et un léviator surgit et vous mange tout cru !")
+		print(f"Game over")
 		quit()
 	
 	if response_9 = 2 :
@@ -321,28 +410,18 @@ def onix_secret ():
 	response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_14 = 1 :
 		print("{prenom_1} : c'est parti pour une petite séance d'escalade !")
-		while not bonnes_prises = 5 :
 			chutes = 0
 			bonnes_prises = 0
 			print("Que voulez vous faire ?")
 			print("1)Monter la main gauche\n2)Monter la main droite")
 			response_15 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-			escalade_1 = random.randint(1,4)
-			escalade_2 = random.randint(1,5)
 			if response_15 = 1:
-				if escalade_1 = 1 :
-					print("La prise ne tient pas, vous êtes tombé")
-					chutes += 1
-				else : 
-					print("La prise tient, reste plus qu'à continuer comme ça !")
-					bonnes_prises += 1
+				print("La prise ne tient pas, vous êtes tombé")
+				chutes += 1
+				bonnes_prises = 0
 			if response_15 = 2 :
-				if escalade_2 = 1 :
-					print("La prise ne tient pas, vous êtes tombé")
-					chutes += 1
-				else : 
-					print("La prise tient, reste plus qu'à continuer comme ça !")
-					bonnes_prises += 1
+				print("La prise tient, reste plus qu'à continuer comme ça !")
+				bonnes_prises += 1
 			if chutes = 5 :
 				print("vous êtes tombés trop de fois, vous êtes morts de chute")
 				print("Game Over")
@@ -600,9 +679,3 @@ while hp_rayquaza > 0:
 		continue
 	desc, fonction = chemin[direction]
 	del chemin[direction]
-	
-
-		
-
-
-
