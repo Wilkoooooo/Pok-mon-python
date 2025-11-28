@@ -179,6 +179,7 @@ def menu_combat_gobou ():
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
 		print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
+
 def menu_combat_poussifeu ():
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
@@ -399,35 +400,36 @@ def forêt_pangorn ():
 def onix_secret ():
 	
 	print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
-	-> combat onix
+	#combat onix
 	print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
 	print("Que voulez-vous faire ?")
 	print("1) Grimper la falaise\n2)Rebrousser chemin")
 	response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-	if response_14 = 1 :
-		print("{prenom_1} : c'est parti pour une petite séance d'escalade !")
+	if response_14 == 1 :
+		print(f"{prenom_1} : c'est parti pour une petite séance d'escalade !")
 			chutes = 0
 			bonnes_prises = 0
-			print("Que voulez vous faire ?")
-			print("1)Monter la main gauche\n2)Monter la main droite")
-			response_15 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-			if response_15 = 1:
-				print("La prise ne tient pas, vous êtes tombé")
-				chutes += 1
-				bonnes_prises = 0
-			if response_15 = 2 :
-				print("La prise tient, reste plus qu'à continuer comme ça !")
-				bonnes_prises += 1
-			if chutes = 5 :
-				print("vous êtes tombés trop de fois, vous êtes morts de chute")
-				print("Game Over")
-				quit()
-			if bonnes_prises = 5 :
+			while chutes != 5 and bonnes_prises != 5:
+				print("Que voulez vous faire ? : \n1)Monter la main gauche\n2)Monter la main droite")
+				reponse_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
+				if reponse_15 == 1:
+					print("La prise ne tient pas, vous êtes tombé(e)")
+					chutes += 1
+					bonnes_prises = 0
+					print(f"Vous avez {chutes} chute(s) et les bonnes prises ont été remise à {bonnes_prises}. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
+				else :
+					print("La prise tient, reste plus qu'à continuer comme ça !")
+					bonnes_prises += 1
+					print(f"Vous avez {chutes} chute(s) et {bonnes_prises} bonnes prises. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
+			if bonnes_prises == 5 :
 				print("{prenom_1} : Pas simple cette ascension mais je suis enfin arrivé dans cette grotte qui intrguait le Onix")
 				print("Vous avancez jusqu'au fond de la grotte et un caillou avec une forme étrange se trouve au centre de la grotte")
 				print("Vous venez de trouver un fossile mâchoire ! Ce fossile, si les conditions sont réunies, va se transformer en un ptyranidur !") 
 				print("{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
-
+			else :
+				print("vous êtes tombés trop de fois, vous êtes morts de chute")
+				print("Game Over")
+				quit()
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
 input("↓")
