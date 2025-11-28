@@ -18,62 +18,58 @@ nbr_superball = 0
 nbr_hyperball = 0
 nbr_superpotion = 0
 nbr_hyperpotion = 0
-
-def boutique ():
+#fonction boutique
+def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion):
 	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
-	print(f"1)acheter des pokéballs\n2)acheter des potions")
-	achatboutique = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
-	if achatboutique = 1 :
-		print(f"Quelle pokéball voulez-vous acheter ?")
-		print(f"1)Pokéball\n2)Superball\n3)Hyperball")
-		achatpoke = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
-		if achatpoke = 1 :
-			if monnaie >= 5 :
+	print(f"\n1)acheter des Pokéballs\n2)acheter des potions")
+	achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : ")) 
+	if achat_boutique == 1:
+		print(f"Quelle type de pokéball voulez-vous acheter ?")
+		print(f"\n1)Pokéball\n2)Superball\n3)Hyperball")
+		achat_poke = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
+		if achat_poke == 1:
+			if monnaie >= 5:
 				monnaie -= 5
 				print(f"Vous venez d'acheter une pokéball !")
 				nbr_pokeball += 1
-			if monnaie < 5 :
-				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+			else :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique !")
 
-		if achatpoke = 2 :
+		elif achat_poke == 2:
 			if monnaie >= 10 :
 				print(f"Vous venez d'acheter une superball !")
 				monnaie -= 10
 				nbr_superball += 1
-			if monnaie < 10 :
-				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+			else :
+				print(f"T'as plus de thunes sale sdf, sors de ma boutique !")
 
-		if achatpoke = 3 :
+		else :
 			if monnaie >= 15 :
 				print(f"Vous venez d'acheter une hyperball !")
 				monnaie -= 15
 				nbr_hyperball += 1
-			if monnaie < 15 :
+			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 				
-	if 	achatboutique = 2 :
+	else :
 		print(f"Quelle potion voulez-vous acheter ?")
-		print(f"1)super potion\n2)hyper potion")
-		achatpotion = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
-		if achatpotion = 1 :
+		print(f"\n1)super potion\n2)hyper potion")
+		achat_potion = int(input("Que choisissez vous ? (sélectionnez le numéro) : ")) 
+		if achat_potion == 1 :
 			if monnaie >= 10 :
 				print(f"Vous venez d'acheter une super potion !")
 				monnaie -= 10
 				nbr_superpotion += 1
-			if monnaie < 10 :
+			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 
-		if achatpotion = 2 :
+		else :
 			if monnaie >= 15 :
 				print(f"Vous venez d'acheter une hyper potion !")
 				monnaie -= 15
 				nbr_hyperpotion += 1
-			if monnaie < 15 :
+			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
-
-
-			
-
 
 def menu_combat_gobou ():
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n 1) Attaquer \n 2) Se soigner \n 3) Changer de pokémon")
