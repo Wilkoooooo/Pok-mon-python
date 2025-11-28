@@ -72,7 +72,7 @@ def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,n
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 
 def menu_combat_gobou ():
-	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n 1) Attaquer \n 2) Se soigner \n 3) Changer de pokémon")
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
@@ -120,9 +120,7 @@ def menu_combat_gobou ():
 			else: 
 				nbr_Hydrocanon = nbr_Hydrocanon - nbr_Hydrocanon + 10
 	elif choix == 3:
-            fuir = False
-            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-            fuir = True 
+            print(" Pas encore codée ")
 	elif choix == 4: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
@@ -178,8 +176,9 @@ def menu_combat_gobou ():
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
-
+		fuir = False
+		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+    	fuir = True 
 def menu_combat_poussifeu ():
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
@@ -231,9 +230,7 @@ def menu_combat_poussifeu ():
 			else:
                 nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
 	elif choix == 3:
-            fuir = False
-            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-            fuir = True 
+            print("pas encore codée")
 	elif choix == 4: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
@@ -289,7 +286,9 @@ def menu_combat_poussifeu ():
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
             else:
-                print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
+				fuir = False
+            	print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            	fuir = True 
 def choix ():
 	print("Que voulez vous faire :")
 	print("1)Partir pour les arènes pokémons\n2)Explorer la forêt Pangorn\3)Visiter les villes à proximité\4)Explorer les environs") 
