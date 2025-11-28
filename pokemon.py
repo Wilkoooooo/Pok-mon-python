@@ -229,7 +229,12 @@ def choix ():
 		ville_donjon ():
 	if response_7 == 4 :
 		grotte_boss ():
-
+def ville_donjon (): 
+	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
+		
+def grotte_boss (): 
+	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve etre de plus en plus instable récemment")
+	print(f"")
 
 def arènes_pokémons ():
 		print("Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
@@ -244,7 +249,6 @@ def arènes_pokémons ():
 			print("votre premer combat commence !")
 		if response_8 = 2:
 			print("Vous sortez des arènes pokémons")
-			def choix ():
 
 def forêt_pangorn ():
 	print("Après quelques dizaines de minutes de marche, vous arrivez à l'entrée de la forêt Pangorn")
