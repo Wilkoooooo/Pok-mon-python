@@ -88,28 +88,28 @@ def menu_combat_gobou ():
 		quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbr_Pistolet_à_O > 0:
-				hppokefightinitial = hppokefightinitial - 15 
-				nbr_Pistolet_à_O = nbr_Pistolet_à_O - 1
+				hp_ennemi -= 15 
+				nbr_Pistolet_à_O - = 1
 			else:
 				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
 			if nbr_Siphon > 0:
-				hppokefightinitial = hppokefightinitial - 10 
-				nbr_Siphon = nbr_Siphon - 1
+				hp_ennemi -= 10 
+				nbr_Siphon -= 1
 			else:
 				print("Vous n'avez plus de Siphon, faites attention la prochaine fois ")
 		elif quelle_attaque == 3: 
 			if nbr_Hydrocanon > 0:
-				hppokefightinitial = hppokefightinitial - 20 
-				nbr_Hydrocanon = nbr_Hydrocanon - 1
+				hp_ennemi -= 20 
+				nbr_Hydrocanon -= 1
 			else:
 				print("Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
 	elif choix == 2: 
-		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
 			if nbr_superpotion > 0 :
-				hp_poke_joueur = hp_poke_joueur + 20
+				hp_poke_joueur += 20
 				nbr_superpotion -= 1
 			else:
 				print(f"Vous n'avez plus de super potion...")
@@ -120,14 +120,14 @@ def menu_combat_gobou ():
 			else:
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:  
-			print("Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+			print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
 			reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 			if reponse_pp == 1: 
-				nbr_Pistolet_à_O = nbr_Pistolet_à_O - nbr_Pistolet_à_O + 15
+				nbr_Pistolet_à_O = 15
 			elif reponse_pp == 2: 
-				nbr_Siphon = nbr_Siphon - nbr_Siphon + 20
+				nbr_Siphon = 20
 			else: 
-				nbr_Hydrocanon = nbr_Hydrocanon - nbr_Hydrocanon + 10
+				nbr_Hydrocanon = 10
 	elif choix == 3:
             print(" Pas encore codée ")
 	elif choix == 4: 
@@ -135,7 +135,7 @@ def menu_combat_gobou ():
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
             if choix_pokeball == 1:
                 if nbr_pokeball > 0: 
-                    nbr_pokeball = nbr_pokeball - 1
+                    nbr_pokeball -= 1
                     print("Vous lancez une Pokéball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -145,14 +145,14 @@ def menu_combat_gobou ():
                         	break
                     	else :
                         	print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
-                        	poké_pop_compteur = poké_pop_compteur + 1
+                        	poké_pop_compteur += 1
                     if poké_pop_compteur % 2 != 0:
                         print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
             elif choix_pokeball == 2:
                 if nbr_superball > 0: 
-                    nbr_superball = nbr_superball - 1
+                    nbr_superball -= 1
                     print("Vous lancez une Superball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -162,14 +162,14 @@ def menu_combat_gobou ():
                             break
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
-                            poké_pop_compteur = poké_pop_compteur + 1
+                            poké_pop_compteur += 1
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
             elif choix_pokeball == 3:
                 if nbr_hyperball > 0: 
-                    nbr_hyperball = nbr_hyperball - 1
+                    nbr_hyperball -= 1
                     print("Vous lancez une Hyperball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -179,7 +179,7 @@ def menu_combat_gobou ():
                             break
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
-                            poké_pop_compteur = poké_pop_compteur + 1
+                            poké_pop_compteur += 1
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
                 else:
@@ -196,20 +196,20 @@ def menu_combat_poussifeu ():
 		quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbr_Flammèche > 0:
-				hppokefightinitial = hppokefightinitial - 15 
-				nbr_Flammèche = nbr_Flammèche - 1
+				hp_ennemi -= 15 
+				nbr_Flammèche -= 1
 			else:
 				print("Vous n'avez plus de Flammèche, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
 			if nbr_LanceFlammes > 0:
-				hppokefightinitial = hppokefightinitial - 10 
-				nbr_LanceFlammes = nbr_LanceFlammes - 1
+				hp_ennemi -= 10 
+				nbr_LanceFlammes -= 1
 			else:
 				print("Vous n'avez plus de Lance Flammes, veuillez en chosir une autre ")
 		elif quelle_attaque == 3: 
 			if nbr_Rebondifeu > 0:
-				hppokefightinitial = hppokefightinitial - 20 
-				nbr_Rebondifeu = nbr_Rebondifeu - 1
+				hp_ennemi -= 20 
+				nbr_Rebondifeu -= 1
 			else:
 				print("Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
 	elif choix == 2: 
@@ -217,7 +217,7 @@ def menu_combat_poussifeu ():
 		choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
 			if nbr_superption > 0 :
-				hp_poke_joueur = hp_poke_joueur + 20
+				hp_poke_joueur += 20
 				nbr_superpotion -= 1
 			if nbr_superpotion = 0 :
 				print(f"Vous n'avez plus de super potion...")
@@ -233,11 +233,11 @@ def menu_combat_poussifeu ():
 			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
 			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
 			if reponse_pp == 1:
-			    nbr_Flammèche = nbr_Flammèche - nbr_Flammèche + 15
+			    nbr_Flammèche = 15
 			elif reponse_pp == 2: 
-			    nbr_LanceFlammes = nbr_LanceFlammes - nbr_LanceFlammes + 20
+			    nbr_LanceFlammes = 20
 			else:
-                nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
+                nbr_Rebondifeu = 10
 	elif choix == 3:
             print("pas encore codée")
 	elif choix == 4: 
@@ -245,7 +245,7 @@ def menu_combat_poussifeu ():
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
             if choix_pokeball == 1:
                 if nbr_pokeball > 0: 
-                    nbr_pokeball = nbr_pokeball - 1
+                    nbr_pokeball -= 1
                     print("Vous lancez une Pokéball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -255,14 +255,14 @@ def menu_combat_poussifeu ():
                         	break
                     	else :
                         	print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
-                        	poké_pop_compteur = poké_pop_compteur + 1
+                        	poké_pop_compteur += 1
                     if poké_pop_compteur % 2 != 0:
                         print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
             elif choix_pokeball == 2:
                 if nbr_superball > 0: 
-                    nbr_superball = nbr_superball - 1
+                    nbr_superball -= 1
                     print("Vous lancez une Superball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -272,14 +272,14 @@ def menu_combat_poussifeu ():
                             break
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
-                            poké_pop_compteur = poké_pop_compteur + 1
+                            poké_pop_compteur += 1
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
             elif choix_pokeball == 3:
                 if nbr_hyperball > 0: 
-                    nbr_hyperball = nbr_hyperball - 1
+                    nbr_hyperball -= 1
                     print("Vous lancez une Hyperball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -289,7 +289,7 @@ def menu_combat_poussifeu ():
                             break
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
-                            poké_pop_compteur = poké_pop_compteur + 1
+                            poké_pop_compteur += 1
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
                 else:
