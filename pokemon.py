@@ -346,7 +346,7 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
 			else:
                 nbr_Rebondifeu = 10
 	elif choix == 3:
-            print("pas encore codée")
+            print(" Pas encore codée ")
 	elif choix == 4: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
@@ -401,10 +401,10 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                             print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
-    else:
+	else: 
 		fuir = False
-        print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-        fuir = True 
+		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+    	fuir = True 
 def choix ():
 	print("Que voulez vous faire :")
 	print("1)Partir pour les arènes pokémons\n2)Explorer la forêt Pangorn\3)Visiter les villes à proximité\4)Explorer les environs") 
