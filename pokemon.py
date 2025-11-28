@@ -80,7 +80,7 @@ def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,n
 			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 
-def menu_combat_gobou ():
+def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
@@ -188,7 +188,7 @@ def menu_combat_gobou ():
 		fuir = False
 		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
     	fuir = True 
-def menu_combat_poussifeu ():
+def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
