@@ -295,15 +295,15 @@ def choix ():
 	print("1)Partir pour les arènes pokémons\n2)Explorer la forêt Pangorn\3)Visiter les villes à proximité\4)Explorer les environs") 
 	response_7 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	while not response_7 in {1,2,3,4}
-	print("vous vous êtes trompées de numéro")
-	choix ()
+		print("vous vous êtes trompées de numéro")
+		choix ()
 	if response_7 == 1 :
 		arènes_pokémons():
-	if response_7 == 2 :
+	elif response_7 == 2 :
 		forêt_pangorn ():
-	if response_7 == 3 :
+	elif response_7 == 3 :
 		ville_donjon ():
-	if response_7 == 4 :
+	else :
 		grotte_boss ():
 def ville_donjon (): 
 	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
@@ -314,11 +314,11 @@ def grotte_boss ():
 	print("Que voulez vous faire :")
 	print("1)rentrer dans la grotte\n2)faire demi-tour")
 	response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-	if response_17 = 1 :
+	if response_17 == 1 :
 		print(f"Vous avez décidé de rentrer dans la grotte, vous marchez pendant de longues minutes jusqu'à vous retrouver dans une salle souterraine")
 		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
 		#combat pokémon mystérieux
-	if response_17 = 2 :
+	else :
 		choix ()
 		
 		
@@ -331,74 +331,75 @@ def arènes_pokémons ():
 		print("Que voulez vous faire :")
 		print("1)S'inscrire au tournoi\n2)partir de l'arène pokémon")
 		response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-		if response_8 = 1:
+		if response_8 == 1:
 			print(f"votre premier combat commence !")
-		if response_8 = 2:
+		else:
 			print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
+			print("À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathurin")
+			quit()
 
 def forêt_pangorn ():
 	print(f"Après quelques dizaines de minutes de marche, vous arrivez à l'entrée de la forêt Pangorn")
 	print(f"{prenom_1} : j'entends de l'eau qui coule vers l'ouest. J'aprçois une lueur pas loin devant moi. J'entends aussi la terre qui tremble à quelques centaines de mètres à ma droite")
 	print("Que voulez vous faire :")
 	print("1)Se diriger vers les bruits de l'eau\n2)S'approcher de la lueur\n3)Se rendre aux lieux des tremblements de terre")
-	response_9 : int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-	if response_9 = 1 :
+	response_9 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	if response_9 == 1 :
 		print(f"Vous êtes émerveillé par une magnifique cascade cependant vous ne vous rendez même pas compte qu'un Crocodil vous observe")
 		print(f"Le Crocodil vous saute dessus seulement vous le voyez au dernier moment et vus avez le choix entre esquiver en vous baissant ou en sautant vers la rivière")
 		print("que voulez vous faire ?")
 		print("1)esquiver en se baissant\n2)esquiver en sautant vers la rivière")
 		response_10 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-		if response_10 = 1 :
+		if response_10 == 1 :
 			Croco_griffe = random.randint(1,2)
 			if Croco_griffe == 1:
 				print(f"Le crocodil vous érafle le dos mais vous êtes légèrment blessé, il va falloir soigner cela avant que ça ne s'infecte")
 				print(f"Le Crocodil se dresse devant vous, préparez vous au combat !")
 			
-			if Croco_griffe == 2:
+			else:
 				print(f"vous avez esquivé de justesse, préparez vous au combat !")
 		
-		if response_10 = 2 :
+		if response_10 == 2 :
 		print(f"Vous vous retrouvez au bord de la rivière et un léviator surgit et vous mange tout cru !")
 		print(f"Game over")
 		quit()
 	
-	if response_9 = 2 :
+	if response_9 == 2 :
 		print("Au fur et à mesure que vous vous approchez de la lumière vous sentez une odeur de brûlé")
 		print("Que voulez vous faire ?")
 		print("1)continuer à avancer\n2)faire demi-tour")
-		response_11 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-		if response_11 = 1 :
+		response_11 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+		if response_11 == 1 :
 			print("Vous avez trop avancé et vous êtes maintenant encerclés par des flammes. Vite il faut s'échapper !")
 			print("En vous retournant vous vous retrouvez face à un ouisticram qui vous bloque le passage. Préparez-vous au combat !")
-			
-		if response_11 = 2 :
+			#combat
+		else:
 			print("Vous vous retrouvez à l'entrée de la forêt")
 			print("Que voulez vous faire ?")
 			print("1)quitter la forêt\n2)continuer d'explorer la forêt")
-			response_12 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-			if response_12 = 1 :
+			response_12 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+			if response_12 == 1 :
 				choix ():
-			if response_12 = 2 :
+			else:
 				forêt_pangorn ():
-	if response_9 = 3 :
+	if response_9 == 3 :
 		print("Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
 		print("cependant à cause des secousses vous trébuchez et vous vous retrouvez par terre")
 		print("à cause des coups donnés par onix sur la falaise des rochers tombent droit sur vous !")
 		print("Que voulez vous faire ?")
 		print("1)se cacher derrière un arbre\n 2)plonger en avant")
-		response_13 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-		if response_13 = 1:
+		response_13 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+		if response_13 == 1:
 			arbre = random.randint(1,4)
-			if arbre = 1 :
+			if arbre == 1 :
 				print("Un rocher vous à éraflé dans sa chute, vous êtes plutôt sérieusement blessé, il va falloir se rendre chez un médecin")
 			else :
 				print("Vous avez réussi à esquiver la chute de rochers, mais pourquoi le Onix est-il aussi intrigué par cette falaise ?")
 				onix_secret()
-		if response_13 = 2:
+		else :
 			print("vous vous êtes foulé la cheville mais vous avez esquivé la chute de rochers, cependant il va falloir se rendre chez un médecin")
 			onix_secret()
 def onix_secret ():
-	
 	print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
 	#combat onix
 	print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
