@@ -1,7 +1,9 @@
 import random 
+import time
 from math import * 
 #variables de tout le programme :
 monnaie = 50
+duree_1 = 1
 XP = 0
 hp_poke_joueur = 60 
 hppokefightinitial = 50 
@@ -578,17 +580,22 @@ print("homme mystérieux : Tu es maintenant un dresseur pokémon ! Différents c
 print("homme mystérieux : tu peux aussi partir pour la forêt pangorn à proximité pour obtenir de nouveaux pokémons mais fais attention à prendre des pokéballs avec toi")
 print("homme mystérieux : il existe de nombreuses villes à proximité si l'envie t'ne prends de faire du tourisme")
 print("homme mystérieux : Tu peux même si tu le souhaites explorer les environs")
-choix ():
-
-
-
-
-
-
-
-print("Tu rencontres un Aspicot ")
-	
-	
+chemins = {
+	1:("Aller visiter la Forêt Pangorn", forêt_pangorn),
+	2:("Aller visiter le Donjon", ville_donjon),
+	3:("Aller relever le défi des Arènes", arènes_pokémons),
+	4:("Aller visiter une mysterieuse grotte", grotte_boss), 
+}
+while hp_rayquaza > 0: 
+	print(f"Vous avez 4 choix de direction : :")
+	for num, (desc, _) in chemins.items():
+		print(f" {num}) {desc}")
+	direction = int(input("\n Quel chemin tu prend ?"))
+	if direction not in chemin:
+		print("Choix invalide.")
+		continue
+	desc, fonction = chemin[direction]
+	del chemin[direction]
 	
 
 		
