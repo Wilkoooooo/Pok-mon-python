@@ -53,7 +53,7 @@ def menu_combat_poussifeu ():
 			elif reponse_pp == 2: 
 			    nbr_LanceFlammes = nbr_LanceFlammes - nbr_LanceFlammes + 20
 			else:
-                            nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
+                nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
 	elif choix == 3:
             fuir = False
             print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
@@ -68,12 +68,12 @@ def menu_combat_poussifeu ():
                     for i in range (3):
                         poké_pop_compteur = 0
                         proba_poké_pop=random.randint(1,5+i)
-                    if proba_poké_pop == 5:
-                        print(f"La Pokéball a pop à la secousse numéro {i+1}!")
-                        break
-                    else :
-                        print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
-                        poké_pop_compteur = poké_pop_compteur + 1
+	                    if proba_poké_pop == 5:
+                        	print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                        	break
+                    	else :
+                        	print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                        	poké_pop_compteur = poké_pop_compteur + 1
                     if poké_pop_compteur % 2 != 0:
                         print("le pokémon a été capturé. Bravo !")
                 else:
