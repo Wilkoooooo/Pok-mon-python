@@ -102,13 +102,13 @@ def menu_combat_gobou ():
 			if nbr_superpotion > 0 :
 				hp_poke_joueur = hp_poke_joueur + 20
 				nbr_superpotion -= 1
-			if nbr_superpotion = 0 :
+			else:
 				print(f"Vous n'avez plus de super potion...")
 		elif choixsoin == 2: 
 			if nbr_hyperpotion > 0:
 				hp_poke_joueur = 60 
 				nbr_hyperpotion -= 1
-			if nbr_hyperpotion = 0 :
+			else:
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:  
 			print("Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
@@ -117,7 +117,7 @@ def menu_combat_gobou ():
 				nbr_Pistolet_à_O = nbr_Pistolet_à_O - nbr_Pistolet_à_O + 15
 			elif reponse_pp == 2: 
 				nbr_Siphon = nbr_Siphon - nbr_Siphon + 20
-			elif reponse_pp == 3: 
+			else: 
 				nbr_Hydrocanon = nbr_Hydrocanon - nbr_Hydrocanon + 10
 	elif choix == 3:
             fuir = False
