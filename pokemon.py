@@ -413,13 +413,13 @@ def choix ():
 		print("vous vous êtes trompées de numéro")
 		choix ()
 	if response_7 == 1 :
-		arènes_pokémons():
+		arènes_pokémons()
 	elif response_7 == 2 :
 		forêt_pangorn ():
 	elif response_7 == 3 :
-		ville_donjon ():
-	else :
-		grotte_boss ():
+		ville_donjon (): 
+	else: 
+		grotte_boss (): 
 def ville_donjon (): 
 	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
 		
