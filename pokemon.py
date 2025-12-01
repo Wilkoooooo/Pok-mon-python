@@ -405,21 +405,6 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
 		fuir = False
 		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
     	fuir = True 
-def choix ():
-	print("Que voulez vous faire :")
-	print("1)Partir pour les arènes pokémons\n2)Explorer la forêt Pangorn\3)Visiter les villes à proximité\4)Explorer les environs") 
-	response_7 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-	while not response_7 in {1,2,3,4}
-		print("vous vous êtes trompées de numéro")
-		choix ()
-	if response_7 == 1 :
-		arènes_pokémons()
-	elif response_7 == 2 :
-		forêt_pangorn ():
-	elif response_7 == 3 :
-		ville_donjon (): 
-	else: 
-		grotte_boss (): 
 
 # --- Définition des fonctions associées à chaque chemin --- #
 
@@ -696,23 +681,8 @@ elif int(response_1) == 2:
 		elif int(response_2) == 2:
 			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
 			quit()
-#Le joueur choisit son pokémon de départ 
-print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
-Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
-while not Poké_dep_choix in {1,2,3} : 
-    print("Vous vous êtes trompés de numéro")
-    print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
-    Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
-if Poké_dep_choix == 1:
-    print("Arcko a été ajouté à ton Pokédex !")
-    print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-elif Poké_dep_choix == 2:
-    print("Poussifeu a été ajouté à ton Pokédex !")
-    print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-elif Poké_dep_choix == 3:
-    print("Gobou a été ajouté à ton Pokédex !")
-    print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 #le jouer fait son premier combat tutoriel 
+print(f"oe entraine toi pour voir si tu merites un de mes pokemon")
 while hppokefightinitial > 0:
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
@@ -779,28 +749,24 @@ print("homme mystérieux : Tu es maintenant un dresseur pokémon ! Différents c
 print("homme mystérieux : tu peux aussi partir pour la forêt pangorn à proximité pour obtenir de nouveaux pokémons mais fais attention à prendre des pokéballs avec toi")
 print("homme mystérieux : il existe de nombreuses villes à proximité si l'envie t'ne prends de faire du tourisme")
 print("homme mystérieux : Tu peux même si tu le souhaites explorer les environs")
-chemins = {
-	1:("Aller visiter la Forêt Pangorn", forêt_pangorn),
-	2:("Aller visiter le Donjon", ville_donjon),
-	3:("Aller relever le défi des Arènes", arènes_pokémons),
-	4:("Aller visiter une mysterieuse grotte", grotte_boss), 
-}
-# --- Définition des fonctions associées à chaque chemin --- #
-
-def foret_sombre():
-    print("🌲 Tu avances dans la forêt sombre... Un hurlement retentit !")
-
-def caverne_mysterieuse():
-    print("🕳️ Tu entres dans la caverne mystérieuse... Une ombre bouge dans le noir...")
-
-def pont_effondre():
-    print("🌉 Le pont s’effondre sous tes pieds ! Tu dois faire demi-tour en courant.")
-
-def village_abandonne():
-    print("🏚️ Le village abandonné est étrangement silencieux... trop silencieux.")
-
+print(f"mais d'abord choisis un de mes pokémons : ")
+print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
+Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+while not Poké_dep_choix in {1,2,3} : 
+    print("Vous vous êtes trompés de numéro")
+    print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
+    Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+if Poké_dep_choix == 1:
+    print("Arcko a été ajouté à ton Pokédex !")
+    print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+elif Poké_dep_choix == 2:
+    print("Poussifeu a été ajouté à ton Pokédex !")
+    print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+elif Poké_dep_choix == 3:
+    print("Gobou a été ajouté à ton Pokédex !")
+    print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
 # Dictionnaire des chemins : clé = choix, valeur = (nom, fonction) 
-
 chemins = {
     "1": ("Ville Donjon", ville_donjon),
     "2": ("La forêt Pangorn", forêt_pangorn),
