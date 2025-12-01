@@ -420,6 +420,9 @@ def choix ():
 		ville_donjon (): 
 	else: 
 		grotte_boss (): 
+
+# --- Définition des fonctions associées à chaque chemin --- #
+
 def ville_donjon (): 
 	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
 		
@@ -783,6 +786,47 @@ chemins = {
 	3:("Aller relever le défi des Arènes", arènes_pokémons),
 	4:("Aller visiter une mysterieuse grotte", grotte_boss), 
 }
+# --- Définition des fonctions associées à chaque chemin --- #
+
+def foret_sombre():
+    print("🌲 Tu avances dans la forêt sombre... Un hurlement retentit !")
+
+def caverne_mysterieuse():
+    print("🕳️ Tu entres dans la caverne mystérieuse... Une ombre bouge dans le noir...")
+
+def pont_effondre():
+    print("🌉 Le pont s’effondre sous tes pieds ! Tu dois faire demi-tour en courant.")
+
+def village_abandonne():
+    print("🏚️ Le village abandonné est étrangement silencieux... trop silencieux.")
+
+# Dictionnaire des chemins : clé = choix, valeur = (nom, fonction) 
+
+chemins = {
+    "1": ("Ville Donjon", ville_donjon),
+    "2": ("La forêt Pangorn", forêt_pangorn),
+    "3": ("Les arênes Pokémon", arènes_pokémons),
+    "4": ("Le Volcan instable de l'île", grotte_boss)
+}
+
+#Boucle principale
+while chemins:
+    print("\nChemins disponibles :")
+    for numero, (nom, _) in chemins.items():
+        print(f"{numero} - {nom}")
+
+    choix = input("Choisis un chemin : ")
+
+    if choix in chemins:
+        nom, fonction = chemins[choix]
+        print(f"\nTu as choisi : {nom}\n")
+        fonction()  #  Lance la fonction liée
+        del chemins[choix]  #  Supprime le chemin
+    else:
+        print("Choix invalide, fais un effort !")
+
+print("\n Game Over ! ")
+
 while hp_rayquaza > 0: 
 	print(f"Vous avez 4 choix de direction : :")
 	for num, (desc, _) in chemins.items():
