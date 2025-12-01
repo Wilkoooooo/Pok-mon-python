@@ -529,7 +529,6 @@ def onix_secret ():
 			chutes = 0
 			bonnes_prises = 0
 			while chutes != 5 and bonnes_prises != 5:
-				print("Que voulez vous faire ? : \n1)Monter la main gauche\n2)Monter la main droite")
 				reponse_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
 				if reponse_15 == 1:
 					print("La prise ne tient pas, vous êtes tombé(e)")
