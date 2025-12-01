@@ -791,14 +791,3 @@ while chemins:
         print("Choix invalide, fais un effort !")
 
 print("\n Game Over ! ")
-
-while hp_rayquaza > 0: 
-	print(f"Vous avez 4 choix de direction : :")
-	for num, (desc, _) in chemins.items():
-		print(f" {num}) {desc}")
-	direction = int(input("\n Quel chemin tu prend ?"))
-	if direction not in chemin:
-		print("Choix invalide.")
-		continue
-	desc, fonction = chemin[direction]
-	del chemin[direction]
