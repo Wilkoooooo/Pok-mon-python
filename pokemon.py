@@ -88,7 +88,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 		if quelle_attaque == 1:
 			if nbr_Désherbaffe > 0:
 				hp_ennemi -= 15 
-				nbr_Désherbaffe - = 1
+				nbr_Désherbaffe -= 1
 			else:
 				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
