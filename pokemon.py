@@ -27,6 +27,9 @@ nbr_hyperball = 0
 #Variable Potions
 nbr_superpotion = 0
 nbr_hyperpotion = 0
+#variable fossile 
+fossile1 = 0
+fossile2 = 0
 #fonction boutique
 def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion):
 	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
@@ -529,6 +532,7 @@ def onix_secret ():
 				print("Vous avancez jusqu'au fond de la grotte et un caillou avec une forme étrange se trouve au centre de la grotte")
 				print("Vous venez de trouver un fossile mâchoire ! Ce fossile, si les conditions sont réunies, va se transformer en un ptyranidur !") 
 				print("{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
+				fossile1 += 1
 			else :
 				print("vous êtes tombés trop de fois, vous êtes morts de chute")
 				print("Game Over")
