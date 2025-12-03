@@ -129,8 +129,8 @@ def menu_combat_poussifeu ():
                             print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
-    else:
-		changer_pokemon()
+		else:
+			changer_pokemon()
 
 
 def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
