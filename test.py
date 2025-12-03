@@ -130,7 +130,7 @@ def menu_combat_poussifeu ():
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
             else:
-                print("tu n'as pas le droit on a pas encore coder cette partie et on le fera probablement jamais")
+				changer_pokemon()
 
 
 def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
@@ -240,9 +240,8 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		fuir = False
-		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-    	fuir = True 
+		changer_pokemon()
+		
 def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
@@ -350,9 +349,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		fuir = False
-		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-    	fuir = True 
+		changer_pokemon()
 
 def capture_pokemon(nom_pokemon, pv_max_pokemon, menu_combat_pokemon):
     # PV
@@ -384,17 +381,47 @@ pv_team = {}
 pv_max = {}
 team = []
 
-def boucle_combat(hp_ennemi):
+def boucle_combat(hp_ennemi, nom_poke_ennemi):
     # Copie temporaire de l'équipe pour ce combat
     team_combat = team.copy()
-
-    while hp_ennemi > 0 and any(pv_team[poke] > 0 for poke in team_combat):
+	
+    while hp_ennemi > 0 and Fuir = False and poké_pop_compteur % 2 == 0 and any(pv_team[poke] > 0 for poke in team_combat):
         actif = team_combat[0]   # Pokémon actif
 
         # Appel du menu de combat correspondant au Pokémon actif
         pokedex[actif](nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, pv_team[actif], nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball)
+
+        # Attaque du Pokémon ennemi
+		print("Au tour du pokémon adverse de jouer ! ")
+		if hp_ennemi > 10: 
+			attaque_ennemi = random.randint(1,4)
+			if attaque_ennemi == 1:
+				pv_team[actif] -= 20
+				print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {pv_team[actif]} points de vie.")
+			elif attaque_ennemi == 2:
+				pv_team[actif] -= 15
+				print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {pv_team[actif]} points de vie.")
+			else:
+				pv_team[actif] -= 10
+				print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {pv_team[actif]} points de vie.")
+		else: 
+			attaque_ou_soin = random.randint(1,4)
+			if attaque_ou_soin == 1:
+				hp_ennemi += 15
+				print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+			else: 
+				attaque_ennemi_2 = random.randint(1,4)
+				if attaque_ennemi_2 == 1:
+					pv_team[actif] -= 20
+					print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {pv_team[actif]} points de vie.")
+				elif attaque_ennemi_2 == 2:
+					pv_team[actif] -= 15
+					print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {pv_team[actif]} points de vie.")
+				else:
+					pv_team[actif] -= 10
+					print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {pv_team[actif]} points de vie.")
 		
-        # Vérifier si le Pokémon actif est K.O.
+		# Vérifier si le Pokémon actif est K.O.
         if pv_team[actif] <= 0:
             print(f"{actif} est K.O. !")
             team_combat.pop(0)  # On retire le Pokémon actif du combat temporaire
@@ -402,15 +429,10 @@ def boucle_combat(hp_ennemi):
                 print("Tous vos Pokémon sont K.O. !")
                 break
 
-        # Exemple : attaque de l'ennemi sur le Pokémon actif
-        degats_ennemi = 12
-        pv_team[actif] -= degats_ennemi
-        print(f"{actif} prend {degats_ennemi} dégâts, reste {pv_team[actif]} PV.")
-
     # Remise full HP après combat
     for poke in team:
         pv_team[poke] = pv_max[poke]
-    print("Tous vos Pokémon ont été remis à full PV !")
+    	print("Tous vos Pokémon ont été remis à full PV !")
 
 def changer_pokemon():
     if len(team) <= 1:
