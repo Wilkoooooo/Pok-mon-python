@@ -412,6 +412,35 @@ def boucle_combat(hp_ennemi):
         pv_team[poke] = pv_max[poke]
     print("Tous vos Pokémon ont été remis à full PV !")
 
+def changer_pokemon():
+    if len(team) <= 1:
+        print("Vous n'avez qu'un seul Pokémon dans votre équipe, impossible de changer.")
+        return
+
+    print("Choisissez le Pokémon actif :")
+    for i, poke in enumerate(team):
+        print(f"{i + 1}) {poke} (PV: {pv_team[poke]}/{pv_max[poke]})")
+
+    while True:
+        choix = int(input("Entrez le numéro du Pokémon que vous voulez mettre actif : ")) - 1
+        if 0 <= choix < len(team):
+            if choix == 0:
+                print(f"{team[0]} est déjà actif !")
+            else:
+                # Échanger le Pokémon choisi avec le premier de la liste
+                team[0], team[choix] = team[choix], team[0]
+                print(f"{team[0]} est maintenant le Pokémon actif !")
+            break
+        else:
+            print("Numéro invalide, réessayez.")
+			
+def soigner_team():
+    for poke in team:
+        pv_team[poke] = pv_max[poke]
+    print("Tous vos Pokémon ont été soignés et sont maintenant à pleine vie !")
+
+
+
 
 
 
