@@ -458,7 +458,7 @@ def changer_pokemon():
 def soigner_team():
     for poke in team:
         pv_team[poke] = pv_max[poke]
-    print("Tous vos Pokémon ont été soignés et sont maintenant à pleine vie !")
+    print("Tous vos Pokémon ont été soignés et sont maintenant à pleine vie !") 
 
 
 
