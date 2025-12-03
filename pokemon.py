@@ -30,6 +30,19 @@ nbr_hyperpotion = 0
 #variable fossile 
 fossile1 = 0
 fossile2 = 0
+# Dictionnaire des chemins : clé = choix, valeur = (nom, fonction) 
+chemins = {
+    "1": ("Ville Donjon", ville_donjon),
+    "2": ("La forêt Pangorn", forêt_pangorn),
+    "3": ("Les arênes Pokémon", arènes_pokémons),
+    "4": ("Le Volcan instable de l'île", grotte_boss)
+}
+# Dictionnaire de combat
+pokedex = {}
+pv_team = {}
+pv_max = {}
+#Liste de team
+team = []
 #fonction boutique
 def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion):
 	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
@@ -298,6 +311,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 		fuir = False
 		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
     	fuir = True 
+	
 def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
@@ -424,8 +438,9 @@ def grotte_boss ():
 		print(f"Vous avez décidé de rentrer dans la grotte, vous marchez pendant de longues minutes jusqu'à vous retrouver dans une salle souterraine")
 		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
 		#combat pokémon mystérieux
+		
 	else :
-		choix ()
+		return
 		
 		
 def arènes_pokémons ():
@@ -770,13 +785,6 @@ elif Poké_dep_choix == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
 print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
-# Dictionnaire des chemins : clé = choix, valeur = (nom, fonction) 
-chemins = {
-    "1": ("Ville Donjon", ville_donjon),
-    "2": ("La forêt Pangorn", forêt_pangorn),
-    "3": ("Les arênes Pokémon", arènes_pokémons),
-    "4": ("Le Volcan instable de l'île", grotte_boss)
-}
 
 #Boucle principale
 while chemins:
