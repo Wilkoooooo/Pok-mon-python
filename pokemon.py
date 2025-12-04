@@ -123,7 +123,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
-			if nbr_superpotion > 0 :
+			if nbr_superpotion > 0 : 
 				hp_poke_joueur += 20
 				nbr_superpotion -= 1
 			else:
