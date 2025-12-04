@@ -30,6 +30,8 @@ nbr_hyperpotion = 0
 #variable fossile 
 fossile1 = 0
 fossile2 = 0
+#variable_amitié
+amitié = 0
 # Dictionnaire des chemins : clé = choix, valeur = (nom, fonction) 
 chemins = {
     "1": ("Ville Donjon", ville_donjon),
@@ -43,66 +45,23 @@ pv_team = {}
 pv_max = {}
 #Liste de team
 team = []
-def changer_pokemon():
-    if len(team) <= 1:
-        print("Vous n'avez qu'un seul Pokémon dans votre équipe, impossible de changer.")
-        return
-
-    print("Choisissez le Pokémon actif :")
-    for i, poke in enumerate(team):
-        print(f"{i + 1}) {poke} (PV: {pv_team[poke]}/{pv_max[poke]})")
-
-    while True:
-        choix = int(input("Entrez le numéro du Pokémon que vous voulez mettre actif : ")) - 1
-        if 0 <= choix < len(team):
-            if choix == 0:
-                print(f"{team[0]} est déjà actif !")
-            else:
-                # Échanger le Pokémon choisi avec le premier de la liste
-                team[0], team[choix] = team[choix], team[0]
-                print(f"{team[0]} est maintenant le Pokémon actif !")
-            break
-        else:
-            print("Numéro invalide, réessayez.")
-			
-def soigner_team():
-    for poke in team:
-        pv_team[poke] = pv_max[poke]
-    print("Tous vos Pokémon ont été soignés et sont maintenant à pleine vie !") 
-
-def capture_pokemon(nom_pokemon, pv_max_pokemon, menu_combat_pokemon):
-    # PV
-    if nom_pokemon not in pv_max:
-        pv_max[nom_pokemon] = pv_max_pokemon
-        pv_team[nom_pokemon] = pv_max_pokemon
-        print(f"{nom_pokemon} ajouté aux PV !")
-    else:
-        print(f"{nom_pokemon} est déjà dans vos PV.")
-
-    # Pokédex
-    if nom_pokemon not in pokedex:
-        pokedex[nom_pokemon] = menu_combat_pokemon
-        print(f"{nom_pokemon} ajouté au Pokédex !")
-    else:
-        print(f"{nom_pokemon} est déjà dans votre Pokédex.")
-
-    # Équipe
-    if nom_pokemon in team:
-        print(f"{nom_pokemon} est déjà dans votre équipe.")
-    elif len(team) < 6:
-        team.append(nom_pokemon)
-        print(f"{nom_pokemon} ajouté à votre équipe !")
-    else:
-        print(f"Ton équipe est pleine, {nom_pokemon} a été ajouté au Pokédex mais pas à l'équipe.")
 #fonction boutique
 def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion):
 	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
 	print(f"\n1)acheter des Pokéballs\n2)acheter des potions")
 	achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : ")) 
+	while not achat_boutique in (1,2):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"\n1)acheter des Pokéballs\n2)acheter des potions")
+	achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : ")) 
 	if achat_boutique == 1:
 		print(f"Quelle type de pokéball voulez-vous acheter ?")
 		print(f"\n1)Pokéball\n2)Superball\n3)Hyperball")
 		achat_poke = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
+		while not achat_poke in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"\n1)Pokéball\n2)Superball\n3)Hyperball")
+			achat_poke = int(input("que choisissez vous ? (sélectionnez le numéro) : ")) 
 		if achat_poke == 1:
 			if monnaie >= 5:
 				monnaie -= 5
@@ -131,6 +90,10 @@ def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,n
 		print(f"Quelle potion voulez-vous acheter ?")
 		print(f"\n1)super potion\n2)hyper potion")
 		achat_potion = int(input("Que choisissez vous ? (sélectionnez le numéro) : ")) 
+		while not achat_potion in (1,2):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"\n1)super potion\n2)hyper potion")
+			achat_potion = int(input("Que choisissez vous ? (sélectionnez le numéro) : ")) 
 		if achat_potion == 1 :
 			if monnaie >= 10 :
 				print(f"Vous venez d'acheter une super potion !")
@@ -147,15 +110,23 @@ def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,n
 			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Fuir \n4) Pokéballs\n5) Changer de Pokemon")
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs \n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
+	while not choix in (1,2,3,4,5):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs \n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Désherbaffe (-15 hp) {nbr_Désherbaffe}/15 \n 2)Fouets Liannes (-10 hp) {nbr_FouetsLiannes}/20 \n 3)Lame Feuille (-20 hp) {nbr_LammeFeuille}/10 ")
 		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisr un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Désherbaffe (-15 hp) {nbr_Désherbaffe}/15 \n 2)Fouets Liannes (-10 hp) {nbr_FouetsLiannes}/20 \n 3)Lame Feuille (-20 hp) {nbr_LammeFeuille}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbr_Désherbaffe > 0:
 				hp_ennemi -= 15 
-				nbr_Désherbaffe - = 1
+				nbr_Désherbaffe -= 1
 			else:
 				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
@@ -173,6 +144,10 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 	elif choix == 2: 
 		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
 			if nbr_superpotion > 0 :
 				hp_poke_joueur += 20
@@ -188,6 +163,10 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 		elif choixsoin == 3:  
 			print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
 			reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+			while not response_pp in (1,2,3):
+				print(f"Veuillez saisir un nombre correct")
+				print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+				reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 			if reponse_pp == 1: 
 				nbr_Désherbaffe = 15
 			elif reponse_pp == 2: 
@@ -195,13 +174,15 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 			else: 
 				nbr_LammeFeuille = 10
 	elif choix == 3:
-            fuir = False
-            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-            fuir = True 
+            print(" Pas encore codée ")
 	elif choix == 4: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
-            if choix_pokeball == 1:
+			while not choix_pokeball in (1,2,3)
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+    		if choix_pokeball == 1:
                 if nbr_pokeball > 0: 
                     nbr_pokeball -= 1
                     print("Vous lancez une Pokéball !")
@@ -253,13 +234,23 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		changer_pokemon() 
+		fuir = False
+		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+    	fuir = True 
 def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Fuir \n4) Pokéballs\n5) changer de Pokemon")
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4,5):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
 		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbr_Pistolet_à_O > 0:
 				hp_ennemi -= 15 
@@ -281,6 +272,10 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 	elif choix == 2: 
 		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
 			if nbr_superpotion > 0 :
 				hp_poke_joueur += 20
@@ -296,6 +291,10 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 		elif choixsoin == 3:  
 			print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
 			reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+			while not response_pp in (1,2,3):
+				print(f"Veuillez saisir un nombre correct")
+				print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+				reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 			if reponse_pp == 1: 
 				nbr_Pistolet_à_O = 15
 			elif reponse_pp == 2: 
@@ -303,12 +302,14 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 			else: 
 				nbr_Hydrocanon = 10
 	elif choix == 3:
-            fuir = False
-            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-            fuir = True 
+            print(" Pas encore codée ")
 	elif choix == 4: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+			while not choix_pokeball in (1,2,3):
+				print(f"Veuillez saisir un nombre correct")
+				print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+           	 	choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
             if choix_pokeball == 1:
                 if nbr_pokeball > 0: 
                     nbr_pokeball -= 1
@@ -361,58 +362,84 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		changer_pokemon()
+		fuir = False
+		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+    	fuir = True 
 	
 def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Fuir \n4) Pokéballs\n5) changer de Pokemon")
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4,5):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-10 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
 		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-10 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbr_Flammèche > 0:
-				hppokefightinitial = hppokefightinitial - 15 
-				nbr_Flammèche = nbr_Flammèche - 1
+				hp_ennemi -= 15 
+				nbr_Flammèche -= 1
 			else:
 				print("Vous n'avez plus de Flammèche, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
 			if nbr_LanceFlammes > 0:
-				hppokefightinitial = hppokefightinitial - 10 
-				nbr_LanceFlammes = nbr_LanceFlammes - 1
+				hp_ennemi -= 10 
+				nbr_LanceFlammes -= 1
 			else:
-				print("Vous n'avez plus de Lance-Flammes, veuillez en chosir une autre ")
+				print("Vous n'avez plus de Lance Flammes, veuillez en chosir une autre ")
 		elif quelle_attaque == 3: 
 			if nbr_Rebondifeu > 0:
-				hppokefightinitial = hppokefightinitial - 20 
-				nbr_Rebondifeu = nbr_Rebondifeu - 1
+				hp_ennemi -= 20 
+				nbr_Rebondifeu -= 1
 			else:
 				print("Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
 	elif choix == 2: 
 		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
-			hp_poke_joueur = hp_poke_joueur + 20
+			if nbr_superption > 0 :
+				hp_poke_joueur += 20
+				nbr_superpotion -= 1
+			if nbr_superpotion = 0 :
+				print(f"Vous n'avez plus de super potion...")
+				
 		elif choixsoin == 2: 
-			hp_poke_joueur = 60 
+			if nbr_hyperpotion > 0 :
+				hp_poke_joueur = 60 
+				nbr_hyperpotion -= 1
+			if nbr_hyperpotion = 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				
 		elif choixsoin == 3: 
 			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
 			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
 			if reponse_pp == 1:
-			    nbr_Flammèche = nbr_Flammèche - nbr_Flammèche + 15
+			    nbr_Flammèche = 15
 			elif reponse_pp == 2: 
-			    nbr_LanceFlammes = nbr_LanceFlammes - nbr_LanceFlammes + 20
+			    nbr_LanceFlammes = 20
 			else:
-                nbr_Rebondifeu = nbr_Rebondifeu - nbr_Rebondifeu + 10
+                nbr_Rebondifeu = 10
 	elif choix == 3:
-            fuir = False
-            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
-            fuir = True 
+            print(" Pas encore codée ")
 	elif choix == 4: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+			while not response_pp in (1,2,3):
+				print(f"Veuillez saisir un nombre correct")
+				print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+				reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
             if choix_pokeball == 1:
                 if nbr_pokeball > 0: 
-                    nbr_pokeball = nbr_pokeball - 1
+                    nbr_pokeball -= 1
                     print("Vous lancez une Pokéball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -422,14 +449,14 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         	break
                     	else :
                         	print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
-                        	poké_pop_compteur = poké_pop_compteur + 1
+                        	poké_pop_compteur += 1
                     if poké_pop_compteur % 2 != 0:
                         print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
             elif choix_pokeball == 2:
                 if nbr_superball > 0: 
-                    nbr_superball = nbr_superball - 1
+                    nbr_superball -= 1
                     print("Vous lancez une Superball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -439,14 +466,14 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                             break
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
-                            poké_pop_compteur = poké_pop_compteur + 1
+                            poké_pop_compteur += 1
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
-            else:
+            elif choix_pokeball == 3:
                 if nbr_hyperball > 0: 
-                    nbr_hyperball = nbr_hyperball - 1
+                    nbr_hyperball -= 1
                     print("Vous lancez une Hyperball !")
                     for i in range (3):
                         poké_pop_compteur = 0
@@ -456,24 +483,64 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                             break
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
-                            poké_pop_compteur = poké_pop_compteur + 1
+                            poké_pop_compteur += 1
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
-		else:
-			changer_pokemon()
+	else: 
+		fuir = False
+		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+    	fuir = True 
+
 # --- Définition des fonctions associées à chaque chemin --- #
 
 def ville_donjon (): 
 	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
+	print(f"Après quelques heures de marche tu te retrouves face au château de Versailles")
+	print(f"{prenom_1} : Ce château me donne des frissons dans le dos mais je suis sûr de trouver des super pokémons et récompenses !")
+	print(f"Tu rentres dans le château et tu t'enfonces dans une salle obscure...")
+	print(f"Tu observes deux objets scintillants à quelques mètres de toi")
+	print(f"Les lumières de la salle s'allument et tu te retrouves face à un ténéfix !")
+	print(f"Que le combat commence")
+	#combat ténéfix
+	print(f"Après ce rude combat, tu t'orientes vers le fond de la salle")
+	print(f"2 portes s'offrent à toi...")
+	print("Que voulez vous faire :")
+	print("1)porte de gauche \n2)porte de droite")
+	choix_porte = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not choix_porte in (1,2):
+		print(f"Veuillez saisir un nombre correct")
+		print("1)porte de gauche \n2)porte de droite")
+		choix_porte = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	if choix_porte = 1 :
+		print(f"Vous vous dirigez vers la porte de gauche")
+		print(f"Vous entendez un rugissement venant de derrière la porte...")
+		print(f"Vous décidez quand même d'entrer car vous savez porter vos balls")
+		print(f"Vous vous tenez devant absol, le combat risque d'être compliqué !")
+		print(f"Que le combat commence !")
+		#combat absol
 		
+	else :
+		print(f"Vous vous dirigez vers la porte de droite")
+		print(f"Vous entendez un cri effrayant venant de derrière la porte...")
+		print(f"Vous décidez quand même d'entrer car vous savez porter vos balls")
+		print(f"Vous vous tenez devant spectrum, le combat risque d'être compliqué !")
+		print(f"Que le combat commence !")
+		#combat spectrum
+		
+		
+	
 def grotte_boss (): 
 	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve être de plus en plus instable récemment")
 	print(f"En te rapprochant du volcan tu te retrouves face à une grotte")
 	print("Que voulez vous faire :")
 	print("1)rentrer dans la grotte\n2)faire demi-tour")
 	response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_17 in (1,2):
+		print(f"Veuillez saisir un nombre correct")
+		print("1)rentrer dans la grotte\n2)faire demi-tour")
+		response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_17 == 1 :
 		print(f"Vous avez décidé de rentrer dans la grotte, vous marchez pendant de longues minutes jusqu'à vous retrouver dans une salle souterraine")
 		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
@@ -492,6 +559,10 @@ def arènes_pokémons ():
 		print("Que voulez vous faire :")
 		print("1)S'inscrire au tournoi\n2)partir de l'arène pokémon")
 		response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+		while not response_8 in (1,2):
+		print(f"Veuillez saisir un nombre correct")
+		print("1)S'inscrire au tournoi\n2)partir de l'arène pokémon")
+		response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if response_8 == 1:
 			print(f"votre premier combat commence !")
 		else:
@@ -505,12 +576,20 @@ def forêt_pangorn ():
 	print("Que voulez vous faire :")
 	print("1)Se diriger vers les bruits de l'eau\n2)S'approcher de la lueur\n3)Se rendre aux lieux des tremblements de terre")
 	response_9 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_9 in (1,2,3):
+		print(f"Veuillez saisir un nombre correct")
+		print("1)Se diriger vers les bruits de l'eau\n2)S'approcher de la lueur\n3)Se rendre aux lieux des tremblements de terre")
+		response_9 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_9 == 1 :
 		print(f"Vous êtes émerveillé par une magnifique cascade cependant vous ne vous rendez même pas compte qu'un Crocodil vous observe")
 		print(f"Le Crocodil vous saute dessus seulement vous le voyez au dernier moment et vus avez le choix entre esquiver en vous baissant ou en sautant vers la rivière")
 		print("que voulez vous faire ?")
 		print("1)esquiver en se baissant\n2)esquiver en sautant vers la rivière")
 		response_10 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+		while not response_10 in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("1)esquiver en se baissant\n2)esquiver en sautant vers la rivière")
+			response_10 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 		if response_10 == 1 :
 			Croco_griffe = random.randint(1,2)
 			if Croco_griffe == 1:
@@ -527,22 +606,11 @@ def forêt_pangorn ():
 	
 	if response_9 == 2 :
 		print("Au fur et à mesure que vous vous approchez de la lumière vous sentez une odeur de brûlé")
-		print("Que voulez vous faire ?")
-		print("1)continuer à avancer\n2)faire demi-tour")
-		response_11 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-		if response_11 == 1 :
-			print("Vous avez trop avancé et vous êtes maintenant encerclés par des flammes. Vite il faut s'échapper !")
-			print("En vous retournant vous vous retrouvez face à un ouisticram qui vous bloque le passage. Préparez-vous au combat !")
+		print("Vous avez trop avancé et vous êtes maintenant encerclés par des flammes. Vite il faut s'échapper !")
+		print("En vous retournant vous vous retrouvez face à un ouisticram qui vous bloque le passage. Préparez-vous au combat !")
 			#combat
-		else:
-			print("Vous vous retrouvez à l'entrée de la forêt")
-			print("Que voulez vous faire ?")
-			print("1)quitter la forêt\n2)continuer d'explorer la forêt")
-			response_12 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
-			if response_12 == 1 :
-				choix ():
-			else:
-				forêt_pangorn ():
+		
+				
 	if response_9 == 3 :
 		print("Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
 		print("cependant à cause des secousses vous trébuchez et vous vous retrouvez par terre")
@@ -550,6 +618,10 @@ def forêt_pangorn ():
 		print("Que voulez vous faire ?")
 		print("1)se cacher derrière un arbre\n 2)plonger en avant")
 		response_13 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+		while not response_13 in (1,2):
+			print(f"Veuillez saisir un nombre correct")
+			print("1)se cacher derrière un arbre\n 2)plonger en avant")
+			response_13 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 		if response_13 == 1:
 			arbre = random.randint(1,4)
 			if arbre == 1 :
@@ -567,12 +639,19 @@ def onix_secret ():
 	print("Que voulez-vous faire ?")
 	print("1) Grimper la falaise\n2)Rebrousser chemin")
 	response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_14 in (1,2):
+			print(f"Veuillez saisir un nombre correct")
+			print("1) Grimper la falaise\n2)Rebrousser chemin")
+		response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_14 == 1 :
 		print(f"{prenom_1} : c'est parti pour une petite séance d'escalade !")
 			chutes = 0
 			bonnes_prises = 0
 			while chutes != 5 and bonnes_prises != 5:
 				reponse_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
+				while not response_15 in (1,2):
+					print(f"Veuillez saisir un nombre correct")
+					reponse_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
 				if reponse_15 == 1:
 					print("La prise ne tient pas, vous êtes tombé(e)")
 					chutes += 1
@@ -607,7 +686,10 @@ input("↓")
 print("Que voulez vous faire :")
 print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
 response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-
+while not response_1 in (1,2):
+	print(f"Veullez saisir un nombre correct"):
+	print("1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
+	response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 #Branche 1 (direct foule) 
 if int(response_1) == 1:
 	print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
@@ -633,6 +715,10 @@ if int(response_1) == 1:
 	print(f"Que voulez vous faire :")
 	print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_2 in (1,2):
+		print(f"Veuillez saisir un nombre correct")
+		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
+		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	#branche 1-1 (il accepte le défi de devenir dresseur) 
 	if int(response_2) == 1:
 		print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
@@ -651,6 +737,10 @@ elif int(response_1) == 2:
 	print(f"Que voulez vous faire :")
 	print(f"1)Faire connaissance\n2)L'ignorer") 
 	response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+	while not response_3 in (1,2):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"1)Faire connaissance\n2)L'ignorer") 
+		response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if int(response_3)== 1:
 		print(f"{prenom_1} : Je m'appelle {prenom_1}, je suis de retour ici, et toi comment tu t'appelles?")
 		input("↓")
@@ -659,6 +749,10 @@ elif int(response_1) == 2:
 		print(f"Que voulez vous faire :")
 		print(f"1)devenir amis\n2)Le repousser")
 		response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+		while not response_4 in (1,2):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"1)devenir amis\n2)Le repousser")
+			response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if int(response_4)== 1:
 			print(f"{prenom_1} : Oui bien sûr, ça te dit qu'on se rapproche de la foule ?")
 			input("↓")
@@ -686,6 +780,10 @@ elif int(response_1) == 2:
 			print(f"Que voulez vous faire :")
 			print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 			response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+			while not response_2 in (1,2):
+				print(f"Veuillez saisir un nombre correct")
+				print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
+				response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 			#branche 1-1 (il accepte le défi de devenir dresseur) 
 			if int(response_2) == 1:
 				print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
@@ -697,6 +795,7 @@ elif int(response_1) == 2:
 		elif int(response_4)== 2:
 				print(f"{prenom_1} : Non désolé je suis trop occupé, à la prochaine")
 				print(f"Vous regretterez sans doute ce choix...")
+				amitié += 1
 				print(f"Attiré par les bruits de la foule, vous vous rapprochez")
 				print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
 				print(f"Homme mystérieux : Comment ça va depuis notre dernière rencontre ?")
@@ -720,6 +819,7 @@ elif int(response_1) == 2:
 	elif int(response_3)== 2:
 		print(f"{prenom_1} : Non désolé je suis trop occupé, à la prochaine")
 		print(f"Vous regretterez sans doute ce choix...") 
+		amitié += 1
 		print(f"Attiré par les bruits de la foule, vous vous rapprochez")
 		print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
 		print(f"Homme mystérieux : Comment ça va depuis notre dernière rencontre ?")
@@ -745,6 +845,10 @@ print(f"oe entraine toi pour voir si tu merites un de mes pokemon")
 while hppokefightinitial > 0:
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
+	while not choix in (1,2,3):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
+		choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? n/1)Nom attaque 1 (-15 hp) {nbrattaque1}/15 n/2)Nom attaque 2 (-10 hp) {nbrattaque2}/20 n/1)Nom attaque 3 (-20 hp) {nbrattaque3}/10 ")
 		quelle_attaque=int(input("choisissez le bon numéro "))
@@ -767,12 +871,18 @@ while hppokefightinitial > 0:
 			else:
 				print("Vous n'avez plus d'attaque 3 veuillez en chosir une autre ")
 	elif choix == 2: 
-		print("Quelle objet pour se soigner ? n\1)Objet 1 n\2)Objet 2 ")
+		print("Quelle objet pour se soigner ? n\1)super potion n\2)hyper potion ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? n\1)super potion n\2)hyper potion ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
 			hp_poke_joueur = hp_poke_joueur + 20
+			nbr_superpotion -= 1
 		elif choixsoin == 2: 
 			hp_poke_joueur = 60 
+			nbr_hyperpotion -= 1
 	else: 
 		print("tu n'as pas le droit")
 	if hppokefightinitial < 10:
@@ -818,16 +928,14 @@ while not Poké_dep_choix in {1,2,3} :
 if Poké_dep_choix == 1:
     print("Arcko a été ajouté à ton Pokédex !")
     print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-	capture_pokemon(Arcko, 70, menu_combat_arcko)
 elif Poké_dep_choix == 2:
     print("Poussifeu a été ajouté à ton Pokédex !")
     print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-	capture_pokemon(Poussifeu, 70, menu_combat_poussifeu)
 elif Poké_dep_choix == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-	capture_pokemon(Gobou, 70, menu_combat_gobou)
 print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
+
 #Boucle principale
 while chemins:
     print("\nChemins disponibles :")
