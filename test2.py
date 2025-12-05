@@ -51,35 +51,34 @@ inventaire = {
     "nbr_hyperball": 1
 }
 pokedex = {}
-params_Gobou = {
-    "nbr_Pistolet_à_O": 15,
-    "nbr_Hydrocanon": 10,
-    "nbr_Siphon": 20,
-    "pv_max": 70
+etat_combat = {
+    "pv": pv_team[actif],                   
+    "pp": pp_par_pokemon[actif],             
+    "objets": inventaire_global,
+    "hp_ennemi": hp_ennemi,
+    "nom_ennemi": nom_poke_ennemi
 }
-params_Poussifeu = {
-    "nbr_Flammèche": 15,
-    "nbr_LanceFlammes": 10,
-    "nbr_Rebondifeu": 20,
-    "pv_max": 70
+pv_team = {
+    "Gobou": 60,
+    "Poussifeu": 60,
+    "Arcko": 60
 }
-params_Arcko = {
-    "nbr_Désherbaffe": 15,
-    "nbr_FouetsLiannes": 10,
-    "nbr_LammeFeuille": 20,
-    "pv_max": 70
-}
-params_Poke = {
-    "nbr_Pistolet_à_O": 15,
-    "nbr_Hydrocanon": 10,
-    "nbr_Siphon": 20,
-    "pv_max": 70
-}
-params_Poke = {
-    "nbr_Pistolet_à_O": 15,
-    "nbr_Hydrocanon": 10,
-    "nbr_Siphon": 20,
-    "pv_max": 70
+pp_par_pokemon = {
+    "Gobou": {
+        "Pistolet à O": 15,
+        "Hydrocanon": 10,
+        "Siphon": 20
+    },
+    "Poussifeu": {
+        "Flammèche": 15,
+        "LanceFlamme": 20,
+		"Rebondifeu": 10
+    },
+    "Arcko": {
+        "Désherbaffe": 15,
+        "FouetsLiannes": 20,
+		"LammeFeuille": 10
+    }
 }
 params_Poke = {
     "nbr_Pistolet_à_O": 15,
@@ -629,7 +628,7 @@ def gérer_equipe():
     print(f"{poke_entrant} a rejoint votre équipe !\n")
 
 
-def boucle_combat(hp_ennemi, nom_poke_ennemi, degats_1, degats_2, degats_3):
+def boucle_combat(hp_ennemi, nom_poke_ennemi):
     # Copie temporaire de l'équipe pour ce combat
     team_combat = team.copy()
 	
@@ -637,20 +636,20 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, degats_1, degats_2, degats_3):
         actif = team_combat[0]   # Pokémon actif
 
         # Appel du menu de combat correspondant au Pokémon actif
-        pokedex[actif](nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, pv_team[actif], nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball)
+        pokedex[actif](etat_combat)
 
         # Attaque du Pokémon ennemi
 		print("Au tour du pokémon adverse de jouer ! ")
 		if hp_ennemi > 10: 
 			attaque_ennemi = random.randint(1,4)
 			if attaque_ennemi == 1:
-				pv_team[actif] -= degats_1
+				pv_team[actif] -= 10
 				print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {pv_team[actif]} points de vie.")
 			elif attaque_ennemi == 2:
-				pv_team[actif] -= degats_2
+				pv_team[actif] -= 20
 				print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {pv_team[actif]} points de vie.")
 			else:
-				pv_team[actif] -= degats_3
+				pv_team[actif] -= 15
 				print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {pv_team[actif]} points de vie.")
 		else: 
 			attaque_ou_soin = random.randint(1,4)
@@ -660,13 +659,13 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, degats_1, degats_2, degats_3):
 			else: 
 				attaque_ennemi_2 = random.randint(1,4)
 				if attaque_ennemi_2 == 1:
-					pv_team[actif] -= degats_1
+					pv_team[actif] -= 10
 					print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {pv_team[actif]} points de vie.")
 				elif attaque_ennemi_2 == 2:
-					pv_team[actif] -= degats_2
+					pv_team[actif] -= 20
 					print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {pv_team[actif]} points de vie.")
 				else:
-					pv_team[actif] -= degats_3
+					pv_team[actif] -= 15
 					print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {pv_team[actif]} points de vie.")
 		
 		# Vérifier si le Pokémon actif est K.O.
@@ -681,4 +680,11 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, degats_1, degats_2, degats_3):
     for poke in team:
         pv_team[poke] = pv_max[poke]
     	print("Tous vos Pokémon ont été remis à full PV !")
+
+ajouter_pokemon(Poussifeu, menu_combat_poussifeu, params_Poussifeu)
+ajouter_pokemon(Arcko, menu_combat_arcko, params_Arcko)
+boucle_combat(30, Pikkachu)
+
+
+
 
