@@ -688,3 +688,4 @@ boucle_combat(30, Pikkachu)
 
 
 
+ 
