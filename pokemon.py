@@ -40,7 +40,26 @@ chemins = {
     "4": ("Le Volcan instable de l'île", grotte_boss)
 }
 # Dictionnaire de combat
-pokedex = {}
+pokedex = {
+    "Arcko": {
+        "hp": 60,
+        "pp1": 15,
+        "pp2": 10,
+        "pp3":20
+    },
+    "Poussifeu": {
+        "hp": 60,
+        "pp1": 15,
+        "pp2": 10,
+        "pp3":20
+    },
+    "Gobou": {
+        "hp": 60,
+        "pp1": 15,
+        "pp2": 10,
+        "pp3": 20
+    }
+}
 pv_team = {}
 pv_max = {}
 #Liste de team
@@ -928,15 +947,17 @@ while not Poké_dep_choix in {1,2,3} :
 if Poké_dep_choix == 1:
     print("Arcko a été ajouté à ton Pokédex !")
     print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+    starter=pokedex["Arcko"]
 elif Poké_dep_choix == 2:
     print("Poussifeu a été ajouté à ton Pokédex !")
     print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+    starter=pokedex["Poussifeu"]
 elif Poké_dep_choix == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+    starter=pokedex["Gobou"]
+team = [starter]
 print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
-
-#Boucle principale
 while chemins:
     print("\nChemins disponibles :")
     for numero, (nom, _) in chemins.items():
