@@ -50,7 +50,26 @@ inventaire = {
     "nbr_superball": 2,
     "nbr_hyperball": 1
 }
-pokedex = {}
+pokedex = {
+	"Gobou" : {
+		"pv" : 60,
+		"pp1": 15,
+        "pp2": 10,
+        "pp3": 20
+	}
+	"Poussifeu" : {
+		"pv" : 60,
+		"pp1": 15,
+        "pp2": 10,
+        "pp3": 20
+	}
+	"Arcko" : {
+		"pv" : 60,
+		"pp1": 15,
+        "pp2": 10,
+        "pp3": 20
+	}
+}
 etat_combat = {
     "pv": pv_team[actif],                   
     "pp": pp_par_pokemon[actif],             
@@ -325,7 +344,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 		if quelle_attaque == 1:
 			if nbr_Pistolet_à_O > 0:
 				hp_ennemi -= 15 
-				nbr_Pistolet_à_O - = 1
+				nbr_Pistolet_à_O -= 1
 			else:
 				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
@@ -636,7 +655,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
         actif = team_combat[0]   # Pokémon actif
 
         # Appel du menu de combat correspondant au Pokémon actif
-        pokedex[actif](etat_combat)
+        pokedex[actif]()
 
         # Attaque du Pokémon ennemi
 		print("Au tour du pokémon adverse de jouer ! ")
@@ -681,11 +700,48 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
         pv_team[poke] = pv_max[poke]
     	print("Tous vos Pokémon ont été remis à full PV !")
 
-ajouter_pokemon(Poussifeu, menu_combat_poussifeu, params_Poussifeu)
-ajouter_pokemon(Arcko, menu_combat_arcko, params_Arcko)
-boucle_combat(30, Pikkachu)
 
-
+pokedex = {
+    "Arcko": {
+        "hp": 60,
+        "pp1": 15,
+        "pp2": 10,
+        "pp3":20
+    },
+    "Poussifeu": {
+        "hp": 60,
+        "pp1": 15,
+        "pp2": 10,
+        "pp3":20
+    },
+    "Gobou": {
+        "hp": 60,
+        "pp1": 15,
+        "pp2": 10,
+        "pp3": 20
+    }
+}
+print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
+Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+while not Poké_dep_choix in {1,2,3} : 
+    print("Vous vous êtes trompés de numéro")
+    print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
+    Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+if Poké_dep_choix == 1:
+    print("Arcko a été ajouté à ton Pokédex !")
+    print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+    starter=pokedex["Arcko"]
+elif Poké_dep_choix == 2:
+    print("Poussifeu a été ajouté à ton Pokédex !")
+    print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+    starter=pokedex["Poussifeu"]
+elif Poké_dep_choix == 3:
+    print("Gobou a été ajouté à ton Pokédex !")
+    print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
+    starter=pokedex["Gobou"]
+team = [starter]
+print(team)
+print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
 
 
  
