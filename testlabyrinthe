@@ -85,7 +85,7 @@ while True:
 		
 		
 	#chemins
-	if direction is None for direction in chemins:
+	if len(chemins) == 0:
 		print("Cul-de-sac ! Retour à l'entrée...\n")
     	position = "A"
 		
