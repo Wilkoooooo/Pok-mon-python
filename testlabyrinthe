@@ -84,7 +84,7 @@ labyrinthe = {
 		
 		
 	#chemins
-			if all(direction is None for direction in chemins.values()):
+			if direction is None for direction in chemins:
 				print("Cul-de-sac ! Retour à l'entrée...\n")
     			position = "A"
 		
