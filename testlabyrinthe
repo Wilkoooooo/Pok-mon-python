@@ -66,37 +66,38 @@ labyrinthe = {
 					None,
 				}
 			}
-		position = "A"
 
-		while True:
-			print(f"Vous êtes à : {position}")
+position = "A"
 
-   	 	chemins = labyrinthe[position]
+while True:
+	print(f"Vous êtes à : {position}")
+	
+	chemins = labyrinthe[position]
 
     #sortie
-			if position == "sortie":
-				print("\n Bravo ! Vous avez trouvé la sortie du labyrinthe !")
-				print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
-				print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
-				fossile2 += 1
-				print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
-				print("Un trioxhydre fait son appirition, bonne chance...")
+	if position == "S":
+		print("\n Bravo ! Vous avez trouvé la sortie du labyrinthe !")
+		print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
+		print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
+		fossile2 += 1
+		print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
+		print("Un trioxhydre fait son appirition, bonne chance...")
 		
 		
 	#chemins
-			if direction is None for direction in chemins:
-				print("Cul-de-sac ! Retour à l'entrée...\n")
-    			position = "A"
+	if direction is None for direction in chemins:
+		print("Cul-de-sac ! Retour à l'entrée...\n")
+    	position = "A"
 		
-			print("Options disponibles :")
-			for direction, destination in chemins.items():
-				if destination is not None:
-        			print(f"  - {direction} -> {destination}")
+	print("Options disponibles :")
+	for direction, destination in chemins.items():
+		if destination is not None:
+        	print(f"  - {direction} -> {destination}")
 			
-			choix = input("Direction (gauche, face, droite) : ")
+	choix = input("Direction (gauche, face, droite) : ")
 		
-			if choix not in chemins:
-        	print("Direction invalide.\n")
+	if choix not in chemins:
+    	print("Direction invalide.\n")
 		
-			position = chemins[choix]
-			print()		
+	position = chemins[choix]
+	print()		
