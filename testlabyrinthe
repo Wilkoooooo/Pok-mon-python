@@ -1,103 +1,125 @@
 labyrinthe = {
-				"A": {
-					"gauche": "B",
-					"droite": "C",
-				},
-				"B": {
-					"gauche": "I",
-					"face": "J",
-				},
-				"C": {
-					"gauche": "F",
-					"face": "E",
-					"droite": "D",
-				},
-				"D": { 
-					"face": "Q",
-					"gauche": "R",
-				},
-				"E": {
-					"face": "O",
-					"droite": "H"
-				},
-				"F": { 
-					"face": "N",
-					"gauche": "M",
-				},
-				"H": {
-					"gauche": "S",
-					"droite": "T",
-				},
-				"I": {
-					None,
-				},
-				"J": {
-					"droite": "K",
-					"gauche": "L",
-				},
-				"K": { 
-					None,
-				},
-				"L": {
-					None,
-				},
-				"M": { 
-					None,
-				},
-				"N": { 
-					None,
-				},
-				"O": { 
-					None,
-				},
-				"P": { 
-					None,
-				},
-				"Q": { 
-					None,
-				},
-				"R": { 
-					None,
-				},
-				"S":{
-					"sortie",
-				},
-				"T": { 
-					None,
-				}
+			"entrée": {
+				"gauche": "B",
+				"droite": "C",
+			},
+			"B": {
+				"gauche": "I",
+				"face": "J",
+			},
+			"C": {
+				"gauche": "F",
+				"face": "E",
+				"droite": "D"
+			},
+			"D": { 
+				"face": "Q",
+				"gauche": "R",
+			},
+			"E": {
+				"face": "O",
+				"droite": "H",
+			},
+			"F": { 
+				"face": "N",
+				"gauche": "M",
+			},
+			"H": {
+				"gauche": "S",
+				"droite": "T",
+			},
+			"I": {
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"J": {
+				"droite": "K",
+				"gauche": "L"	
+			},
+			"K": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"L": {
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"M": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"N": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"O": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"P": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"Q": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"R": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
+			},
+			"S":{
+				"sortie"
+			},
+			"T": { 
+				"gauche": None,
+				"face": None,
+				"droite": None
 			}
+		}
 
-position = "A"
+
+
+position = "entrée"
 
 while True:
-	print(f"Vous êtes à : {position}")
-	
-	chemins = labyrinthe[position]
+    print(f"Vous êtes à : {position}")
+
+    chemins = labyrinthe[position]
 
     #sortie
-	if position == "S":
-		print("\n Bravo ! Vous avez trouvé la sortie du labyrinthe !")
-		print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
-		print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
-		fossile2 += 1
-		print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
-		print("Un trioxhydre fait son appirition, bonne chance...")
-		
-		
-	#chemins
-	if len(chemins) == 0:
-		print("Cul-de-sac ! Retour à l'entrée...\n")
-    	position = "A"
-		
-	print("Options disponibles :")
-	for direction, destination in chemins.items():
-		if destination is not None:
-        	print(f"  - {direction} -> {destination}")
-			
-	choix = input("Direction (gauche, face, droite) : ")
-		
-	if choix not in chemins:
-    	print("Direction invalide.\n")
-		
-	position = chemins[choix]
-	print()		
+    if position == "S":
+        print(" Bravo ! Vous avez trouvé la sortie du labyrinthe ! ")
+    
+    if all(direction is None for direction in chemins.values()):
+        print("Cul-de-sac ! Retour à l'entrée...\n")
+        position = "entrée"
+        continue
+
+    # choix
+    print("Options disponibles :")
+    for direction, destination in chemins.items():
+        if destination is not None:
+            print(f"  - {direction} -> {destination}")
+
+    choix = input("Direction (gauche, face, droite) : ")
+
+    if choix not in chemins:
+        print("Direction invalide.\n")
+        continue
+
+    if chemins[choix] is None:
+        print("Il n'y a pas de chemin dans cette direction.\n")
+        continue
+
+    position = chemins[choix]
+    print()
