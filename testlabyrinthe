@@ -99,6 +99,12 @@ while True:
     #sortie
     if position == "S":
         print(" Bravo ! Vous avez trouvé la sortie du labyrinthe ! ")
+		print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
+		print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
+		fossile2 += 1
+		print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
+		print("Un trioxhydre fait son appirition, bonne chance...")
+		break
     
     if all(direction is None for direction in chemins.values()):
         print("Cul-de-sac ! Retour à l'entrée...\n")
