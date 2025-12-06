@@ -547,8 +547,121 @@ def ville_donjon ():
 		print(f"Vous vous tenez devant spectrum, le combat risque d'être compliqué !")
 		print(f"Que le combat commence !")
 		#combat spectrum
+		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coinde la salle")
+		print("Que voulez vous faire :")
+		print("1)porte\n2)trappe")
+		choix_trappe = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+		while not choix_porte in (1,2):
+			print(f"Veuillez saisir un nombre correct")
+			print("1)porte\n2)trappe")
+			choix_trappe = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
+		if choix_trappe = 1:
+			print("Vous vous retrouvez dans un long couloir comme ceux qui mènent au boss dans les jeux")
+			print("En poussant la grande porte au bout du couloir vous tombez face à un trioxhydre, bonne chance...")
+		else:
+			print("Vous passez la trappe et vous êtes arrivés dans une salle avec plusieurs portes")
+			labyrinthe = {
+				"A": {
+					"gauche": "B",
+					"droite": "C",
+				},
+				"B": {
+					"gauche": "I",
+					"face": "J",
+				},
+				"C": {
+					"gauche": "F",
+					"face": "E",
+					"droite": "D",
+				},
+				"D": { 
+					"face": "Q",
+					"gauche": "R",
+				},
+				"E": {
+					"face": "O",
+					"droite": "H"
+				},
+				"F": { 
+					"face": "N",
+					"gauche": "M",
+				},
+				"H": {
+					"gauche": "S",
+					"droite": "T",
+				},
+				"I": {
+					None,
+				},
+				"J": {
+					"droite": "K",
+					"gauche": "L",
+				},
+				"K": { 
+					None,
+				},
+				"L": {
+					None,
+				},
+				"M": { 
+					None,
+				},
+				"N": { 
+					None,
+				},
+				"O": { 
+					None,
+				},
+				"P": { 
+					None,
+				},
+				"Q": { 
+					None,
+				},
+				"R": { 
+					None,
+				},
+				"S":{
+					"sortie",
+				},
+				"T": { 
+					None,
+				}
+			}
+		position = "A"
+
+		while True:
+			print(f"Vous êtes à : {position}")
+
+   	 	chemins = labyrinthe[position]
+
+    #sortie
+			if position == "sortie":
+				print("\n Bravo ! Vous avez trouvé la sortie du labyrinthe !")
+				print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
+				print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
+				fossile2 += 1
+				print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
+				print("Un trioxhydre fait son appirition, bonne chance...")
 		
 		
+	#chemins
+			if all(direction is None for direction in chemins.values()):
+				print("Cul-de-sac ! Retour à l'entrée...\n")
+    			position = "A"
+		
+			print("Options disponibles :")
+			for direction, destination in chemins.items():
+				if destination is not None:
+        			print(f"  - {direction} -> {destination}")
+			
+			choix = int(input("Direction (gauche, face, droite) : "))
+		
+			if choix not in chemins:
+        	print("Direction invalide.\n")
+		
+			position = chemins[choix]
+			print()		
 	
 def grotte_boss (): 
 	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve être de plus en plus instable récemment")
