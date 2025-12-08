@@ -690,4 +690,70 @@ boucle_combat(hp_ennemi=100)
 
 
 
+def boucle_combat(hp_ennemi, nom_poke_ennemi):
+    while hp_ennemi > 0 and hp_starter > 0 and not Fuir
+        # Appel du menu de combat correspondant au Pokémon actif
+        print(f"\n À Vous de Jouer ! \n")
+		if starter == 1: 
+			menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 2:
+			menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 3: 
+			menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+        # Attaque du Pokémon ennemi
+		print("Au tour du pokémon adverse de jouer ! ")
+		if hp_ennemi > 10: 
+			attaque_ennemi = random.randint(1,4)
+			if attaque_ennemi == 1:
+				hp_starter -= 10
+				print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+			elif attaque_ennemi == 2:
+				hp_starter -= 20
+				print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+			else:
+				hp_starter -= 15
+				print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+		else: 
+			attaque_ou_soin = random.randint(1,4)
+			if attaque_ou_soin == 1:
+				hp_ennemi += 15
+				print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+			else: 
+				attaque_ennemi_2 = random.randint(1,4)
+				if attaque_ennemi_2 == 1:
+					hp_starter -= 10
+					print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+				elif attaque_ennemi_2 == 2:
+					hp_starter -= 20
+					print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+				else:
+					hp_starter -= 15
+					print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+	if hp_ennemie < 0: 
+		XP_gagne=random.randint(100,200)
+		XP += XP_gagne
+		if XP >= 500:
+			XP = 0 
+			print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
+			if starter == 1:
+				print(f"Arcko devient Massko ! ")
+			elif starter == 2:
+				print(f"Poussifeu devient Galifeu ! ")
+			elif starter == 3:
+				print(f"Gobou devient Flobio ! ")
+			elif starter == 4:
+				print(f"Massko devient Jungko ! ")
+			elif starter == 5:
+				print(f"Galifeu devient Braségali! ")
+			elif starter == 6:
+				print(f"Flobio devient Laggron ! ")
+			elif starter == 7:
+				print(f"Jungko devient Méga-Jungko ! ")
+			elif starter == 8:
+				print(f"Braségali devient Méga-Braségali !")
+			elif starter == 9:
+				print(f"Laggron devient Méga-Laggron !")
+			starter += 3
+		else:
+			print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !")
 
