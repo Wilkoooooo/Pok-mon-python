@@ -64,6 +64,75 @@ pv_team = {}
 pv_max = {}
 #Liste de team
 team = []
+nom_poke_ennemi = 0
+#Fonction combat
+def boucle_combat(hp_ennemi, nom_poke_ennemi):
+    while hp_ennemi > 0 and hp_starter > 0 and not Fuir
+        # Appel du menu de combat correspondant au Pokémon actif
+        print(f"\n À Vous de Jouer ! \n")
+		if starter == 1: 
+			menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 2:
+			menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 3: 
+			menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+        # Attaque du Pokémon ennemi
+		print("Au tour du pokémon adverse de jouer ! ")
+		if hp_ennemi > 10: 
+			attaque_ennemi = random.randint(1,4)
+			if attaque_ennemi == 1:
+				hp_starter -= 10
+				print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+			elif attaque_ennemi == 2:
+				hp_starter -= 20
+				print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+			else:
+				hp_starter -= 15
+				print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+		else: 
+			attaque_ou_soin = random.randint(1,4)
+			if attaque_ou_soin == 1:
+				hp_ennemi += 15
+				print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+			else: 
+				attaque_ennemi_2 = random.randint(1,4)
+				if attaque_ennemi_2 == 1:
+					hp_starter -= 10
+					print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+				elif attaque_ennemi_2 == 2:
+					hp_starter -= 20
+					print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+				else:
+					hp_starter -= 15
+					print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+	if hp_ennemie < 0: 
+		XP_gagne=random.randint(100,200)
+		XP += XP_gagne
+		if XP >= 500:
+			XP = 0 
+			print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
+			if starter == 1:
+				print(f"Arcko devient Massko ! ")
+			elif starter == 2:
+				print(f"Poussifeu devient Galifeu ! ")
+			elif starter == 3:
+				print(f"Gobou devient Flobio ! ")
+			elif starter == 4:
+				print(f"Massko devient Jungko ! ")
+			elif starter == 5:
+				print(f"Galifeu devient Braségali! ")
+			elif starter == 6:
+				print(f"Flobio devient Laggron ! ")
+			elif starter == 7:
+				print(f"Jungko devient Méga-Jungko ! ")
+			elif starter == 8:
+				print(f"Braségali devient Méga-Braségali !")
+			elif starter == 9:
+				print(f"Laggron devient Méga-Laggron !")
+			starter += 3
+		else:
+			print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !")
+			
 #fonction boutique
 def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion):
 	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
@@ -129,9 +198,10 @@ def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,n
 			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs \n5) Fuir")
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
 	choix=int(input("choisissez le bon numéro "))
-	while not choix in (1,2,3,4,5):
+	while not choix in (1,2,3,4):
 		print(f"Veuillez saisir un nombre correct")
 		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs \n5) Fuir")
 		choix=int(input("choisissez le bon numéro "))
@@ -192,9 +262,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 				nbr_FouetsLiannes = 20
 			else: 
 				nbr_LammeFeuille = 10
-	elif choix == 3:
-            print(" Pas encore codée ")
-	elif choix == 4: 
+	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			while not choix_pokeball in (1,2,3)
@@ -253,13 +321,13 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		fuir = False
 		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
     	fuir = True 
 def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
 	choix=int(input("choisissez le bon numéro "))
-	while not  choix in (1,2,3,4,5):
+	while not  choix in (1,2,3,4):
 		print(f"Veuillez saisir un nombre correct")
 		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 		choix=int(input("choisissez le bon numéro "))
@@ -320,9 +388,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 				nbr_Siphon = 20
 			else: 
 				nbr_Hydrocanon = 10
-	elif choix == 3:
-            print(" Pas encore codée ")
-	elif choix == 4: 
+	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			while not choix_pokeball in (1,2,3):
@@ -381,14 +447,14 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		fuir = False
 		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
     	fuir = True 
 	
 def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_poke_joueur,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
 	choix=int(input("choisissez le bon numéro "))
-	while not  choix in (1,2,3,4,5):
+	while not  choix in (1,2,3,4):
 		print(f"Veuillez saisir un nombre correct")
 		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
 		choix=int(input("choisissez le bon numéro "))
@@ -447,9 +513,7 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
 			    nbr_LanceFlammes = 20
 			else:
                 nbr_Rebondifeu = 10
-	elif choix == 3:
-            print(" Pas encore codée ")
-	elif choix == 4: 
+	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			while not response_pp in (1,2,3):
@@ -508,7 +572,6 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
 	else: 
-		fuir = False
 		print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
     	fuir = True 
 
@@ -1052,24 +1115,20 @@ print("homme mystérieux : il existe de nombreuses villes à proximité si l'env
 print("homme mystérieux : Tu peux même si tu le souhaites explorer les environs")
 print(f"mais d'abord choisis un de mes pokémons : ")
 print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
-Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+starter = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
 while not Poké_dep_choix in {1,2,3} : 
     print("Vous vous êtes trompés de numéro")
     print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
-    Poké_dep_choix = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
-if Poké_dep_choix == 1:
+	starter = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
+if starter == 1:
     print("Arcko a été ajouté à ton Pokédex !")
     print("Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-    starter=pokedex["Arcko"]
-elif Poké_dep_choix == 2:
+elif starter == 2:
     print("Poussifeu a été ajouté à ton Pokédex !")
     print("Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-    starter=pokedex["Poussifeu"]
-elif Poké_dep_choix == 3:
+elif starter == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-    starter=pokedex["Gobou"]
-team = [starter]
 print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
 while chemins:
     print("\nChemins disponibles :")
