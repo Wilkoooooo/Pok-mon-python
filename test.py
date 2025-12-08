@@ -142,7 +142,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 		if quelle_attaque == 1:
 			if nbr_Désherbaffe > 0:
 				hp_ennemi -= 15 
-				nbr_Désherbaffe - = 1
+				nbr_Désherbaffe -= 1
 			else:
 				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
@@ -251,7 +251,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_
 		if quelle_attaque == 1:
 			if nbr_Pistolet_à_O > 0:
 				hp_ennemi -= 15 
-				nbr_Pistolet_à_O - = 1
+				nbr_Pistolet_à_O -= 1
 			else:
 				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
 		elif quelle_attaque == 2: 
@@ -729,7 +729,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
 				else:
 					hp_starter -= 15
 					print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
-	if hp_ennemie < 0: 
+	if hp_ennemi < 0: 
 		XP_gagne=random.randint(100,200)
 		XP += XP_gagne
 		if XP >= 500:
