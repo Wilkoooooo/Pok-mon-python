@@ -672,7 +672,7 @@ def ville_donjon ():
 		print(f"Veuillez saisir un nombre correct")
 		print("1)porte de gauche \n2)porte de droite")
 		choix_porte = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-	if choix_porte = 1 :
+	if choix_porte == 1 :
 		print(f"Vous vous dirigez vers la porte de gauche")
 		input("↓")
 		print(f"Vous entendez un rugissement venant de derrière la porte...")
@@ -712,7 +712,7 @@ def ville_donjon ():
 			print(f"Veuillez saisir un nombre correct")
 			print("1)porte\n2)trappe")
 			choix_trappe = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-		if choix_trappe = 1:
+		if choix_trappe == 1:
 			print("Vous vous retrouvez dans un long couloir comme ceux qui mènent au boss dans les jeux")
 			input("↓")
 			print("En poussant la grande porte au bout du couloir vous tombez face à un trioxhydre, bonne chance...")
