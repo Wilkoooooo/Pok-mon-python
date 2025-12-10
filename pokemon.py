@@ -637,21 +637,34 @@ def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,n
 			else :
 				print(f"T'as plus de thunes sale sdf, sors de ma boutique")
 
-
+def medecin (monnaie):
+	print(f"Vous devez payer 5 pièces de monnaie pour frais de consultation, il vous reste donc {monnaie} - {5} monnaie")
+	input("↓")
+	print("Faites attention à ne pas vous blesser la prochaine fois !")
+	monnaie -= 5
+				
 # --- Définition des fonctions associées à chaque chemin --- #
 
 def ville_donjon (): 
 	print(f"Tu as choisis de te diriger vers la ville donjon du nom de Versailles")
+	input("↓")
 	print(f"Après quelques heures de marche tu te retrouves face au château de Versailles")
+	input("↓")
 	print(f"{prenom_1} : Ce château me donne des frissons dans le dos mais je suis sûr de trouver des super pokémons et récompenses !")
+	input("↓")
 	print(f"Tu rentres dans le château et tu t'enfonces dans une salle obscure...")
+	input("↓")
 	print(f"Tu observes deux objets scintillants à quelques mètres de toi")
+	input("↓")
 	print(f"Les lumières de la salle s'allument et tu te retrouves face à un ténéfix !")
+	input("↓")
 	print(f"Que le combat commence")
 	#combat ténéfix
 	boucle_combat(65, "Ténéfix", 80, starter, XP)
 	print(f"Après ce rude combat, tu t'orientes vers le fond de la salle")
+	input("↓")
 	print(f"2 portes s'offrent à toi...")
+	input("↓")
 	print("Que voulez vous faire :")
 	print("1)porte de gauche \n2)porte de droite")
 	choix_porte = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -661,36 +674,53 @@ def ville_donjon ():
 		choix_porte = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if choix_porte = 1 :
 		print(f"Vous vous dirigez vers la porte de gauche")
+		input("↓")
 		print(f"Vous entendez un rugissement venant de derrière la porte...")
+		input("↓")
 		print(f"Vous décidez quand même d'entrer car vous savez porter vos balls")
+		input("↓")
 		print(f"Vous vous tenez devant absol, le combat risque d'être compliqué !")
+		input("↓")
 		print(f"Que le combat commence !")
 		#combat absol
 		boucle_combat(60, "Absol", 80, starter, XP)
+		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle")
+		input("↓")
+		print("Vous vous retrouvez dans un long couloir comme ceux qui mènent au boss dans les jeux...")
+		input("↓")
+		print("Vous poussez la porte et vous tombez face à un trioxhydre, bone chance...")
+		boss_donjon ()
+		
 		
 	else :
 		print(f"Vous vous dirigez vers la porte de droite")
+		input("↓")
 		print(f"Vous entendez un cri effrayant venant de derrière la porte...")
+		input("↓")
 		print(f"Vous décidez quand même d'entrer car vous savez porter vos balls")
+		input("↓")
 		print(f"Vous vous tenez devant spectrum, le combat risque d'être compliqué !")
+		input("↓")
 		print(f"Que le combat commence !")
 		#combat spectrum
 		boucle_combat(75, "Spectrum", 80, starter, XP)
-		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coinde la salle")
+		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coin de la salle")
 		print("Que voulez vous faire :")
 		print("1)porte\n2)trappe")
 		choix_trappe = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
-		while not choix_porte in (1,2):
+		while not choix_trappe in (1,2):
 			print(f"Veuillez saisir un nombre correct")
 			print("1)porte\n2)trappe")
 			choix_trappe = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if choix_trappe = 1:
 			print("Vous vous retrouvez dans un long couloir comme ceux qui mènent au boss dans les jeux")
+			input("↓")
 			print("En poussant la grande porte au bout du couloir vous tombez face à un trioxhydre, bonne chance...")
+			boss_donjon ()
 		else:
 			print("Vous passez la trappe et vous êtes arrivés dans une salle avec plusieurs portes")
 			labyrinthe = {
-				"A": {
+				"entrée": {
 					"gauche": "B",
 					"droite": "C",
 				},
@@ -701,7 +731,7 @@ def ville_donjon ():
 				"C": {
 					"gauche": "F",
 					"face": "E",
-					"droite": "D",
+					"droite": "D"
 				},
 				"D": { 
 					"face": "Q",
@@ -709,7 +739,7 @@ def ville_donjon ():
 				},
 				"E": {
 					"face": "O",
-					"droite": "H"
+					"droite": "H",
 				},
 				"F": { 
 					"face": "N",
@@ -720,81 +750,120 @@ def ville_donjon ():
 					"droite": "T",
 				},
 				"I": {
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"J": {
 					"droite": "K",
-					"gauche": "L",
+					"gauche": "L"	
 				},
 				"K": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"L": {
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"M": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"N": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"O": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"P": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"Q": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"R": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				},
 				"S":{
-					"sortie",
+					"sortie"
 				},
 				"T": { 
-					None,
+					"gauche": None,
+					"face": None,
+					"droite": None
 				}
 			}
-		position = "A"
 
-		while True:
-			print(f"Vous êtes à : {position}")
 
-   	 	chemins = labyrinthe[position]
 
-    #sortie
-			if position == "sortie":
-				print("\n Bravo ! Vous avez trouvé la sortie du labyrinthe !")
-				print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
-				print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
-				fossile2 += 1
-				print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
-				print("Un trioxhydre fait son appirition, bonne chance...")
-		
-		
-	#chemins
-			if all(direction is None for direction in chemins.values()):
-				print("Cul-de-sac ! Retour à l'entrée...\n")
-    			position = "A"
-		
-			print("Options disponibles :")
-			for direction, destination in chemins.items():
-				if destination is not None:
-        			print(f"  - {direction} -> {destination}")
+			position = "entrée"
 			
-			choix = input("Direction (gauche, face, droite) : ")
-		
-			if choix not in chemins:
-        	print("Direction invalide.\n")
-		
-			position = chemins[choix]
-			print()		
-	
+			while True:
+			    print(f"Vous êtes à : {position}")
+			
+			    chemins = labyrinthe[position]
+			
+			    #sortie
+			    if position == "S":
+			        print(" Bravo ! Vous avez trouvé la sortie du labyrinthe ! ")
+					input("↓")
+					print("Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
+					input("↓")
+					print("Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
+					input("↓")
+					fossile2 += 1
+					print("une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !") 
+					input("↓")
+					print("Un trioxhydre fait son appirition, bonne chance...")
+					boss_donjon ()
+					break
+			    
+			    if all(direction is None for direction in chemins.values()):
+			        print("Cul-de-sac ! Retour à l'entrée...\n")
+			        position = "entrée"
+			        continue
+			
+			    # choix
+			    print("Options disponibles :")
+			    for direction, destination in chemins.items():
+			        if destination is not None:
+			            print(f"  - {direction} -> {destination}")
+			
+			    choix = input("Direction (gauche, face, droite) : ")
+			
+			    if choix not in chemins:
+			        print("Direction invalide.\n")
+			        continue
+			
+			    if chemins[choix] is None:
+			        print("Il n'y a pas de chemin dans cette direction.\n")
+			        continue
+			
+			    position = chemins[choix]
+			    print()
+
+def boss_donojon ():
+	#combat trioxhydre
+
 def grotte_boss (): 
 	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve être de plus en plus instable récemment")
+	input("↓")
 	print(f"En te rapprochant du volcan tu te retrouves face à une grotte")
+	input("↓")
 	print("Que voulez vous faire :")
 	print("1)rentrer dans la grotte\n2)faire demi-tour")
 	response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -804,6 +873,7 @@ def grotte_boss ():
 		response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_17 == 1 :
 		print(f"Vous avez décidé de rentrer dans la grotte, vous marchez pendant de longues minutes jusqu'à vous retrouver dans une salle souterraine")
+		input("↓")
 		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
 		#combat pokémon mystérieux
 		boucle_combat(200, "Mewtoo", 100, starter, XP)
@@ -812,10 +882,15 @@ def grotte_boss ():
 		
 def arènes_pokémons ():
 		print(f"Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
+		input("↓")
 		print(f"quelqu'un à l'entrée de l'arène vous attend pour vous expliquer les règles de l'arène pokémon")
+		input("↓")
 		print(f"organisateur : Bonjour jeune homme, vous êtes arrivé à l'arène pokémon, ici de nombreux dresseurs s'affrontent en espérant atteindre la finale du tournoi pour gagner un pokémon rarissime !")
+		input("↓")
 		print(f"organisateur : Le fonctionnement est très simple, vous démarrez quand 32 dresseurs pokémons arrivent dans l'arène et dès que vous perdez vous devez attendre le prochain tournoi, par contre à chaque fois que vous gagnez vous passez à l'étape supérieure et vous affrontez de noueaux dresseurs. Vous avez le droit d'utliser des potions de soins sur vos pokémons seulement entre chaque combat; Bonne chance !")
+		input("↓")
 		print(f"Organisateur : Alors ça te tente ?")
+		input("↓")
 		print("Que voulez vous faire :")
 		print("1)S'inscrire au tournoi\n2)partir de l'arène pokémon")
 		response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -827,12 +902,15 @@ def arènes_pokémons ():
 			print(f"votre premier combat commence !")
 		else:
 			print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
-			print("À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathurin")
+			input("↓")
+			print("À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant")
 			quit()
 
 def forêt_pangorn ():
 	print(f"Après quelques dizaines de minutes de marche, vous arrivez à l'entrée de la forêt Pangorn")
+	input("↓")
 	print(f"{prenom_1} : j'entends de l'eau qui coule vers l'ouest. J'aprçois une lueur pas loin devant moi. J'entends aussi la terre qui tremble à quelques centaines de mètres à ma droite")
+	input("↓")
 	print("Que voulez vous faire :")
 	print("1)Se diriger vers les bruits de l'eau\n2)S'approcher de la lueur\n3)Se rendre aux lieux des tremblements de terre")
 	response_9 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -842,7 +920,9 @@ def forêt_pangorn ():
 		response_9 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	if response_9 == 1 :
 		print(f"Vous êtes émerveillé par une magnifique cascade cependant vous ne vous rendez même pas compte qu'un Crocodil vous observe")
+		input("↓")
 		print(f"Le Crocodil vous saute dessus seulement vous le voyez au dernier moment et vus avez le choix entre esquiver en vous baissant ou en sautant vers la rivière")
+		input("↓")
 		print("que voulez vous faire ?")
 		print("1)esquiver en se baissant\n2)esquiver en sautant vers la rivière")
 		response_10 : int(input("que choisissez vous ? (sélectionnez le numéro) : "))
@@ -853,7 +933,9 @@ def forêt_pangorn ():
 		if response_10 == 1 :
 			Croco_griffe = random.randint(1,2)
 			if Croco_griffe == 1:
-				print(f"Le crocodil vous érafle le dos mais vous êtes légèrment blessé, il va falloir soigner cela avant que ça ne s'infecte")
+				print(f"Le crocodil vous érafle le dos mais vous êtes légèrment blessé, il va falloir consulter un médecin")
+				medecdin ()
+				input("↓")
 				print(f"Le Crocodil se dresse devant vous, préparez vous au combat !")
 			
 			else:
@@ -861,20 +943,26 @@ def forêt_pangorn ():
 		
 		if response_10 == 2 :
 		print(f"Vous vous retrouvez au bord de la rivière et un léviator surgit et vous mange tout cru !")
+		input("↓")
 		print(f"Game over")
 		quit()
 	
 	if response_9 == 2 :
 		print("Au fur et à mesure que vous vous approchez de la lumière vous sentez une odeur de brûlé")
+		input("↓")
 		print("Vous avez trop avancé et vous êtes maintenant encerclés par des flammes. Vite il faut s'échapper !")
+		input("↓")
 		print("En vous retournant vous vous retrouvez face à un Ouisticram qui vous bloque le passage. Préparez-vous au combat !")
 		#combat
 		boucle_combat(65, "Ouisticram", 80, starter, XP)
 				
 	if response_9 == 3 :
 		print("Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
+		input("↓")
 		print("cependant à cause des secousses vous trébuchez et vous vous retrouvez par terre")
+		input("↓")
 		print("à cause des coups donnés par onix sur la falaise des rochers tombent droit sur vous !")
+		input("↓")
 		print("Que voulez vous faire ?")
 		print("1)se cacher derrière un arbre\n 2)plonger en avant")
 		response_13 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
@@ -886,17 +974,20 @@ def forêt_pangorn ():
 			arbre = random.randint(1,4)
 			if arbre == 1 :
 				print("Un rocher vous à éraflé dans sa chute, vous êtes plutôt sérieusement blessé, il va falloir se rendre chez un médecin")
+				medecin ()
 			else :
 				print("Vous avez réussi à esquiver la chute de rochers, mais pourquoi le Onix est-il aussi intrigué par cette falaise ?")
 				onix_secret()
 		else :
 			print("vous vous êtes foulé la cheville mais vous avez esquivé la chute de rochers, cependant il va falloir se rendre chez un médecin")
+			medecin ()
 			onix_secret()
 def onix_secret ():
 	print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
 	#combat onix
 	boucle_combat(70, "Onix", 80, starter, XP)
 	print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
+	input("↓")
 	print("Que voulez-vous faire ?")
 	print("1) Grimper la falaise\n2)Rebrousser chemin")
 	response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
@@ -924,14 +1015,23 @@ def onix_secret ():
 					print(f"Vous avez {chutes} chute(s) et {bonnes_prises} bonnes prises. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
 			if bonnes_prises == 5 :
 				print("{prenom_1} : Pas simple cette ascension mais je suis enfin arrivé dans cette grotte qui intrguait le Onix")
+				input("↓")
 				print("Vous avancez jusqu'au fond de la grotte et un caillou avec une forme étrange se trouve au centre de la grotte")
+				input("↓")
 				print("Vous venez de trouver un fossile mâchoire ! Ce fossile, si les conditions sont réunies, va se transformer en un ptyranidur !") 
+				input("↓")
 				print("{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
 				fossile1 += 1
 			else :
 				print("vous êtes tombés trop de fois, vous êtes morts de chute")
+				input("↓")
 				print("Game Over")
 				quit()
+
+
+	else:
+		chemins 
+
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
 input("↓")
@@ -1058,16 +1158,27 @@ elif int(response_1) == 2:
 				print(f"Vous regretterez sans doute ce choix...")
 				amitié += 1
 				print(f"Attiré par les bruits de la foule, vous vous rapprochez")
+				input("↓")
 				print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
+				input("↓")
 				print(f"Homme mystérieux : Comment ça va depuis notre dernière rencontre ?")
+				input("↓")
 				print(f"{prenom_1} : Ça va mais pourquoi es-tu entouré de toute cette foule ? ")
+				input("↓")
 				print(f"Homme mystérieux : Je viens visiter mon village natal, tu ne me connais pas ? ")
+				input("↓")
 				print(f"{prenom_1} : Non! Qui êtes-vous ?")
+				input("↓")
 				print(f"Homme mystérieux : Je suis le tout nouveau maitre Pokémon. Je viens de gagner le combat final de la ligue Pokémon")
+				input("↓")
 				print(f"{prenom_1} : La ligue Pokémon ? C'est quoi ? ")	
+				input("↓")
 				print(f"Homme mystérieux : Tu ne connais pas la ligue Pokémon ?")
+				input("↓")
 				print(f"{prenom_1} : Non, c'est quoi ?")
+				input("↓")
 				print(f"Homme mystérieux : C'est une ligue connue à l'internationale où tout les combattants pokémon s'affrontent pour savoir qui est le meilleur dresseur, ça t'intéresse ?")
+				input("↓")
 				print(f"Que voulez vous faire :")
 				print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 				response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -1079,24 +1190,37 @@ elif int(response_1) == 2:
 					quit()
 	elif int(response_3)== 2:
 		print(f"{prenom_1} : Non désolé je suis trop occupé, à la prochaine")
+		input("↓")
 		print(f"Vous regretterez sans doute ce choix...") 
 		amitié += 1
 		print(f"Attiré par les bruits de la foule, vous vous rapprochez")
+		input("↓")
 		print(f"Alors que vous vous approchez de la foule, l'homme au milieu de la foule vous remarque et vous interpelle ! ")
+		input("↓")
 		print(f"Homme mystérieux : Comment ça va depuis notre dernière rencontre ?")
+		input("↓")
 		print(f"{prenom_1} : Ça va mais pourquoi es-tu entouré de toute cette foule ? ")
+		input("↓")
 		print(f"Homme mystérieux : Je viens visiter mon village natal, tu ne me connais pas ? ")
+		input("↓")
 		print(f"{prenom_1} : Non! Qui êtes-vous ?")
+		input("↓")
 		print(f"Homme mystérieux : Je suis le tout nouveau maitre Pokémon. Je viens de gagner le combat final de la ligue Pokémon")
+		input("↓")
 		print(f"{prenom_1} : La ligue Pokémon ? C'est quoi ? ")	
+		input("↓")
 		print(f"Homme mystérieux : Tu ne connais pas la ligue Pokémon ?")
+		input("↓")
 		print(f"{prenom_1} : Non, c'est quoi ?")
+		input("↓")
 		print(f"Homme mystérieux : C'est une ligue connue à l'internationale où tout les combattants pokémon s'affrontent pour savoir qui est le meilleur dresseur, ça t'intéresse ?")
+		input("↓")
 		print(f"Que voulez vous faire :")
 		print("1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
 		response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		if int(response_2) == 1:
 			print(f"{prenom_1} : Oui je veux entrer dans le monde Pokémon !")
+			input("↓")
 			print(f"Homme mystérieux : Très bien alors il est temps de choisir ton premier pokémon !")
 		elif int(response_2) == 2:
 			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
@@ -1175,11 +1299,17 @@ while hppokefightinitial > 0:
 				print("il utilise l'attaque 3")
 				hp_starter = hp_starter - 5
 print("Bravo ! Tu as gagné ton premier combat (tu ne pouvais pas perdre donc prend pas trop la confiance sale merde")
+input("↓")
 print("homme mystérieux : Tu es maintenant un dresseur pokémon ! Différents choix s'offrent à toi. Tu peux par exemple partir pour les arènes pokémons pour essayer de gagner des récompenses et faire évoluer ton pokémon")
+input("↓")
 print("homme mystérieux : tu peux aussi partir pour la forêt pangorn à proximité pour obtenir de nouveaux pokémons mais fais attention à prendre des pokéballs avec toi")
+input("↓")
 print("homme mystérieux : il existe de nombreuses villes à proximité si l'envie t'ne prends de faire du tourisme")
+input("↓")
 print("homme mystérieux : Tu peux même si tu le souhaites explorer les environs")
+input("↓")
 print(f"mais d'abord choisis un de mes pokémons : ")
+input("↓")
 print("Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3)Gobou (Type Eau)")
 starter = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
 while not Poké_dep_choix in {1,2,3} : 
