@@ -105,6 +105,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, hp_starter, starter, XP):
                         elif starter == 9:
                                 print(f"Laggron devient Méga-Laggron !")
                         starter += 3
+						XP -= 500
                 else:
                         print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !")
 
