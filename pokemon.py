@@ -555,7 +555,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                         poké_pop_compteur = 0
                         proba_poké_pop=random.randint(1,7+i)
                         if proba_poké_pop == 5:
-                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!") 
                             break
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
