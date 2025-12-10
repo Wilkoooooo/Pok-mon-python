@@ -1148,7 +1148,7 @@ while chemins:
     for numero, (nom, _) in chemins.items():
         print(f"{numero} - {nom}")
 
-    choix = input("Choisis un chemin : ")
+    choix = input("Choisis un chemin : ") 
 
     if choix in chemins:
         nom, fonction = chemins[choix]
