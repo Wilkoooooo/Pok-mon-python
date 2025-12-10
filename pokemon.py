@@ -67,7 +67,7 @@ team = []
 nom_poke_ennemi = 0
 #Fonction combat
 def boucle_combat(hp_ennemi, nom_poke_ennemi):
-    while hp_ennemi > 0 and hp_starter > 0 and not Fuir
+    while hp_ennemi > 0 and hp_starter > 0 and not Fuir:
         # Appel du menu de combat correspondant au Pokémon actif
         print(f"\n À Vous de Jouer ! \n")
 		if starter == 1: 
