@@ -1026,7 +1026,7 @@ elif int(response_1) == 2:
 			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
 			quit()
 #le jouer fait son premier combat tutoriel 
-print(f"oe entraine toi pour voir si tu merites un de mes pokemon")
+print(f"")
 while hppokefightinitial > 0:
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
