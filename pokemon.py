@@ -791,9 +791,9 @@ def forêt_pangorn ():
 	if response_9 == 2 :
 		print("Au fur et à mesure que vous vous approchez de la lumière vous sentez une odeur de brûlé")
 		print("Vous avez trop avancé et vous êtes maintenant encerclés par des flammes. Vite il faut s'échapper !")
-		print("En vous retournant vous vous retrouvez face à un ouisticram qui vous bloque le passage. Préparez-vous au combat !")
-			#combat
-		
+		print("En vous retournant vous vous retrouvez face à un Ouisticram qui vous bloque le passage. Préparez-vous au combat !")
+		#combat
+		boucle_combat(65, "Ouisticram", 80, starter, XP)
 				
 	if response_9 == 3 :
 		print("Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
@@ -819,6 +819,7 @@ def forêt_pangorn ():
 def onix_secret ():
 	print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
 	#combat onix
+	boucle_combat(70, "Onix", 80, starter, XP)
 	print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
 	print("Que voulez-vous faire ?")
 	print("1) Grimper la falaise\n2)Rebrousser chemin")
