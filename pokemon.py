@@ -7,7 +7,7 @@ duree_1 = 1
 XP = 0
 hp_starter = 60 
 #Variable PP des Pokémons : 
-#Variable PP Poussifeu
+#Variable PP Poussifeu 
 nbr_Flammèche = 15
 nbr_LanceFlammes = 20
 nbr_Rebondifeu = 10
