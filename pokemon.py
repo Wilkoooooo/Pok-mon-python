@@ -39,32 +39,6 @@ chemins = {
     "3": ("Les arênes Pokémon", arènes_pokémons),
     "4": ("Le Volcan instable de l'île", grotte_boss)
 }
-# Dictionnaire de combat
-pokedex = {
-    "Arcko": {
-        "hp": 60,
-        "pp1": 15,
-        "pp2": 10,
-        "pp3":20
-    },
-    "Poussifeu": {
-        "hp": 60,
-        "pp1": 15,
-        "pp2": 10,
-        "pp3":20
-    },
-    "Gobou": {
-        "hp": 60,
-        "pp1": 15,
-        "pp2": 10,
-        "pp3": 20
-    }
-}
-pv_team = {}
-pv_max = {}
-#Liste de team
-team = []
-nom_poke_ennemi = 0
 #Fonction combat
 def boucle_combat(hp_ennemi, nom_poke_ennemi, hp_starter, starter, XP):
     while hp_ennemi > 0 and hp_starter > 0 and not fuir:
@@ -599,6 +573,7 @@ def ville_donjon ():
 	print(f"Les lumières de la salle s'allument et tu te retrouves face à un ténéfix !")
 	print(f"Que le combat commence")
 	#combat ténéfix
+	boucle_combat(65, "Ténéfix", 80, starter, XP)
 	print(f"Après ce rude combat, tu t'orientes vers le fond de la salle")
 	print(f"2 portes s'offrent à toi...")
 	print("Que voulez vous faire :")
@@ -615,6 +590,7 @@ def ville_donjon ():
 		print(f"Vous vous tenez devant absol, le combat risque d'être compliqué !")
 		print(f"Que le combat commence !")
 		#combat absol
+		boucle_combat(60, "Absol", 80, starter, XP)
 		
 	else :
 		print(f"Vous vous dirigez vers la porte de droite")
@@ -623,6 +599,7 @@ def ville_donjon ():
 		print(f"Vous vous tenez devant spectrum, le combat risque d'être compliqué !")
 		print(f"Que le combat commence !")
 		#combat spectrum
+		boucle_combat(75, "Spectrum", 80, starter, XP)
 		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coinde la salle")
 		print("Que voulez vous faire :")
 		print("1)porte\n2)trappe")
@@ -753,10 +730,9 @@ def grotte_boss ():
 		print(f"Vous avez décidé de rentrer dans la grotte, vous marchez pendant de longues minutes jusqu'à vous retrouver dans une salle souterraine")
 		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
 		#combat pokémon mystérieux
+		boucle_combat(200, "Mewtoo", 100, starter, XP)
 		
 	else :
-		return
-		
 		
 def arènes_pokémons ():
 		print(f"Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
