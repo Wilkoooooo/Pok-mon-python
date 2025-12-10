@@ -6,7 +6,6 @@ monnaie = 50
 duree_1 = 1
 XP = 0
 hp_starter = 60 
-hppokefightinitial = 50 
 #Variable PP des Pokémons : 
 #Variable PP Poussifeu
 nbr_Flammèche = 15
@@ -41,6 +40,17 @@ chemins = {
 }
 #Fonction combat
 def boucle_combat(hp_ennemi, nom_poke_ennemi, hp_starter, starter, XP):
+	if starter in (4,5,6):
+		hp_starter += 40
+		print("Que le combat commence !")
+	elif starter in (7,8,9):
+		hp_starter += 70
+		print("Que le combat commence !")
+	elif starter in (10, 11, 12):
+		hp_starter += 100
+		print("Que le combat commence !")
+	else:
+		print("Que le combat commence !")
     while hp_ennemi > 0 and hp_starter > 0 and not fuir:
         # Appel du menu de combat correspondant au Pokémon actif
         print(f"\n À Vous de Jouer ! \n")
@@ -50,6 +60,25 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, hp_starter, starter, XP):
             hp_ennemi = menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
         elif starter == 3:
             hp_ennemi = menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 4:
+			 hp_ennemi = menu_combat_massko (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+        elif starter == 5:
+            hp_ennemi = menu_combat_galifeu (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 6: 
+			hp_ennemi = menu_combat_flobio (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+        elif starter == 7:
+            hp_ennemi = menu_combat_jungko (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 8: 
+			hp_ennemi = menu_combat_brasegali (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+        elif starter == 9:
+            hp_ennemi = menu_combat_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 10:
+            hp_ennemi = menu_combat_mega_jungko (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		elif starter == 11: 
+			hp_ennemi = menu_combat_mega_brasegali (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+        elif starter == 12:
+            hp_ennemi = menu_combat_mega_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+				
         # Attaque du Pokémon ennemi
         print(f"le pokemon ennemie a {hp_ennemi} pv ")
         print("Au tour du pokémon adverse de jouer ! ")
@@ -84,7 +113,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, hp_starter, starter, XP):
                 XP_gagne=random.randint(100,200)
                 XP += XP_gagne
                 if XP >= 500:
-                        XP = 0
+						XP = 0
                         print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
                         if starter == 1:
                                 print(f"Arcko devient Massko ! ")
@@ -106,8 +135,12 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi, hp_starter, starter, XP):
                                 print(f"Laggron devient Méga-Laggron !")
                         starter += 3
 						XP -= 500
+						return (XP, starter)
                 else:
                         print(f"Félicitation, vous avez gagné(e) votre combat {nom_poke_ennemi}, Vous avez gagné(e) {XP_gagne} XPs !")
+						return (XP, starter)
+
+					
 
 def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
 	fuir = False
@@ -141,6 +174,424 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
 		elif quelle_attaque == 3: 
 			if nbr_Hydrocanon > 0:
 				hp_ennemi -= 20 
+				nbr_Hydrocanon -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superpotion > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			else:
+				print(f"Vous n'avez plus de super potion...")
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0:
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			else:
+				print(f"Vous n'avez plus d'hyper potion...")
+		elif choixsoin == 3:
+                    print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+                    while not response_pp in (1,2,3):
+                        print(f"Veuillez saisir un nombre correct")
+                        print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+                        reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+                    if reponse_pp == 1:
+                        nbr_Pistolet_à_O = 15
+						return hp_ennemie
+                    elif reponse_pp == 2:
+                        nbr_Siphon = 20
+						return hp_ennemie
+                    else:
+                        nbr_Hydrocanon = 10
+						return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else: 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+def menu_combat_flobio (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs\n4) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-25 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-20 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-30 hp) {nbr_Hydrocanon}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-25 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-20 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-30 hp) {nbr_Hydrocanon}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Pistolet_à_O > 0:
+				hp_ennemi -= 25 
+				nbr_Pistolet_à_O -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_Siphon > 0:
+				hp_ennemi -= 20 
+				nbr_Siphon -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Siphon, faites attention la prochaine fois ")
+		elif quelle_attaque == 3: 
+			if nbr_Hydrocanon > 0:
+				hp_ennemi -= 30 
+				nbr_Hydrocanon -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superpotion > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			else:
+				print(f"Vous n'avez plus de super potion...")
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0:
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			else:
+				print(f"Vous n'avez plus d'hyper potion...")
+		elif choixsoin == 3:
+                    print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+                    while not response_pp in (1,2,3):
+                        print(f"Veuillez saisir un nombre correct")
+                        print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+                        reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+                    if reponse_pp == 1:
+                        nbr_Pistolet_à_O = 15
+						return hp_ennemie
+                    elif reponse_pp == 2:
+                        nbr_Siphon = 20
+						return hp_ennemie
+                    else:
+                        nbr_Hydrocanon = 10
+						return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else: 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+def menu_combat_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs\n4) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-35 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-30 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-40 hp) {nbr_Hydrocanon}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-35 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-30 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-40 hp) {nbr_Hydrocanon}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Pistolet_à_O > 0:
+				hp_ennemi -= 35 
+				nbr_Pistolet_à_O -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_Siphon > 0:
+				hp_ennemi -= 30 
+				nbr_Siphon -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Siphon, faites attention la prochaine fois ")
+		elif quelle_attaque == 3: 
+			if nbr_Hydrocanon > 0:
+				hp_ennemi -= 40 
+				nbr_Hydrocanon -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superpotion > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			else:
+				print(f"Vous n'avez plus de super potion...")
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0:
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			else:
+				print(f"Vous n'avez plus d'hyper potion...")
+		elif choixsoin == 3:
+                    print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+                    while not response_pp in (1,2,3):
+                        print(f"Veuillez saisir un nombre correct")
+                        print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-10 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-20 hp) {nbr_Hydrocanon}/10 ")
+                        reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
+                    if reponse_pp == 1:
+                        nbr_Pistolet_à_O = 15
+						return hp_ennemie
+                    elif reponse_pp == 2:
+                        nbr_Siphon = 20
+						return hp_ennemie
+                    else:
+                        nbr_Hydrocanon = 10
+						return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else: 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+
+def menu_combat_mega_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs\n4) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-45 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-40 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-50 hp) {nbr_Hydrocanon}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-45 hp) {nbr_Pistolet_à_O}/15 \n 2)Siphon (-40 hp) {nbr_Siphon}/20 \n 3)Hydrocanon (-50 hp) {nbr_Hydrocanon}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Pistolet_à_O > 0:
+				hp_ennemi -= 45 
+				nbr_Pistolet_à_O -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Pistolet à O, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_Siphon > 0:
+				hp_ennemi -= 40 
+				nbr_Siphon -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Siphon, faites attention la prochaine fois ")
+		elif quelle_attaque == 3: 
+			if nbr_Hydrocanon > 0:
+				hp_ennemi -= 50 
 				nbr_Hydrocanon -= 1
 				return hp_ennemie
 			else:
@@ -394,7 +845,442 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
             print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
 	return hp_ennemie
-	
+def menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-25 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-20 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-30 hp) {nbr_Rebondifeu}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-25 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-20 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-30 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Flammèche > 0:
+				hp_ennemi -= 25 
+				nbr_Flammèche -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Flammèche, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_LanceFlammes > 0:
+				hp_ennemi -= 20 
+				nbr_LanceFlammes -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Lance Flammes, veuillez en chosir une autre ")
+		elif quelle_attaque == 3: 
+			if nbr_Rebondifeu > 0:
+				hp_ennemi -= 30 
+				nbr_Rebondifeu -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superption > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			if nbr_superpotion == 0 :
+				print(f"Vous n'avez plus de super potion...")
+				
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0 :
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			if nbr_hyperpotion == 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Flammèche = 15
+				return hp_ennemie
+			elif reponse_pp == 2: 
+			    nbr_LanceFlammes == 20
+				return hp_ennemie
+			else:
+				nbr_Rebondifeu = 10
+				return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else : 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else: 
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+
+def menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-35 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-30 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-40 hp) {nbr_Rebondifeu}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-35 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-30 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-40 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Flammèche > 0:
+				hp_ennemi -= 35 
+				nbr_Flammèche -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Flammèche, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_LanceFlammes > 0:
+				hp_ennemi -= 30 
+				nbr_LanceFlammes -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Lance Flammes, veuillez en chosir une autre ")
+		elif quelle_attaque == 3: 
+			if nbr_Rebondifeu > 0:
+				hp_ennemi -= 40 
+				nbr_Rebondifeu -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superption > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			if nbr_superpotion == 0 :
+				print(f"Vous n'avez plus de super potion...")
+				
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0 :
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			if nbr_hyperpotion == 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Flammèche = 15
+				return hp_ennemie
+			elif reponse_pp == 2: 
+			    nbr_LanceFlammes == 20
+				return hp_ennemie
+			else:
+				nbr_Rebondifeu = 10
+				return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else : 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else: 
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+def menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-45 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-40 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-50 hp) {nbr_Rebondifeu}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-45 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-40 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-50 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Flammèche > 0:
+				hp_ennemi -= 45 
+				nbr_Flammèche -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Flammèche, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_LanceFlammes > 0:
+				hp_ennemi -= 40 
+				nbr_LanceFlammes -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Lance Flammes, veuillez en chosir une autre ")
+		elif quelle_attaque == 3: 
+			if nbr_Rebondifeu > 0:
+				hp_ennemi -= 50 
+				nbr_Rebondifeu -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superption > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			if nbr_superpotion == 0 :
+				print(f"Vous n'avez plus de super potion...")
+				
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0 :
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			if nbr_hyperpotion == 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Flammèche = 15
+				return hp_ennemie
+			elif reponse_pp == 2: 
+			    nbr_LanceFlammes == 20
+				return hp_ennemie
+			else:
+				nbr_Rebondifeu = 10
+				return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else : 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else: 
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie	
 def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
@@ -542,7 +1428,451 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 	else:
             print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemie		
+	return hp_ennemie	
+def menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-25 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-20 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-30 hp) {nbr_Rebondifeu}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-25 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-20 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-30 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Désherbaffe > 0:
+				hp_ennemi -= 25 
+				nbr_Désherbaffe -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Désherbaffe, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_FouetsLiannes > 0:
+				hp_ennemi -= 20 
+				nbr_FouetsLiannes -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Fouets-Liannes, veuillez en chosir une autre ")
+		elif quelle_attaque == 3: 
+			if nbr_LammeFeuille > 0:
+				hp_ennemi -= 30 
+				nbr_LammeFeuille -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Lamme-Feuille, veuillez en chosir une autre ")
+				return hp_ennemie
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superption > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			if nbr_superpotion == 0 :
+				print(f"Vous n'avez plus de super potion...")
+				return hp_ennemie
+				
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0 :
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			if nbr_hyperpotion == 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				return hp_ennemie
+				
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Désherbaffe = 15
+				return hp_ennemie
+			elif reponse_pp == 2: 
+			    nbr_FouetsLiannes == 2
+				return hp_ennemie
+			else:
+				nbr_LammeFeuille = 10
+				return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else: 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!") 
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+def menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-35 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-30 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-40 hp) {nbr_Rebondifeu}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-35 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-30 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-40 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Désherbaffe > 0:
+				hp_ennemi -= 35 
+				nbr_Désherbaffe -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Désherbaffe, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_FouetsLiannes > 0:
+				hp_ennemi -= 30 
+				nbr_FouetsLiannes -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Fouets-Liannes, veuillez en chosir une autre ")
+		elif quelle_attaque == 3: 
+			if nbr_LammeFeuille > 0:
+				hp_ennemi -= 40 
+				nbr_LammeFeuille -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Lamme-Feuille, veuillez en chosir une autre ")
+				return hp_ennemie
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superption > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			if nbr_superpotion == 0 :
+				print(f"Vous n'avez plus de super potion...")
+				return hp_ennemie
+				
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0 :
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			if nbr_hyperpotion == 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				return hp_ennemie
+				
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Désherbaffe = 15
+				return hp_ennemie
+			elif reponse_pp == 2: 
+			    nbr_FouetsLiannes == 2
+				return hp_ennemie
+			else:
+				nbr_LammeFeuille = 10
+				return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else: 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!") 
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
+def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
+	fuir = False
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) Fuir")
+	choix=int(input("choisissez le bon numéro "))
+	while not  choix in (1,2,3,4):
+		print(f"Veuillez saisir un nombre correct")
+		print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon \n4) Pokéballs\n5) Fuir")
+		choix=int(input("choisissez le bon numéro "))
+	if choix == 1: 
+		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-45 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-40 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-50 hp) {nbr_Rebondifeu}/10 ")
+		quelle_attaque=int(input("choisissez le bon numéro "))
+		while not quelle_attaque in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-45 hp) {nbr_Flammèche}/15 \n 2)LanceFlammes (-40 hp) {nbr_LanceFlammes}/20 \n 3)Rebondifeu (-50 hp) {nbr_Rebondifeu}/10 ")
+			quelle_attaque=int(input("choisissez le bon numéro "))
+		if quelle_attaque == 1:
+			if nbr_Désherbaffe > 0:
+				hp_ennemi -= 45 
+				nbr_Désherbaffe -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Désherbaffe, faites attention la prochaine fois ")
+		elif quelle_attaque == 2: 
+			if nbr_FouetsLiannes > 0:
+				hp_ennemi -= 40 
+				nbr_FouetsLiannes -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Fouets-Liannes, veuillez en chosir une autre ")
+		elif quelle_attaque == 3: 
+			if nbr_LammeFeuille > 0:
+				hp_ennemi -= 50 
+				nbr_LammeFeuille -= 1
+				return hp_ennemie
+			else:
+				print("Vous n'avez plus de Lamme-Feuille, veuillez en chosir une autre ")
+				return hp_ennemie
+	elif choix == 2: 
+		print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
+		choixsoin=int(input("Quel objet choisissez vous ?"))
+		while not choixsoin in (1,2,3):
+			print(f"Veuillez saisir un nombre correct")
+			print("Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
+			choixsoin=int(input("Quel objet choisissez vous ?"))
+		if choixsoin == 1: 
+			if nbr_superption > 0 :
+				hp_starter += 20
+				nbr_superpotion -= 1
+				return hp_ennemie
+			if nbr_superpotion == 0 :
+				print(f"Vous n'avez plus de super potion...")
+				return hp_ennemie
+				
+		elif choixsoin == 2: 
+			if nbr_hyperpotion > 0 :
+				hp_starter = 60 
+				nbr_hyperpotion -= 1
+				return hp_ennemie
+			if nbr_hyperpotion == 0 :
+				print(f"vous n'avez plus d'hyper potion...")
+				return hp_ennemie
+				
+		elif choixsoin == 3: 
+			print("Sur quelle attaque : \n1)Flammèche (-15 hp) {nbr_Flammèche}/15 \n 2)Lance-Flammes (-10 hp) {nbr_Lance-Flammes}/20 \n 3)Rebondifeu (-20 hp) {nbr_Rebondifeu}/10 ")
+			reponse_pp=int(input(f"Quelle attaque choisissez vous ?"))
+			if reponse_pp == 1:
+			    nbr_Désherbaffe = 15
+				return hp_ennemie
+			elif reponse_pp == 2: 
+			    nbr_FouetsLiannes == 2
+				return hp_ennemie
+			else:
+				nbr_LammeFeuille = 10
+				return hp_ennemie
+	elif choix == 3: 
+            print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            while not choix_pokeball in (1,2,3):
+                print(f"Veuillez saisir un nombre correct")
+                print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({nbr_pokeball})\n2) Superball ({nbr_superball})\n3) Hyperball ({nbr_hyperball})")
+                choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
+            if choix_pokeball == 1:
+                if nbr_pokeball > 0: 
+                    nbr_pokeball -= 1
+                    print("Vous lancez une Pokéball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,5+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+                            break
+                        else :
+                            print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                    if poké_pop_compteur % 2 != 0:
+                        print("le pokémon a été capturé. Bravo !")
+						return hp_ennemie
+					else: 
+						print("dommage")
+						return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+            elif choix_pokeball == 2:
+                if nbr_superball > 0: 
+                    nbr_superball -= 1
+                    print("Vous lancez une Superball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,6+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Superball a pop à la secousse numéro {i+1}!")
+                            break
+                        else:
+                            print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+            elif choix_pokeball == 3:
+                if nbr_hyperball > 0: 
+                    nbr_hyperball -= 1
+                    print("Vous lancez une Hyperball !")
+                    for i in range (3):
+                        poké_pop_compteur = 0
+                        proba_poké_pop=random.randint(1,7+i)
+                        if proba_poké_pop == 5:
+                            print(f"La Hyperball a pop à la secousse numéro {i+1}!") 
+                            break
+                        else:
+                            print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
+                            poké_pop_compteur += 1
+                        if poké_pop_compteur % 2 != 0:
+                            print("le pokémon a été capturé. Bravo !")
+							return hp_ennemie
+						else:
+							print("dommage")
+							return hp_ennemie
+                else:
+                    print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+	else:
+            print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
+            fuir = True 
+	return hp_ennemie
 #fonction boutique
 def boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion):
 	print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
@@ -631,7 +1961,10 @@ def ville_donjon ():
 	input("↓")
 	print(f"Que le combat commence")
 	#combat ténéfix
-	boucle_combat(65, "Ténéfix", 80, starter, XP)
+	combat1 = boucle_combat(65, "Ténéfix", 80, starter, XP)
+	XP = combat1 [0]
+	starter = combat1 [1]
+	boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)
 	print(f"Après ce rude combat, tu t'orientes vers le fond de la salle")
 	input("↓")
 	print(f"2 portes s'offrent à toi...")
@@ -654,7 +1987,10 @@ def ville_donjon ():
 		input("↓")
 		print(f"Que le combat commence !")
 		#combat absol
-		boucle_combat(60, "Absol", 80, starter, XP)
+		combat2 = boucle_combat(60, "Absol", 80, starter, XP)
+		XP = combat2 [0]
+		starter = combat2 [1]
+		boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)
 		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle")
 		input("↓")
 		print("Vous vous retrouvez dans un long couloir comme ceux qui mènent au boss dans les jeux...")
@@ -674,7 +2010,10 @@ def ville_donjon ():
 		input("↓")
 		print(f"Que le combat commence !")
 		#combat spectrum
-		boucle_combat(75, "Spectrum", 80, starter, XP)
+		combat3 = boucle_combat(75, "Spectrum", 80, starter, XP)
+		XP = combat3 [0]
+		starter = combat3 [1]
+		boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)
 		print("Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coin de la salle")
 		print("Que voulez vous faire :")
 		print("1)porte\n2)trappe")
@@ -827,8 +2166,11 @@ def ville_donjon ():
 			    position = chemins[choix]
 			    print()
 
-def boss_donojon ():
+def boss_donjon ():
 	#combat trioxhydre
+	combat7 = boucle_combat(100, "Trioxhydre", 80, starter, XP)
+	XP = combat7 [0]
+	starter = combat7 [1]
 
 def grotte_boss (): 
 	print(f"vous decidez de prendre la direction du Volcan de l'ile qui se trouve être de plus en plus instable récemment")
@@ -847,9 +2189,12 @@ def grotte_boss ():
 		input("↓")
 		print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
 		#combat pokémon mystérieux
-		boucle_combat(200, "Mewtoo", 100, starter, XP)
-		
+		combat4 = boucle_combat(200, "Mewtoo", 80, starter, XP)
+		XP = combat4 [0]
+		starter = combat4 [1]
+		boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)	
 	else :
+		quit ()
 		
 def arènes_pokémons ():
 		print(f"Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
@@ -925,7 +2270,10 @@ def forêt_pangorn ():
 		input("↓")
 		print("En vous retournant vous vous retrouvez face à un Ouisticram qui vous bloque le passage. Préparez-vous au combat !")
 		#combat
-		boucle_combat(65, "Ouisticram", 80, starter, XP)
+		combat5 = boucle_combat(65, "Ouisticram", 80, starter, XP)
+		XP = combat5 [0]
+		starter = combat5 [1]
+		boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)
 				
 	if response_9 == 3 :
 		print("Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
@@ -956,7 +2304,10 @@ def forêt_pangorn ():
 def onix_secret ():
 	print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
 	#combat onix
-	boucle_combat(70, "Onix", 80, starter, XP)
+	combat6 = boucle_combat(70, "Onix", 80, starter, XP)
+	boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)
+	XP = combat6 [0]
+	starter = comba6 [1]
 	print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
 	input("↓")
 	print("Que voulez-vous faire ?")
@@ -1197,7 +2548,11 @@ elif int(response_1) == 2:
 			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
 			quit()
 #le jouer fait son premier combat tutoriel 
-print(f"")
+print(f"Homme Mysterieux : Tiens prend ce Pikachu et essaye de vaincre le pokemon adverse ! Si tu réussis à le vaincre je te laisserais prendre un de mes pokémons pour commencer ton aventure !")
+hppokefightinitial = 50 
+nbrattaque1 = 15
+nbrattaque2 = 20
+nbrattaque3 = 10
 while hppokefightinitial > 0:
 	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
 	choix=int(input("choisissez le bon numéro "))
@@ -1206,26 +2561,26 @@ while hppokefightinitial > 0:
 		print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? n\1) Attaquer n\2) Se soigner n\3) Changer de pokémon")
 		choix=int(input("choisissez le bon numéro "))
 	if choix == 1: 
-		print(f"Quelle attaque voulez vous utiliser ? n/1)Nom attaque 1 (-15 hp) {nbrattaque1}/15 n/2)Nom attaque 2 (-10 hp) {nbrattaque2}/20 n/1)Nom attaque 3 (-20 hp) {nbrattaque3}/10 ")
+		print(f"Quelle attaque voulez vous utiliser ? n/1)Éclair (-15 hp) {nbrattaque1}/15 n/2)Cage-Éclair (-10 hp) {nbrattaque2}/20 n/3)Tonnerre (-20 hp) {nbrattaque3}/10 ")
 		quelle_attaque=int(input("choisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbrattaque1 > 0:
 				hppokefightinitial = hppokefightinitial - 15 
 				nbrattaque1 = nbrattaque1 - 1
 			else:
-				print("Vous n'avez plus d'attaque 1 veuillez en chosir une autre ")
+				print("Vous n'avez plus d'Éclair veuillez en chosir une autre ")
 		elif quelle_attaque == 2: 
 			if nbrattaque2 > 0:
 				hppokefightinitial = hppokefightinitial - 10 
 				nbrattaque2 = nbrattaque2 - 1
 			else:
-				print("Vous n'avez plus d'attaque 2 veuillez en chosir une autre ")
+				print("Vous n'avez plus de Cage-Éclaire veuillez en chosir une autre ")
 		elif quelle_attaque == 3: 
 			if nbrattaque3 > 0:
 				hppokefightinitial = hppokefightinitial - 20 
 				nbrattaque3 = nbrattaque3 - 1
 			else:
-				print("Vous n'avez plus d'attaque 3 veuillez en chosir une autre ")
+				print("Vous n'avez plus de Tonerre veuillez en chosir une autre ")
 	elif choix == 2: 
 		print("Quelle objet pour se soigner ? n\1)super potion n\2)hyper potion ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
@@ -1234,10 +2589,10 @@ while hppokefightinitial > 0:
 			print("Quelle objet pour se soigner ? n\1)super potion n\2)hyper potion ")
 			choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
-			hp_starter = hp_starter + 20
+			hp_fight_ini_joueur += 20
 			nbr_superpotion -= 1
 		elif choixsoin == 2: 
-			hp_starter = 60 
+			hp_fight_ini_joueur = 60 
 			nbr_hyperpotion -= 1
 	else: 
 		print("tu n'as pas le droit")
@@ -1250,25 +2605,25 @@ while hppokefightinitial > 0:
 			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
 				print("il utilise l'attaque 1")
-				hp_starter = hp_starter - 1 
+				hp_fight_ini_joueur -= 2 
 			elif proba_attaque == 2:
 				print("il utilise l'attaque 2")
-				hp_starter = hp_starter - 1
+				hp_fight_ini_joueur -= 1
 			elif proba_attaque == 3:
 				print("il utilise l'attaque 3")
-				hp_starter = hp_starter - 5
+				hp_fight_ini_joueur -= 5
 
 	else: 
 			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
 				print("il utilise l'attaque 1")
-				hp_starter = hp_starter - 1 
+				hp_fight_ini_joueur -= 2 
 			elif proba_attaque == 2:
 				print("il utilise l'attaque 2")
-				hp_starter = hp_starter - 1
+				hp_fight_ini_joueur -= 1
 			elif proba_attaque == 3:
 				print("il utilise l'attaque 3")
-				hp_starter = hp_starter - 5
+				hp_fight_ini_joueur -= 5
 print("Bravo ! Tu as gagné ton premier combat (tu ne pouvais pas perdre donc prend pas trop la confiance sale merde")
 input("↓")
 print("homme mystérieux : Tu es maintenant un dresseur pokémon ! Différents choix s'offrent à toi. Tu peux par exemple partir pour les arènes pokémons pour essayer de gagner des récompenses et faire évoluer ton pokémon")
