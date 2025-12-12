@@ -33,6 +33,26 @@ fossile2 = 0
 amitié = 0
 fuir = False
 # Dictionnaire des chemins : clé = choix, valeur = (nom, fonction) 
+def game_over ():
+	print("L'aventure s'arrête ici pour vous.")
+	game_over_art = """⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⠀⠀⠀⢀⣴⣿⡶⠀⣾⣿⣿⡿⠟⠛⠁
+⠀⠀⠀⠀⠀⠀⣀⣀⣄⣀⠀⠀⠀⠀⣶⣶⣦⠀⠀⠀⠀⣼⣿⣿⡇⠀⣠⣿⣿⣿⠇⣸⣿⣿⣧⣤⠀⠀⠀
+⠀⠀⢀⣴⣾⣿⡿⠿⠿⠿⠇⠀⠀⣸⣿⣿⣿⡆⠀⠀⢰⣿⣿⣿⣷⣼⣿⣿⣿⡿⢀⣿⣿⡿⠟⠛⠁⠀⠀
+⠀⣴⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⢠⣿⣿⣹⣿⣿⣿⣿⣿⣿⡏⢻⣿⣿⢿⣿⣿⠃⣼⣿⣯⣤⣴⣶⣿⡤⠀
+⣼⣿⠏⠀⣀⣠⣤⣶⣾⣷⠄⣰⣿⣿⡿⠿⠻⣿⣯⣸⣿⡿⠀⠀⠀⠁⣾⣿⡏⢠⣿⣿⠿⠛⠋⠉⠀⠀⠀
+⣿⣿⠲⢿⣿⣿⣿⣿⡿⠋⢰⣿⣿⠋⠀⠀⠀⢻⣿⣿⣿⠇⠀⠀⠀⠀⠙⠛⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀
+⠹⢿⣷⣶⣿⣿⠿⠋⠀⠀⠈⠙⠃⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⣴⣶⣦⣤⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⣠⡇⢰⣶⣶⣾⡿⠷⣿⣿⣿⡟⠛⣉⣿⣿⣿⠆
+⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⣿⡎⣿⣿⣦⠀⠀⠀⢀⣤⣾⠟⢀⣿⣿⡟⣁⠀⠀⣸⣿⣿⣤⣾⣿⡿⠛⠁⠀
+⠀⠀⠀⠀⣠⣾⣿⡿⠛⠉⢿⣦⠘⣿⣿⡆⠀⢠⣾⣿⠋⠀⣼⣿⣿⣿⠿⠷⢠⣿⣿⣿⠿⢻⣿⣧⠀⠀⠀
+⠀⠀⠀⣴⣿⣿⠋⠀⠀⠀⢸⣿⣇⢹⣿⣷⣰⣿⣿⠃⠀⢠⣿⣿⢃⣀⣤⣤⣾⣿⡟⠀⠀⠀⢻⣿⣆⠀⠀
+⠀⠀⠀⣿⣿⡇⠀⠀⢀⣴⣿⣿⡟⠀⣿⣿⣿⣿⠃⠀⠀⣾⣿⣿⡿⠿⠛⢛⣿⡟⠀⠀⠀⠀⠀⠻⠿⠀⠀
+⠀⠀⠀⠹⣿⣿⣶⣾⣿⣿⣿⠟⠁⠀⠸⢿⣿⠇⠀⠀⠀⠛⠛⠁⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠙⠛⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"""
+	print("game_over_art")
+	quit()
 #Fonction combat
 def boucle_combat(hp_ennemi, nom_poke_ennemi):
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter, fuir
@@ -2128,8 +2148,6 @@ def ville_donjon ():
                         while True:
                                 print(f"Vous êtes à : {position}")
                                 chemins = labyrinthe[position]
-			
-			    #sortie
                                 if position == "S":
                                         print(" Bravo ! Vous avez trouvé la sortie du labyrinthe ! ")
                                         input("↓")
@@ -2196,7 +2214,10 @@ def grotte_boss ():
                 hp_starter = 60
                 boutique ()
         else :
-                quit ()
+                print("Vous décidez alors de sortir de la grotte !")
+                input("↓")
+                print("Mais alors que vous sortez de la grotte, le volcan rentre en irruption et la grotte s'éffondre sur vous. Vous mourrez d'une attroce mort tout ça à cause de votre manque de courrage… La honte miskin !")			
+                game_over()
 		
 def arènes_pokémons ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
@@ -2222,8 +2243,8 @@ def arènes_pokémons ():
         else:
                 print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
                 input("↓")
-                print("À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant")
-                quit()
+                print("À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
+                game_over ()
 
 def forêt_pangorn ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
@@ -2261,9 +2282,7 @@ def forêt_pangorn ():
                                 print(f"vous avez esquivé de justesse, préparez vous au combat !")
                 elif response_10 == 2 :
                         print(f"Vous vous retrouvez au bord de la rivière et un léviator surgit et vous mange tout cru !")
-                        input("↓")
-                        print(f"Game over")
-                        quit()
+                        game_over ()
         elif response_9 == 2 :
                 print("Au fur et à mesure que vous vous approchez de la lumière vous sentez une odeur de brûlé")
                 input("↓")
@@ -2352,11 +2371,9 @@ def onix_secret ():
                                 fossile1 += 1
                             else :
                                 print("vous êtes tombés trop de fois, vous êtes morts de chute")
-                                input("↓")
-                                print("Game Over")
-                                quit()
+                                game_over ()
         else:
-                chemins 
+                print("Vous rebroussez chemin ! ") 
 
 #Introduction
 print(f"Homme mystérieux : Bonjour jeune homme! Tu es perdu ? Tu ne devrais pas te promener seul dans la forêt si tard le soir ! Il y a des rumeurs comme quoi cette forêt abrite les Pokemons les plus dangereux.")
@@ -2413,7 +2430,7 @@ if int(response_1) == 1:
 	#Branche 1-2 (il renonce au défi fin du jeu) 
 	elif int(response_2) == 2:
 		print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
-		quit()
+		game_over ()
 #Branche 2 (il va dans l'autre sens et rencontre son meilleur pote) 
 elif int(response_1) == 2: 
 	print(f"Quelqu'un vous tape à l'épaule et vous vous retournez")
@@ -2477,7 +2494,7 @@ elif int(response_1) == 2:
 		#Branche 1-2 (il renonce au défi fin du jeu) 
 			elif int(response_2) == 2:
 				print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
-				quit()
+				game_over ()
 		elif int(response_4)== 2:
 				print(f"{prenom_1} : Non désolé je suis trop occupé, à la prochaine")
 				print(f"Vous regretterez sans doute ce choix...")
@@ -2512,7 +2529,7 @@ elif int(response_1) == 2:
 					print(f"Homme mystérieux : Très bien alors il est temps de me prouver que tu en es capable !")
 				elif int(response_2) == 2:
 					print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
-					quit()
+					game_over ()
 	elif int(response_3)== 2:
 		print(f"{prenom_1} : Non désolé je suis trop occupé, à la prochaine")
 		input("↓")
@@ -2549,7 +2566,7 @@ elif int(response_1) == 2:
 			print(f"Homme mystérieux : Très bien alors il est temps de me prouver que tu en es capable !")
 		elif int(response_2) == 2:
 			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
-			quit()
+			game_over ()
 #le jouer fait son premier combat tutoriel 
 print(f"Homme Mysterieux : Tiens prend ce Pikachu et essaye de vaincre le pokemon adverse ! Si tu réussis à le vaincre je te laisserais prendre un de mes pokémons pour commencer ton aventure !")
 hppokefightinitial = 50
