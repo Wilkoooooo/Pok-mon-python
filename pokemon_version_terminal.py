@@ -2332,7 +2332,7 @@ def onix_secret ():
         #combat onix
         combat6 = boucle_combat(70, "Onix")
         XP = combat6 [0]
-        starter = comba6 [1]
+        starter = combat6 [1]
         hp_starter = combat6 [2]
         hp_starter = 60
         boutique()
