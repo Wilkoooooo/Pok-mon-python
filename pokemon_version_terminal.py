@@ -2698,3 +2698,4 @@ while chemins:
         print("Choix invalide, fais un effort !")
 
 print("\n Game Over ! ")
+ 
