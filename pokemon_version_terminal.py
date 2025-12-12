@@ -97,33 +97,36 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
             # Attaque du Pokémon ennemi
             print(f"le pokemon ennemie a {hp_ennemi} pv ")
             print("Au tour du pokémon adverse de jouer ! ")
-            if hp_ennemi > 10:
-                    attaque_ennemi = random.randint(1,4)
-                    if attaque_ennemi == 1:
-                            hp_starter -= 20
-                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
-                    elif attaque_ennemi == 2:
-                            hp_starter -= 15
-                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
-                    else:
-                            hp_starter -= 10
-                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+            if hp_ennemi > 0:
+		    if hp_ennemi > 10:
+		            attaque_ennemi = random.randint(1,4)
+		            if attaque_ennemi == 1:
+		                    hp_starter -= 20
+		                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+		            elif attaque_ennemi == 2:
+		                    hp_starter -= 15
+		                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+		            else:
+		                    hp_starter -= 10
+		                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+		    else:
+		            attaque_ou_soin = random.randint(1,4)
+		            if attaque_ou_soin == 1:
+		                    hp_ennemi += 15
+		                    print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+		            else:
+		                    attaque_ennemi_2 = random.randint(1,4)
+		                    if attaque_ennemi_2 == 1:
+		                            hp_starter -= 20
+		                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+		                    elif attaque_ennemi_2 == 2:
+		                            hp_starter -= 15
+		                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+		                    else:
+		                            hp_starter -= 10
+		                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
             else:
-                    attaque_ou_soin = random.randint(1,4)
-                    if attaque_ou_soin == 1:
-                            hp_ennemi += 15
-                            print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
-                    else:
-                            attaque_ennemi_2 = random.randint(1,4)
-                            if attaque_ennemi_2 == 1:
-                                    hp_starter -= 20
-                                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
-                            elif attaque_ennemi_2 == 2:
-                                    hp_starter -= 15
-                                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
-                            else:
-                                    hp_starter -= 10
-                                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+            	print("{nom_poke_ennemi} est mort ! Félicitation ! ")
             if hp_starter <= 0:
                     print(f"{prenom1} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
                     monnaie_gagne = random.randint(20,30)
@@ -1903,9 +1906,9 @@ def boutique ():
         print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
         print(f"\n1)acheter des Pokéballs\n2)acheter des potions\n3)Quitter")
         achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : "))
-        while not achat_boutique in (1,2):
+        while not achat_boutique in (1,2,3):
                 print(f"Veuillez saisir un nombre correct")
-                print(f"\n1)acheter des Pokéballs\n2)acheter des potions")
+                print(f"\n1)acheter des Pokéballs\n2)acheter des potions\n3)Quitter")
                 achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : "))
         if achat_boutique == 1:
                 print(f"Quelle type de pokéball voulez-vous acheter ?")
@@ -1936,7 +1939,7 @@ def boutique ():
                                 nbr_hyperball += 1
                         else :
                                 print(f"T'as plus de thunes sale sdf, sors de ma boutique")
-		elif achat_boutique == 1:
+        elif achat_boutique == 2:
                 print(f"Quelle potion voulez-vous acheter ?")
                 print(f"\n1)super potion\n2)hyper potion")
                 achat_potion = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -1958,8 +1961,8 @@ def boutique ():
                                 nbr_hyperpotion += 1
                         else :
                                 print(f"T'as plus de thunes sale sdf, sors de ma boutique")
-		else:
-                print("Vous quittez la boutique")	
+        elif achat_boutique == 3 :
+        	print("à la prochaine !")	
 
 
 def medecin ():
@@ -2318,7 +2321,7 @@ def forêt_pangorn ():
                         if arbre == 1 :
                                 print("Un rocher vous à éraflé dans sa chute, vous êtes plutôt sérieusement blessé, il va falloir se rendre chez un médecin")
                                 medecin ()
-								onix_secret ()
+                                onix_secret ()
                         else :
                                 print("Vous avez réussi à esquiver la chute de rochers, mais pourquoi le Onix est-il aussi intrigué par cette falaise ?")
                                 onix_secret()
@@ -2336,7 +2339,7 @@ def onix_secret ():
         hp_starter = combat6 [2]
         hp_starter = 60
         boutique()
-        print(" {prenom_1} : Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
+        print(" Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
         input("↓")
         print("Que voulez-vous faire ?")
         print("1) Grimper la falaise\n2)Rebrousser chemin")
@@ -2350,31 +2353,31 @@ def onix_secret ():
                 chutes = 0
                 bonnes_prises = 0
                 while chutes != 5 and bonnes_prises != 5:
-                    reponse_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
+                    response_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
                     while not response_15 in (1,2):
                         print(f"Veuillez saisir un nombre correct")
                         reponse_15 = int(input("Que voulez vous faire ? : \n1)Monter la main gauche ?\n2)Monter la main droite ? (sélectionnez le numéro) : "))
-                        if reponse_15 == 1:
-                            print("La prise ne tient pas, vous êtes tombé(e)")
-                            chutes += 1
-                            bonnes_prises = 0
-                            print(f"Vous avez {chutes} chute(s) et les bonnes prises ont été remise à {bonnes_prises}. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
-                        else :
-                            print("La prise tient, reste plus qu'à continuer comme ça !")
-                            bonnes_prises += 1
-                            print(f"Vous avez {chutes} chute(s) et {bonnes_prises} bonnes prises. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
-                            if bonnes_prises == 5 :
-                                print("{prenom_1} : Pas simple cette ascension mais je suis enfin arrivé dans cette grotte qui intrguait le Onix")
-                                input("↓")
-                                print("Vous avancez jusqu'au fond de la grotte et un caillou avec une forme étrange se trouve au centre de la grotte")
-                                input("↓")
-                                print("Vous venez de trouver un fossile mâchoire ! Ce fossile, si les conditions sont réunies, va se transformer en un ptyranidur !")
-                                input("↓")
-                                print("{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
-                                fossile1 += 1
-                            else :
-                                print("vous êtes tombés trop de fois, vous êtes morts de chute")
-                                game_over ()
+                    if response_15 == 1:
+                    	print("La prise ne tient pas, vous êtes tombé(e)")
+                    	chutes += 1
+                    	bonnes_prises = 0
+                    	print(f"Vous avez {chutes} chute(s) et les bonnes prises ont été remise à {bonnes_prises}. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
+                    else :
+                    	print("La prise tient, reste plus qu'à continuer comme ça !")
+                    	bonnes_prises += 1
+                    	print(f"Vous avez {chutes} chute(s) et {bonnes_prises} bonnes prises. \n	⚠️ Attention à ne pas trop chuter ! ⚠️")
+                    if bonnes_prises == 5 :
+                    	print("{prenom_1} : Pas simple cette ascension mais je suis enfin arrivé dans cette grotte qui intrguait le Onix")
+                    	input("↓")
+                    	print("Vous avancez jusqu'au fond de la grotte et un caillou avec une forme étrange se trouve au centre de la grotte")
+                    	input("↓")
+                    	print("Vous venez de trouver un fossile mâchoire ! Ce fossile, si les conditions sont réunies, va se transformer en un ptyranidur !")
+                    	input("↓")
+                    	print("{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
+                    	fossile1 += 1
+                    else :
+                       print("vous êtes tombés trop de fois, vous êtes morts de chute")
+                       game_over ()
         else:
                 print("Vous rebroussez chemin ! ") 
 
