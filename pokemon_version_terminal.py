@@ -1901,7 +1901,7 @@ def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille
 def boutique ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
         print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
-        print(f"\n1)acheter des Pokéballs\n2)acheter des potions")
+        print(f"\n1)acheter des Pokéballs\n2)acheter des potions\n3)Quitter")
         achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : "))
         while not achat_boutique in (1,2):
                 print(f"Veuillez saisir un nombre correct")
@@ -1936,7 +1936,7 @@ def boutique ():
                                 nbr_hyperball += 1
                         else :
                                 print(f"T'as plus de thunes sale sdf, sors de ma boutique")
-        else :
+		elif achat_boutique == 1:
                 print(f"Quelle potion voulez-vous acheter ?")
                 print(f"\n1)super potion\n2)hyper potion")
                 achat_potion = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
@@ -1958,6 +1958,9 @@ def boutique ():
                                 nbr_hyperpotion += 1
                         else :
                                 print(f"T'as plus de thunes sale sdf, sors de ma boutique")
+		else:
+                print("Vous quittez la boutique")	
+
 
 def medecin ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
@@ -2327,7 +2330,6 @@ def onix_secret ():
         print("Il va falloir combattre pour savoir ce qui intrigue ce onix !")
         #combat onix
         combat6 = boucle_combat(70, "Onix")
-        boutique (monnaie,nbr_pokeball,nbr_superball,nbr_hyperball,nbr_superpotion,nbr_hyperpotion)
         XP = combat6 [0]
         starter = comba6 [1]
         hp_starter = combat6 [2]
