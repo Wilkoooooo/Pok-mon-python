@@ -1964,10 +1964,10 @@ def boutique ():
 
 def medecin ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
-        print(f"Vous devez payer 5 pièces de monnaie pour frais de consultation, il vous reste donc {monnaie} - {5} monnaie")
+        monnaie -= 5
+        print(f"Vous devez payer 5 pièces de monnaie pour frais de consultation, il vous reste donc {monnaie} monnaie")
         input("↓")
         print("Faites attention à ne pas vous blesser la prochaine fois !")
-        monnaie -= 5
 				
 # --- Définition des fonctions associées à chaque chemin --- #
 
@@ -2318,6 +2318,7 @@ def forêt_pangorn ():
                         if arbre == 1 :
                                 print("Un rocher vous à éraflé dans sa chute, vous êtes plutôt sérieusement blessé, il va falloir se rendre chez un médecin")
                                 medecin ()
+								onix_secret ()
                         else :
                                 print("Vous avez réussi à esquiver la chute de rochers, mais pourquoi le Onix est-il aussi intrigué par cette falaise ?")
                                 onix_secret()
