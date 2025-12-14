@@ -2681,7 +2681,11 @@ elif starter == 3:
     print("Gobou a été ajouté à ton Pokédex !")
     print("Gobou est un pokémon de type Eau, cela veut dire qu'il sera très éfficace face aux Pokémons de type Feu, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
     starter = 3
-print(f"très bon choix ! Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
+print("homme mystérieux : très bon choix, je te conseille avant de partir de passer par la boutique pour te munir de gadgets très utiles lors de tes combats")
+print("homme mystérieux : Combien d'argent as tu sur toi ?")
+print(f"{prenom_1} : j'ai {monnaie} monnaie sur moi actuellement")
+boutique ()
+print("Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
 chemins = {
     "1": ("Ville Donjon", ville_donjon),
     "2": ("La forêt Pangorn", forêt_pangorn),
