@@ -71,100 +71,99 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
             print(f"\n À Vous de Jouer ! \n")
             if starter == 1:
                 VAR_COMBAT = menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 2:
                 VAR_COMBAT = menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 3:
                 VAR_COMBAT = menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 4:
                 VAR_COMBAT = menu_combat_massko (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 5:
                 VAR_COMBAT = menu_combat_galifeu (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 6:
                 VAR_COMBAT = menu_combat_flobio (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 7:
                 VAR_COMBAT = menu_combat_jungko (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 8:
                 VAR_COMBAT = menu_combat_brasegali (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 9:
                 VAR_COMBAT = menu_combat_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 10:
                 VAR_COMBAT = menu_combat_mega_jungko (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
-			elif starter == 11:
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
+            elif starter == 11:
                 VAR_COMBAT = menu_combat_mega_brasegali (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
-				hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]
+                hp_ennemi = VAR_COMBAT[0]
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]
             elif starter == 12:
                 VAR_COMBAT = menu_combat_mega_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
-				hp_starter = VAR_COMBAT[1]
-				attraper = VAR_COMBAT[2]                   
+                hp_starter = VAR_COMBAT[1]
+                attraper = VAR_COMBAT[2]           
             # Attaque du Pokémon ennemi
             print(f"le pokemon ennemie a {hp_ennemi} pv ")
             print("Au tour du pokémon adverse de jouer ! ")
-            if hp_ennemi > 0:
-			    if hp_ennemi > 10:
-			            attaque_ennemi = random.randint(1,4)
-			            if attaque_ennemi == 1:
-			                    hp_starter -= 20
-			                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
-			            elif attaque_ennemi == 2:
-			                    hp_starter -= 15
-			                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
-			            else:
-			                    hp_starter -= 10
-			                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
-			    else:
-			            attaque_ou_soin = random.randint(1,4)
-			            if attaque_ou_soin == 1:
-			                    hp_ennemi += 15
-			                    print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
-			            else:
-			                    attaque_ennemi_2 = random.randint(1,4)
-			                    if attaque_ennemi_2 == 1:
-			                            hp_starter -= 20
-			                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
-			                    elif attaque_ennemi_2 == 2:
-			                            hp_starter -= 15
-			                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
-			                    else:
-			                            hp_starter -= 10
-			                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
-            else:
-            	print("{nom_poke_ennemi} est mort ! Félicitation ! ")
-			if attraper == True:
-				print("Tu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
-				hp_ennemi = 0 
+            if hp_ennemi > 0 : 
+                attaque_ennemi = random.randint(1,4)
+                if attaque_ennemi == 1:
+                    hp_starter -= 20
+                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+                elif attaque_ennemi == 2:
+                    hp_starter -= 15
+                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+                elif attaque_ennemi == 3:
+                    hp_starter -= 10
+                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+                else:
+                    attaque_ou_soin = random.randint(1,4) 
+                    if attaque_ou_soin == 1:
+                        hp_ennemi += 15
+                        print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+                    else:
+                        attaque_ennemi_2 = random.randint(1,4)
+                        if attaque_ennemi_2 == 1:
+                            hp_starter -= 20
+                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+                        elif attaque_ennemi_2 == 2:
+                            hp_starter -= 15
+                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+                        else:
+                            hp_starter -= 10
+                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+           else:
+           print("{nom_poke_ennemi} est mort ! Félicitation ! ")
+                if attraper == True:
+                print("Tu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
+                hp_ennemi = 0 
             if hp_starter <= 0:
                     print(f"{prenom1} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
                     monnaie_gagne = random.randint(20,30)
