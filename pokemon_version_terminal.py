@@ -2407,13 +2407,40 @@ def grotte_boss ():
 					                            hp_starter -= 10
 					                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
 			        else:
-			            print("{nom_poke_ennemi} est mort ! Félicitation ! ")
+			            print(f"{nom_poke_ennemi} est mort ! Félicitations ! ")
+						monnaie_gagne = random.randint(40,50)
+			            monnaie += monnaie_gagne
+			            print(f"Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces.")
+						input("↓")
+						print("En sortant de la grotte, celle-ci s'effondre au moment même où vous sortez")
+						input("↓")
+						print("Vous esquivez deux trois éboulements de rochers vous sautez vers la sortie et vous arrivez enfin à l'extérieur !")
+						input("↓")
+						print("En vous relevant, de nombreuses personnes se dirigent vers vous dont l'homme mystérieux de la ville de départ")
+						input("↓")
+						print("scientifique : Eh petit, t'as réussi à battre le pokémon à l'intérieur de la grotte ?")
+						input("↓")
+						print(f"{prenom_1} : Heu... Oui pourquoi ?")
+						input("↓")
+						print("scientifique : Hoo... Nous sommes sauvés ! Ce pokémon avait échappé à notre contrôle et il menacait de détruire toute l'île avec sa puissance de combat")
+						input("↓")
+						print("homme mystérieux : Bravo petit, je savais que tu allais accomplir de grandes choses !")
+						input("↓")
+						print("Vous avez sauvé l'île et vous êtes devenu le héros de tout ses habitants !")
+						game_over ()
+						
+						
 			        if hp_starter <= 0:
-			                print(f"{prenom1} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
-			                monnaie_gagne = random.randint(20,30)
-			                monnaie += monnaie_gagne
-			                print(f"Vous gagnez quand même {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces.")
-			                return (XP, starter, hp_starter)
+						print(f"{prenom1} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
+			            input("↓")
+						print("Cependant le pokémon ennemi commence à se charger de son énergie et la concentre tout autour de lui...")
+						input("↓")
+						print(f" {prenom_1} : Vite ! J-je.. je dois fuir !!")
+						input("↓")
+						print("le pokémon libère toute son énergie d'un coup et rase toute l'île où vous étiez !")
+						input("↓")
+						print("Vous n'avez pas réussi à portéger les habiatants de cette calamité, vous n'avez vraiment pas été à la hauteur...")
+						game_over()
 						
         else :
                 print("Vous décidez alors de sortir de la grotte !")
