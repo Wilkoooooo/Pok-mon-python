@@ -307,7 +307,8 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         print("dommage")
                         return hp_ennemi, hp_starter, attraper
                 else:
-                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !")    
+                    print("Vous n'avez plus de Pokéball c'était pourtant écrit... veuillez faire attention la prochaine fois !") 
+					return hp_ennemi, hp_starter, attraper
             elif choix_pokeball == 2:
                 if nbr_superball > 0: 
                     nbr_superball -= 1
@@ -325,8 +326,10 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         if poké_pop_compteur % 2 != 0:
 							attraper = True
                             print("le pokémon a été capturé. Bravo !")
+							return hp_ennemi, hp_starter, attraper
                 else:
                     print("Vous n'avez plus de Superball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+					return hp_ennemi, hp_starter, attraper
             elif choix_pokeball == 3:
                 if nbr_hyperball > 0: 
                     nbr_hyperball -= 1
@@ -336,6 +339,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         proba_poké_pop=random.randint(1,7+i)
                         if proba_poké_pop == 5:
                             print(f"La Hyperball a pop à la secousse numéro {i+1}!")
+							return hp_ennemi, hp_starter, attraper
                             break
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
@@ -343,8 +347,10 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         if poké_pop_compteur % 2 != 0:
                             print("le pokémon a été capturé. Bravo !")
 							attraper = True
+							return hp_ennemi, hp_starter, attraper
                 else:
                     print("Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
+					return hp_ennemi, hp_starter, attraper
 	else:
             print("Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
