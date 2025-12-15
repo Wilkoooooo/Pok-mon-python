@@ -294,6 +294,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         proba_poké_pop=random.randint(1,5+i)
                         if proba_poké_pop == 5:
                             print(f"La Pokéball a pop à la secousse numéro {i+1}!")
+							return hp_ennemi, hp_starter, attraper
                             break
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
@@ -316,6 +317,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         proba_poké_pop=random.randint(1,6+i)
                         if proba_poké_pop == 5:
                             print(f"La Superball a pop à la secousse numéro {i+1}!")
+							return hp_ennemi, hp_starter, attraper
                             break
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
