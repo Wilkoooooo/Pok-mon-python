@@ -67,7 +67,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                 print("Que le combat commence !")
         else:
                 print("Que le combat commence !")
-        while hp_ennemi > 0 and hp_starter > 0 and not fuir:
+        while hp_ennemi > 0 and hp_starter > 0 and not fuir and not atrraper:
             print(f"\n À Vous de Jouer ! \n")
             if starter == 1:
                 VAR_COMBAT = menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
@@ -133,35 +133,38 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
             print(f"le pokemon ennemie a {hp_ennemi} pv ")
             print("Au tour du pokémon adverse de jouer ! ")
             if hp_ennemi > 0:
-		    if hp_ennemi > 10:
-		            attaque_ennemi = random.randint(1,4)
-		            if attaque_ennemi == 1:
-		                    hp_starter -= 20
-		                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
-		            elif attaque_ennemi == 2:
-		                    hp_starter -= 15
-		                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
-		            else:
-		                    hp_starter -= 10
-		                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
-		    else:
-		            attaque_ou_soin = random.randint(1,4)
-		            if attaque_ou_soin == 1:
-		                    hp_ennemi += 15
-		                    print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
-		            else:
-		                    attaque_ennemi_2 = random.randint(1,4)
-		                    if attaque_ennemi_2 == 1:
-		                            hp_starter -= 20
-		                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
-		                    elif attaque_ennemi_2 == 2:
-		                            hp_starter -= 15
-		                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
-		                    else:
-		                            hp_starter -= 10
-		                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+			    if hp_ennemi > 10:
+			            attaque_ennemi = random.randint(1,4)
+			            if attaque_ennemi == 1:
+			                    hp_starter -= 20
+			                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+			            elif attaque_ennemi == 2:
+			                    hp_starter -= 15
+			                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+			            else:
+			                    hp_starter -= 10
+			                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+			    else:
+			            attaque_ou_soin = random.randint(1,4)
+			            if attaque_ou_soin == 1:
+			                    hp_ennemi += 15
+			                    print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+			            else:
+			                    attaque_ennemi_2 = random.randint(1,4)
+			                    if attaque_ennemi_2 == 1:
+			                            hp_starter -= 20
+			                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+			                    elif attaque_ennemi_2 == 2:
+			                            hp_starter -= 15
+			                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+			                    else:
+			                            hp_starter -= 10
+			                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
             else:
             	print("{nom_poke_ennemi} est mort ! Félicitation ! ")
+			if attraper == True:
+				print("Tu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
+				hp_ennemi = 0 
             if hp_starter <= 0:
                     print(f"{prenom1} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
                     monnaie_gagne = random.randint(20,30)
@@ -2382,7 +2385,9 @@ def grotte_boss ():
 		            # Attaque du Pokémon ennemi
 		            print(f"le pokemon ennemie a {hp_ennemi} pv ")
 		            print("Au tour du pokémon adverse de jouer ! ")
-		            if attraper == True:
+					if attraper == True:
+						print("Tu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
+						hp_ennemi = 0 
 						
 					if hp_ennemi > 0:
 					    if hp_ennemi > 10:
