@@ -2213,12 +2213,86 @@ def grotte_boss ():
                 input("↓")
                 print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
                 #combat pokémon mystérieux
-                combat4 = boucle_combat(200, "Mewtoo")
-                XP = combat4 [0]
-                starter = combat4 [1]
-                hp_starter = combat4[2]
-                hp_starter = 60
-                boutique ()
+				global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter, fuir
+		        print(f"Mewtoo Shiny apparait ! Il semble s'agir du Pokemon mysterieux dont on t'a tant parlé. ")
+				if starter in (4,5,6):
+		                hp_starter += 40
+		                print("Que le combat commence !")
+		        elif starter in (7,8,9):
+		                hp_starter += 70
+		                print("Que le combat commence !")
+		        elif starter in (10, 11, 12):
+		                hp_starter += 100
+		                print("Que le combat commence !")
+		        else:
+		                print("Que le combat commence !")
+		        while hp_ennemi > 0 and hp_starter > 0 and not fuir:
+		            print(f"\n À Vous de Jouer ! \n")
+		            if starter == 1:
+		                hp_ennemi = menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 2:
+		                hp_ennemi = menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 3:
+		                hp_ennemi = menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 4:
+		                hp_ennemi = menu_combat_massko (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 5:
+		                hp_ennemi = menu_combat_galifeu (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 6:
+		                hp_ennemi = menu_combat_flobio (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 7:
+		                hp_ennemi = menu_combat_jungko (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 8:
+		                hp_ennemi = menu_combat_brasegali (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 9:
+		                hp_ennemi = menu_combat_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 10:
+		                hp_ennemi = menu_combat_mega_jungko (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 11:
+		                hp_ennemi = menu_combat_mega_brasegali (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		            elif starter == 12:
+		                hp_ennemi = menu_combat_mega_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
+		                                    
+		            # Attaque du Pokémon ennemi
+		            print(f"le pokemon ennemie a {hp_ennemi} pv ")
+		            print("Au tour du pokémon adverse de jouer ! ")
+		            if hp_ennemi > 0:
+					    if hp_ennemi > 10:
+					            attaque_ennemi = random.randint(1,4)
+					            if attaque_ennemi == 1:
+					                    hp_starter -= 20
+					                    print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+					            elif attaque_ennemi == 2:
+					                    hp_starter -= 15
+					                    print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+					            else:
+					                    hp_starter -= 10
+					                    print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+					    else:
+					            attaque_ou_soin = random.randint(1,4)
+					            if attaque_ou_soin == 1:
+					                    hp_ennemi += 15
+					                    print(f"{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+					            else:
+					                    attaque_ennemi_2 = random.randint(1,4)
+					                    if attaque_ennemi_2 == 1:
+					                            hp_starter -= 20
+					                            print(f"{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+					                    elif attaque_ennemi_2 == 2:
+					                            hp_starter -= 15
+					                            print(f"{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+					                    else:
+					                            hp_starter -= 10
+					                            print(f"{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+			        else:
+			            print("{nom_poke_ennemi} est mort ! Félicitation ! ")
+			        if hp_starter <= 0:
+			                print(f"{prenom1} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
+			                monnaie_gagne = random.randint(20,30)
+			                monnaie += monnaie_gagne
+			                print(f"Vous gagnez quand même {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces.")
+			                return (XP, starter, hp_starter)
+						
         else :
                 print("Vous décidez alors de sortir de la grotte !")
                 input("↓")
