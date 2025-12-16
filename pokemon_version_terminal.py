@@ -582,7 +582,7 @@ def menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                             attraper = True
                             print(f"le pokémon a été capturé. Bravo !")
                     else:
@@ -603,7 +603,7 @@ def menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                                 attraper = True
                                 print(f"le pokémon a été capturé. Bravo !")
                 else:
@@ -621,7 +621,7 @@ def menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -718,7 +718,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                             attraper = True
                             print(f"le pokémon a été capturé. Bravo !")
                     else:
@@ -739,7 +739,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                                 attraper = True
                                 print(f"le pokémon a été capturé. Bravo !")
                 else:
@@ -757,7 +757,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -852,7 +852,7 @@ def menu_combat_flobio (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -872,7 +872,7 @@ def menu_combat_flobio (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -890,7 +890,7 @@ def menu_combat_flobio (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -985,7 +985,7 @@ def menu_combat_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennem
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -1005,7 +1005,7 @@ def menu_combat_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennem
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -1023,7 +1023,7 @@ def menu_combat_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennem
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -1119,7 +1119,7 @@ def menu_combat_mega_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -1139,7 +1139,7 @@ def menu_combat_mega_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -1157,7 +1157,7 @@ def menu_combat_mega_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                 else:
@@ -1251,7 +1251,7 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else :
@@ -1271,7 +1271,7 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1291,7 +1291,7 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1386,7 +1386,7 @@ def menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennem
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else :
@@ -1406,7 +1406,7 @@ def menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennem
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1426,7 +1426,7 @@ def menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennem
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1522,7 +1522,7 @@ def menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else :
@@ -1542,7 +1542,7 @@ def menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1562,7 +1562,7 @@ def menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1657,7 +1657,7 @@ def menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,h
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else :
@@ -1677,7 +1677,7 @@ def menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,h
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1697,7 +1697,7 @@ def menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,h
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1792,7 +1792,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -1812,7 +1812,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1832,7 +1832,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1938,7 +1938,7 @@ def menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -1958,7 +1958,7 @@ def menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -1978,7 +1978,7 @@ def menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -2084,7 +2084,7 @@ def menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -2104,7 +2104,7 @@ def menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -2124,7 +2124,7 @@ def menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -2230,7 +2230,7 @@ def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille
                         else :
                             print(f"La Pokéball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                    if poké_pop_compteur % 2 != 0:
+                    if poké_pop_compteur == 3:
                         print(f"le pokémon a été capturé. Bravo !")
                         attraper = True
                     else:
@@ -2250,7 +2250,7 @@ def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille
                         else:
                             print(f"La Superball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
@@ -2270,7 +2270,7 @@ def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur % 2 != 0:
+                        if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
                         else:
