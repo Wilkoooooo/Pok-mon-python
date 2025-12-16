@@ -2242,137 +2242,138 @@ def ville_donjon ():
                         print(f"En poussant la grande porte au bout du couloir vous tombez face à un trioxhydre, bonne chance...")
                         boss_donjon ()
                 else:
-                        print(f"Vous passez la trappe et vous êtes arrivés dans une salle avec plusieurs portes")
-                        labyrinthe = {
-                                "entrée": {
-					"gauche": "B",
-					"droite": "C",
-				},
-				"B": {
-					"gauche": "I",
-					"face": "J",
-				},
-				"C": {
-					"gauche": "F",
-					"face": "E",
-					"droite": "D"
-				},
-				"D": { 
-					"face": "Q",
-					"gauche": "R",
-				},
-				"E": {
-					"face": "O",
-					"droite": "H",
-				},
-				"F": { 
-					"face": "N",
-					"gauche": "M",
-				},
-				"H": {
-					"gauche": "S",
-					"droite": "T",
-				},
-				"I": {
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"J": {
-					"droite": "K",
-					"gauche": "L"	
-				},
-				"K": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"L": {
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"M": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"N": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"O": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"P": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"Q": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"R": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				},
-				"S":{
-					"sortie"
-				},
-				"T": { 
-					"gauche": None,
-					"face": None,
-					"droite": None
-				}
-			}
-                        position = "entrée"
-                        while True:
-                                print(f"Vous êtes à : {position}")
-                                chemins = labyrinthe[position]
-                                if position == "S":
-                                        print(f" Bravo ! Vous avez trouvé la sortie du labyrinthe ! ")
-                                        input("↓")
-                                        print(f"Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
-                                        input("↓")
-                                        print(f"Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
-                                        input("↓")
-                                        fossile += 1
-                                        if fossile == 2:
-                                                print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
-                                                ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
-                                                if ray == 1:
-                                                        print(f"Rayquaza a été ajouté à votre équipe !")
-                                                        starter = 13
-                                                else:
-                                                        print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
-                                        print(f"une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !")
-                                        input("↓")
-                                        print(f"Un trioxhydre fait son appirition, bonne chance...")
-                                        break
-                                if all(direction is None for direction in chemins.values()):
-                                        print(f"Cul-de-sac ! Retour à l'entrée...\n")
-                                        position = "entrée"
+					print(f"Vous passez la trappe et vous êtes arrivés dans une salle avec plusieurs portes")
+					labyrinthe = {
+						"entrée": {
+							"gauche": "B",
+							"droite": "C",
+						},
+						"B": {
+						    "gauche": "I",
+							"face": "J",
+						},
+						"C": {
+							"gauche": "F",
+							"face": "E",
+							"droite": "D"
+						},
+						"D": { 
+							"face": "Q",
+							"gauche": "R",
+						},
+						"E": {
+							"face": "O",
+							"droite": "H",
+						},
+						"F": { 
+							"face": "N",
+							"gauche": "M",
+						},
+						"H": {
+							"gauche": "S",
+							"droite": "T",
+						},
+						"I": {
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"J": {
+							"droite": "K",
+							"gauche": "L"	
+						},
+						"K": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"L": {
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"M": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"N": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"O": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"P": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"Q": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"R": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						},
+						"S":{
+							"sortie"
+						},
+						"T": { 
+							"gauche": None,
+							"face": None,
+							"droite": None
+						}
+					}
+                    position = "entrée"
+                    while True:
+                        print(f"Vous êtes à : {position}")
+                        chemins = labyrinthe[position]
+                        if position == "S":
+                                print(f" Bravo ! Vous avez trouvé la sortie du labyrinthe ! ")
+                                input("↓")
+                                print(f"Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
+                                input("↓")
+                                print(f"Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
+                                input("↓")
+                                fossile += 1
+                                if fossile1 and fossile2 == 1:
+                                    print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
+                                    ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
+                                    if ray == 1:
+                                            print(f"Rayquaza a été ajouté à votre équipe !")
+                                            starter = 13
+                                    else:
+										print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
+                                print(f"une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !")
+                                input("↓")
+                                print(f"Un trioxhydre fait son appirition, bonne chance...")
+								boss_donjon()
+                                break
+                        if all(direction is None for direction in chemins.values()):
+                                print(f"Cul-de-sac ! Retour à l'entrée...\n")
+                                position = "entrée"
+                                continue
+                            # choix
+                                print(f"Options disponibles :")
+                                for direction, destination in chemins.items():
+                        if destination is not None:
+                                print(f"  - {direction} -> {destination}")
+                                choix = input("Direction (gauche, face, droite) : ")
+                                if choix not in chemins:
+									print(f"Direction invalide.\n")
+                                    continue
+                                    if chemins[choix] is None:
+                                        print(f"Il n'y a pas de chemin dans cette direction.\n")
                                         continue
-                                        # choix
-                                        print(f"Options disponibles :")
-                                        for direction, destination in chemins.items():
-                                                if destination is not None:
-                                                        print(f"  - {direction} -> {destination}")
-                                                        choix = input("Direction (gauche, face, droite) : ")
-                                                        if choix not in chemins:
-                                                                print(f"Direction invalide.\n")
-                                                                continue
-                                                        if chemins[choix] is None:
-                                                                print(f"Il n'y a pas de chemin dans cette direction.\n")
-                                                                continue
-                                                        position = chemins[choix]
-                                                        print()
+                                    position = chemins[choix]
+                                    print()
 
 def boss_donjon ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
