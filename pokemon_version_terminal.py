@@ -76,66 +76,105 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Désherbaffe = VAR_COMBAT[3]
+				nbr_FouetsLiannes = VAR_COMBAT[4]
+				nbr_LammeFeuille = VAR_COMBAT[5]
             elif starter == 2:
                 VAR_COMBAT = menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Flammèche = VAR_COMBAT[3]
+				nbr_LanceFlammes = VAR_COMBAT[4]
+				nbr_Rebondifeu = VAR_COMBAT[5]
             elif starter == 3:
                 VAR_COMBAT = menu_combat_gobou (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Pistolet_à_O = VAR_COMBAT[3]
+				nbr_Siphon = VAR_COMBAT[4]
+				nbr_Hydrocanon = VAR_COMBAT[5]
             elif starter == 4:
                 VAR_COMBAT = menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Désherbaffe = VAR_COMBAT[3]
+				nbr_FouetsLiannes = VAR_COMBAT[4]
+				nbr_LammeFeuille = VAR_COMBAT[5]
             elif starter == 5:
                 VAR_COMBAT = menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Flammèche = VAR_COMBAT[3]
+				nbr_LanceFlammes = VAR_COMBAT[4]
+				nbr_Rebondifeu = VAR_COMBAT[5]
             elif starter == 6:
                 VAR_COMBAT = menu_combat_flobio (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Pistolet_à_O = VAR_COMBAT[3]
+				nbr_Siphon = VAR_COMBAT[4]
+				nbr_Hydrocanon = VAR_COMBAT[5]
             elif starter == 7:
                 VAR_COMBAT = menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Désherbaffe = VAR_COMBAT[3]
+				nbr_FouetsLiannes = VAR_COMBAT[4]
+				nbr_LammeFeuille = VAR_COMBAT[5]
             elif starter == 8:
                 VAR_COMBAT = menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Flammèche = VAR_COMBAT[3]
+				nbr_LanceFlammes = VAR_COMBAT[4]
+				nbr_Rebondifeu = VAR_COMBAT[5]
             elif starter == 9:
                 VAR_COMBAT = menu_combat_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Pistolet_à_O = VAR_COMBAT[3]
+				nbr_Siphon = VAR_COMBAT[4]
+				nbr_Hydrocanon = VAR_COMBAT[5]
             elif starter == 10:
                 VAR_COMBAT = menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Désherbaffe = VAR_COMBAT[3]
+				nbr_FouetsLiannes = VAR_COMBAT[4]
+				nbr_LammeFeuille = VAR_COMBAT[5]
             elif starter == 11:
                 VAR_COMBAT = menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Flammèche = VAR_COMBAT[3]
+				nbr_LanceFlammes = VAR_COMBAT[4]
+				nbr_Rebondifeu = VAR_COMBAT[5]
             elif starter == 12:
                 VAR_COMBAT = menu_combat_mega_laggron (nbr_Pistolet_à_O,nbr_Siphon,nbr_Hydrocanon,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Pistolet_à_O = VAR_COMBAT[3]
+				nbr_Siphon = VAR_COMBAT[4]
+				nbr_Hydrocanon = VAR_COMBAT[5]
             elif starter == 13:
                 VAR_COMBAT = menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
+				nbr_Dracochoc = VAR_COMBAT[3]
+				nbr_Lame_Air = VAR_COMBAT[4]
+				nbr_Ultralaser = VAR_COMBAT[5]
             # Attaque du Pokémon ennemi
             print(f"\nle pokemon ennemie a {hp_ennemi} pv ")
             print(f"\nAu tour du pokémon adverse de jouer ! ")
@@ -187,27 +226,30 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                     if XP >= 500:
                         XP = 0
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs !\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
-                        if starter == 1:
-                            print(f"Arcko devient Massko ! ")
-                        elif starter == 2:
-                            print(f"Poussifeu devient Galifeu ! ")
-                        elif starter == 3:
-                            print(f"Gobou devient Flobio ! ")
-                        elif starter == 4:
-                            print(f"Massko devient Jungko ! ")
-                        elif starter == 5:
-                            print(f"Galifeu devient Braségali! ")
-                        elif starter == 6:
-                            print(f"Flobio devient Laggron ! ")
-                        elif starter == 7:
-                            print(f"Jungko devient Méga-Jungko ! ")
-                        elif starter == 8:
-                            print(f"Braségali devient Méga-Braségali !")
-                        elif starter == 9:
-                            print(f"Laggron devient Méga-Laggron !")
-                        starter += 3
-                        XP -= 500
-                        return (XP, starter, hp_starter, state_combat)
+						if starter in (1,2,3,4,5,6,7,8,9)
+							if starter == 1:
+	                            print(f"Arcko devient Massko ! ")
+	                        elif starter == 2:
+	                            print(f"Poussifeu devient Galifeu ! ")
+	                        elif starter == 3:
+	                            print(f"Gobou devient Flobio ! ")
+	                        elif starter == 4:
+	                            print(f"Massko devient Jungko ! ")
+	                        elif starter == 5:
+	                            print(f"Galifeu devient Braségali! ")
+	                        elif starter == 6:
+	                            print(f"Flobio devient Laggron ! ")
+	                        elif starter == 7:
+	                            print(f"Jungko devient Méga-Jungko ! ")
+	                        elif starter == 8:
+	                            print(f"Braségali devient Méga-Braségali !")
+	                        elif starter == 9:
+	                            print(f"Laggron devient Méga-Laggron !")
+	                        starter += 3
+	                        XP -= 500
+	                        return (XP, starter, hp_starter, state_combat)
+						else: 
+							print("\n")
                     else:
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs !")
                         return (XP, starter, hp_starter, state_combat)
@@ -353,7 +395,7 @@ def menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper                                            
+	return hp_ennemi, hp_starter, attraper, nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser                                            
 
 def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
 	fuir = False
@@ -496,7 +538,7 @@ def menu_combat_gobou (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi,
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon)
 def menu_combat_flobio (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -637,7 +679,7 @@ def menu_combat_flobio (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon)
 def menu_combat_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -780,7 +822,7 @@ def menu_combat_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennem
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon)
 
 def menu_combat_mega_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
 	fuir = False
@@ -922,7 +964,7 @@ def menu_combat_mega_laggron (nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, hp_
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon)
 	
 def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
@@ -1066,7 +1108,7 @@ def menu_combat_poussifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu)
 def menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -1209,7 +1251,7 @@ def menu_combat_galifeu (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennem
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu)
 
 def menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
@@ -1353,7 +1395,7 @@ def menu_combat_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_enn
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu)
 def menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -1496,7 +1538,7 @@ def menu_combat_mega_brasegali (nbr_Flammèche,nbr_LanceFlammes,nbr_Rebondifeu,h
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper	
+	return (hp_ennemi, hp_starter, attraper, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu)
 def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -1642,7 +1684,7 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper	
+	return (hp_ennemi, hp_starter, attraper, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille)	
 def menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -1788,7 +1830,7 @@ def menu_combat_massko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille)
 def menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -1934,7 +1976,7 @@ def menu_combat_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_e
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille)
 def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball):
 	fuir = False
 	attraper = False
@@ -2080,7 +2122,7 @@ def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille
 	else:
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             fuir = True 
-	return hp_ennemi, hp_starter, attraper
+	return (hp_ennemi, hp_starter, attraper, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille)
 #fonction boutique
 def boutique ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
@@ -2665,6 +2707,12 @@ def forêt_pangorn ():
                                 medecin ()
                                 input("↓")
                                 print(f"Le Crocodil se dresse devant vous, préparez vous au combat !")
+							    combat10 = boucle_combat(65, "Ouisticram")
+								XP = combat10 [0]
+								starter = combat10 [1]
+								hp_starter = combat10 [2]
+								hp_starter = 60
+								boutique ()
                         else:
                                 print(f"vous avez esquivé de justesse, préparez vous au combat !")
                 elif response_10 == 2 :
