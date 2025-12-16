@@ -2361,8 +2361,8 @@ def ville_donjon ():
                                 position = "entrée"
                                 continue
                             # choix
-                                print(f"Options disponibles :")
-                                for direction, destination in chemins.items():
+                        print(f"Options disponibles :")
+                        for direction, destination in chemins.items():
                         if destination is not None:
                                 print(f"  - {direction} -> {destination}")
                                 choix = input("Direction (gauche, face, droite) : ")
