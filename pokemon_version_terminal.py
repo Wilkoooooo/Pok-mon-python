@@ -2363,17 +2363,14 @@ def ville_donjon ():
                             # choix
                         print(f"Options disponibles :")
                         for direction, destination in chemins.items():
-                        if destination is not None:
+							if destination is not None:
                                 print(f"  - {direction} -> {destination}")
-                                choix = input("Direction (gauche, face, droite) : ")
-                                if choix not in chemins:
-									print(f"Direction invalide.\n")
-                                    continue
-                                    if chemins[choix] is None:
-                                        print(f"Il n'y a pas de chemin dans cette direction.\n")
-                                        continue
-                                    position = chemins[choix]
-                                    print()
+                        choix = input("Direction (gauche, face, droite) : ")
+                        if choix not in chemins:
+							print(f"Direction invalide.\n")
+                            continue
+                        position = chemins[choix]
+                        print()
 
 def boss_donjon ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
