@@ -2365,7 +2365,8 @@ def ville_donjon ():
                         for direction, destination in chemins.items():
 							if destination is not None:
                                 print(f"  - {direction} -> {destination}")
-                        choix = input("Direction (gauche, face, droite) : ")
+								
+						choix = input("Choissisez une direction entre : (gauche, face, droite) : ")
                         if choix not in chemins:
 							print(f"Direction invalide.\n")
                             continue
