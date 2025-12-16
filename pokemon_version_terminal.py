@@ -119,7 +119,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3):
 	    print(f"Que le combat commence !")
 	while hp_ennemi > 0 and hp_starter > 0 and not fuir and not attraper:
 		print(f"\n À Vous de Jouer ! \n")
-	    if starter == 1:
+		if starter == 1:
 			VAR_COMBAT = menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_ennemi,hp_starter,nbr_superpotion,nbr_hyperpotion,nbr_pokeball,nbr_superball,nbr_hyperball)
 			hp_ennemi = VAR_COMBAT[0]
 			hp_starter = VAR_COMBAT[1]
@@ -223,76 +223,72 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3):
 			nbr_Dracochoc = VAR_COMBAT[3]
 			nbr_Lame_Air = VAR_COMBAT[4]
 			nbr_Ultralaser = VAR_COMBAT[5]
-            # Attaque du Pokémon ennemi
-            print(f"\nle pokemon ennemie a {hp_ennemi} pv ")
-            print(f"\nAu tour du pokémon adverse de jouer ! ")
-            if hp_ennemi > 0 : 
-                attaque_ennemi = random.randint(1,4)
-                if attaque_ennemi == 1:
-                    hp_starter -= degat1
-                    print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
-                elif attaque_ennemi == 2:
-                    hp_starter -= degat2
-                    print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
-                elif attaque_ennemi == 3:
-                    hp_starter -= degat3
-                    print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
-                else:
-                    attaque_ou_soin = random.randint(1,4) 
-                    if attaque_ou_soin == 1:
-                        hp_ennemi += 15
-                        print(f"\n{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
-                    else:
-                        attaque_ennemi_2 = random.randint(1,4)
-                        if attaque_ennemi_2 == 1:
-                            hp_starter -= degat1
-                            print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
-                        elif attaque_ennemi_2 == 2:
-                            hp_starter -= degat2
-                            print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
+		print(f"\nle pokemon ennemie a {hp_ennemi} pv ")
+		print(f"\nAu tour du pokémon adverse de jouer ! ")
+		if hp_ennemi > 0 :
+                        attaque_ennemi = random.randint(1,4)
+                        if attaque_ennemi == 1:
+                                hp_starter -= degat1
+                                print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
+                        elif attaque_ennemi == 2:
+                                hp_starter -= degat2
+                                print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
+                        elif attaque_ennemi == 3:
+                                hp_starter -= degat3
+                                print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
                         else:
-                            hp_starter -= degat3
-                            print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
-            else:
-                    print(f"\n{nom_poke_ennemi} est mort ! Félicitation ! ")
-            if attraper == True:
-                    print(f"\nTu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
-					#faire texte manquant !!!!! si pokemon attraper = mort aussi 
-				
-            if hp_starter <= 0:
-				print(f"{prenom} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
-				input("↓")
-				print(f"Cependant le pokémon ennemi commence à se charger de son énergie et la concentre tout autour de lui...")
-				input("↓")
-				print(f" {prenom} : Vite ! J-je.. je dois fuir !!")
-				input("↓")
-				print(f"le pokémon libère toute son énergie d'un coup et rase toute l'île où vous étiez !")
-				input("↓")
-				print(f"Vous n'avez pas réussi à portéger les habiatants de cette calamité, vous n'avez vraiment pas été à la hauteur... #lahonte")
-				game_over()    
-				
-            if hp_ennemi <= 0:
-				print(f"{nom_poke_ennemi} est mort ! Félicitations ! ")
-				monnaie_gagne = random.randint(40,50)
-				monnaie += monnaie_gagne
-				print(f"Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces.")
-				input("↓")
-				print(f"En sortant de la grotte, celle-ci s'effondre au moment même où vous sortez")
-				input("↓")
-				print(f"Vous esquivez deux trois éboulements de rochers vous sautez vers la sortie et vous arrivez enfin à l'extérieur !")
-				input("↓")
-				print(f"En vous relevant, de nombreuses personnes se dirigent vers vous dont l'homme mystérieux de la ville de départ")    
-				input("↓")
-				print(f"scientifique : Eh petit, t'as réussi à battre le pokémon à l'intérieur de la grotte ?")
-				input("↓")
-				print(f"{prenom} : Heu... Oui pourquoi ?")
-				input("↓")
-				print(f"scientifique : Hoo... Nous sommes sauvés ! Ce pokémon avait échappé à notre contrôle et il menacait de détruire toute l'île avec sa puissance de combat")
-				input("↓")
-				print(f"homme mystérieux : Bravo petit, je savais que tu allais accomplir de grandes choses !")
-				input("↓")
-				print(f"Vous avez sauvé l'île et vous êtes devenu le héros de tout ses habitants !")
-				victoire()
+                            attaque_ou_soin = random.randint(1,4) 
+                            if attaque_ou_soin == 1:
+                                hp_ennemi += 15
+                                print(f"\n{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+                            else:
+                                attaque_ennemi_2 = random.randint(1,4)
+                                if attaque_ennemi_2 == 1:
+                                    hp_starter -= degat1
+                                    print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
+                                elif attaque_ennemi_2 == 2:
+                                    hp_starter -= degat2
+                                    print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
+                                else:
+                                    hp_starter -= degat3
+                                    print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
+		else:
+                        print(f"\n{nom_poke_ennemi} est mort ! Félicitation ! ")
+                        if attraper == True:
+                                print(f"\nTu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
+                                #faire texte manquant !!!!! si pokemon attraper = mort aussi 
+                        if hp_starter <= 0:
+                                print(f"{prenom} : NON ! Mon pokémon, il … il… il est… il est KO ! Je dois aller te soigner de suite !")
+                                input("↓")
+                                print(f"Cependant le pokémon ennemi commence à se charger de son énergie et la concentre tout autour de lui...")
+                                input("↓")
+                                print(f" {prenom} : Vite ! J-je.. je dois fuir !!")
+                                input("↓")
+                                print(f"le pokémon libère toute son énergie d'un coup et rase toute l'île où vous étiez !")
+                                input("↓")
+                                print(f"Vous n'avez pas réussi à portéger les habiatants de cette calamité, vous n'avez vraiment pas été à la hauteur... #lahonte")
+                                game_over()
+                        if hp_ennemi <= 0:
+                                monnaie_gagne = random.randint(40,50)
+                                monnaie += monnaie_gagne
+                                print(f"Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces.")
+                                input("↓")
+                                print(f"En sortant de la grotte, celle-ci s'effondre au moment même où vous sortez")
+                                input("↓")
+                                print(f"Vous esquivez deux trois éboulements de rochers vous sautez vers la sortie et vous arrivez enfin à l'extérieur !")
+                                input("↓")
+                                print(f"En vous relevant, de nombreuses personnes se dirigent vers vous dont l'homme mystérieux de la ville de départ")
+                                input("↓")
+                                print(f"scientifique : Eh petit, t'as réussi à battre le pokémon à l'intérieur de la grotte ?")
+                                input("↓")
+                                print(f"{prenom} : Heu... Oui pourquoi ?")
+                                input("↓")
+                                print(f"scientifique : Hoo... Nous sommes sauvés ! Ce pokémon avait échappé à notre contrôle et il menacait de détruire toute l'île avec sa puissance de combat")
+                                input("↓")
+                                print(f"homme mystérieux : Bravo petit, je savais que tu allais accomplir de grandes choses !")
+                                input("↓")
+                                print(f"Vous avez sauvé l'île et vous êtes devenu le héros de tout ses habitants !")
+                                victoire()
 #Fonction combat
 def boucle_combat(hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3):
         global XP, starter, nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter, fuir, attraper, attraper, prenom, state_combat
@@ -2380,30 +2376,30 @@ def ville_donjon ():
         starter = combat1 [1]
         hp_starter = combat1 [2]
         hp_starter = 60
-		nbr_Dracochoc = combat1 [4]
-		nbr_Lame_Air = combat1 [5]
-		nbr_Ultralaser = combat1 [6]
-		nbr_Flammèche = combat1 [7]
-		nbr_LanceFlammes = combat1 [8]
-		nbr_Rebondifeu = combat1 [9]
-		nbr_Pistolet_à_O = combat1 [10]
-		nbr_Siphon = combat1 [11]
-		nbr_Hydrocanon = combat1 [12]
-		nbr_Désherbaffe = combat1 [13]
-		nbr_FouetsLiannes =	combat1 [14]
-		nbr_LammeFeuille = combat1 [15]
-		nbr_Dracochoc = 15
-		nbr_Lame_Air = 20
-		nbr_Ultralaser = 10
-		nbr_Flammèche = 15
-		nbr_LanceFlammes = 20
-		nbr_Rebondifeu = 10
-		nbr_Pistolet_à_O = 15
-		nbr_Siphon = 20
-		nbr_Hydrocanon = 10
-		nbr_Désherbaffe = 15
-		nbr_FouetsLiannes =	20
-		nbr_LammeFeuille = 10
+        nbr_Dracochoc = combat1 [4]
+        nbr_Lame_Air = combat1 [5]
+        nbr_Ultralaser = combat1 [6]
+        nbr_Flammèche = combat1 [7]
+        nbr_LanceFlammes = combat1 [8]
+        nbr_Rebondifeu = combat1 [9]
+        nbr_Pistolet_à_O = combat1 [10]
+        nbr_Siphon = combat1 [11]
+        nbr_Hydrocanon = combat1 [12]
+        nbr_Désherbaffe = combat1 [13]
+        nbr_FouetsLiannes =	combat1 [14]
+        nbr_LammeFeuille = combat1 [15]
+        nbr_Dracochoc = 15
+        nbr_Lame_Air = 20
+        nbr_Ultralaser = 10
+        nbr_Flammèche = 15
+        nbr_LanceFlammes = 20
+        nbr_Rebondifeu = 10
+        nbr_Pistolet_à_O = 15
+        nbr_Siphon = 20
+        nbr_Hydrocanon = 10
+        nbr_Désherbaffe = 15
+        nbr_FouetsLiannes =	20
+        nbr_LammeFeuille = 10
         boutique ()
         print(f"Après ce rude combat, tu t'orientes vers le fond de la salle")
         input("↓")
@@ -2432,30 +2428,30 @@ def ville_donjon ():
                 starter = combat2 [1]
                 hp_starter = combat2 [2]
                 hp_starter = 60
-				nbr_Dracochoc = combat2 [4]
-				nbr_Lame_Air = combat2 [5]
-				nbr_Ultralaser = combat2 [6]
-				nbr_Flammèche = combat2 [7]
-				nbr_LanceFlammes = combat2 [8]
-				nbr_Rebondifeu = combat2 [9]
-				nbr_Pistolet_à_O = combat2 [10]
-				nbr_Siphon = combat2 [11]
-				nbr_Hydrocanon = combat2 [12]
-				nbr_Désherbaffe = combat2 [13]
-				nbr_FouetsLiannes =	combat2 [14]
-				nbr_LammeFeuille = combat2 [15]
-				nbr_Dracochoc = 15
-				nbr_Lame_Air = 20
-				nbr_Ultralaser = 10
-				nbr_Flammèche = 15
-				nbr_LanceFlammes = 20
-				nbr_Rebondifeu = 10
-				nbr_Pistolet_à_O = 15
-				nbr_Siphon = 20
-				nbr_Hydrocanon = 10
-				nbr_Désherbaffe = 15
-				nbr_FouetsLiannes =	20
-				nbr_LammeFeuille = 10
+                nbr_Dracochoc = combat2 [4]
+                nbr_Lame_Air = combat2 [5]
+                nbr_Ultralaser = combat2 [6]
+                nbr_Flammèche = combat2 [7]
+                nbr_LanceFlammes = combat2 [8]
+                nbr_Rebondifeu = combat2 [9]
+                nbr_Pistolet_à_O = combat2 [10]
+                nbr_Siphon = combat2 [11]
+                nbr_Hydrocanon = combat2 [12]
+                nbr_Désherbaffe = combat2 [13]
+                nbr_FouetsLiannes =	combat2 [14]
+                nbr_LammeFeuille = combat2 [15]
+                nbr_Dracochoc = 15
+                nbr_Lame_Air = 20
+                nbr_Ultralaser = 10
+                nbr_Flammèche = 15
+                nbr_LanceFlammes = 20
+                nbr_Rebondifeu = 10
+                nbr_Pistolet_à_O = 15
+                nbr_Siphon = 20
+                nbr_Hydrocanon = 10
+                nbr_Désherbaffe = 15
+                nbr_FouetsLiannes =	20
+                nbr_LammeFeuille = 10
                 boutique ()
                 print(f"Après ce rude combat vous vous dirigez vers le la porte au fond de la salle")
                 input("↓")
@@ -2479,30 +2475,30 @@ def ville_donjon ():
                 starter = combat3 [1]
                 hp_starter = combat3 [2]
                 hp_starter = 60
-				nbr_Dracochoc = combat3 [4]
-				nbr_Lame_Air = combat3 [5]
-				nbr_Ultralaser = combat3 [6]
-				nbr_Flammèche = combat3 [7]
-				nbr_LanceFlammes = combat3 [8]
-				nbr_Rebondifeu = combat3 [9]
-				nbr_Pistolet_à_O = combat3 [10]
-				nbr_Siphon = combat3 [11]
-				nbr_Hydrocanon = combat3 [12]
-				nbr_Désherbaffe = combat3 [13]
-				nbr_FouetsLiannes =	combat3 [14]
-				nbr_LammeFeuille = combat3 [15]
-				nbr_Dracochoc = 15
-				nbr_Lame_Air = 20
-				nbr_Ultralaser = 10
-				nbr_Flammèche = 15
-				nbr_LanceFlammes = 20
-				nbr_Rebondifeu = 10
-				nbr_Pistolet_à_O = 15
-				nbr_Siphon = 20
-				nbr_Hydrocanon = 10
-				nbr_Désherbaffe = 15
-				nbr_FouetsLiannes =	20
-				nbr_LammeFeuille = 10
+                nbr_Dracochoc = combat3 [4]
+                nbr_Lame_Air = combat3 [5]
+                nbr_Ultralaser = combat3 [6]
+                nbr_Flammèche = combat3 [7]
+                nbr_LanceFlammes = combat3 [8]
+                nbr_Rebondifeu = combat3 [9]
+                nbr_Pistolet_à_O = combat3 [10]
+                nbr_Siphon = combat3 [11]
+                nbr_Hydrocanon = combat3 [12]
+                nbr_Désherbaffe = combat3 [13]
+                nbr_FouetsLiannes = combat3 [14]
+                nbr_LammeFeuille = combat3 [15]
+                nbr_Dracochoc = 15
+                nbr_Lame_Air = 20
+                nbr_Ultralaser = 10
+                nbr_Flammèche = 15
+                nbr_LanceFlammes = 20
+                nbr_Rebondifeu = 10
+                nbr_Pistolet_à_O = 15
+                nbr_Siphon = 20
+                nbr_Hydrocanon = 10
+                nbr_Désherbaffe = 15
+                nbr_FouetsLiannes = 20
+                nbr_LammeFeuille = 10
                 boutique ()
                 print(f"Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coin de la salle")
                 print(f"Que voulez vous faire :")
@@ -2654,30 +2650,30 @@ def boss_donjon ():
         starter = combat7 [1]
         hp_starter = combat7 [2]
         hp_starter = 60
-		nbr_Dracochoc = combat7 [4]
-		nbr_Lame_Air = combat7 [5]
-		nbr_Ultralaser = combat7 [6]
-		nbr_Flammèche = combat7 [7]
-		nbr_LanceFlammes = combat7 [8]
-		nbr_Rebondifeu = combat7 [9]
-		nbr_Pistolet_à_O = combat7 [10]
-		nbr_Siphon = combat7 [11]
-		nbr_Hydrocanon = combat7 [12]
-		nbr_Désherbaffe = combat7 [13]
-		nbr_FouetsLiannes =	combat7 [14]
-		nbr_LammeFeuille = combat7 [15]
-		nbr_Dracochoc = 15
-		nbr_Lame_Air = 20
-		nbr_Ultralaser = 10
-		nbr_Flammèche = 15
-		nbr_LanceFlammes = 20
-		nbr_Rebondifeu = 10
-		nbr_Pistolet_à_O = 15
-		nbr_Siphon = 20
-		nbr_Hydrocanon = 10
-		nbr_Désherbaffe = 15
-		nbr_FouetsLiannes =	20
-		nbr_LammeFeuille = 10
+        nbr_Dracochoc = combat7 [4]
+        nbr_Lame_Air = combat7 [5]
+        nbr_Ultralaser = combat7 [6]
+        nbr_Flammèche = combat7 [7]
+        nbr_LanceFlammes = combat7 [8]
+        nbr_Rebondifeu = combat7 [9]
+        nbr_Pistolet_à_O = combat7 [10]
+        nbr_Siphon = combat7 [11]
+        nbr_Hydrocanon = combat7 [12]
+        nbr_Désherbaffe = combat7 [13]
+        nbr_FouetsLiannes =	combat7 [14]
+        nbr_LammeFeuille = combat7 [15]
+        nbr_Dracochoc = 15
+        nbr_Lame_Air = 20
+        nbr_Ultralaser = 10
+        nbr_Flammèche = 15
+        nbr_LanceFlammes = 20
+        nbr_Rebondifeu = 10
+        nbr_Pistolet_à_O = 15
+        nbr_Siphon = 20
+        nbr_Hydrocanon = 10
+        nbr_Désherbaffe = 15
+        nbr_FouetsLiannes =	20
+        nbr_LammeFeuille = 10
         boutique()
         
 def grotte_boss ():
@@ -2698,7 +2694,10 @@ def grotte_boss ():
                 input("↓")
                 print(f"Un pokémon que vous n'avez encore jamais croisé fait son apparition")
                 #combat pokémon mystérieux
-                combat_boss_final (210, Mewtoo Shiny, 40, 35, 50)
+                combat_boss_final (10, "Mewtoo Shiny", 40, 35, 50)
+        else:
+                print("tu meurs")
+                quit()
 		
 def arènes_pokémons ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
@@ -2727,18 +2726,18 @@ def arènes_pokémons ():
                 hp_starter = arene1 [2]
                 hp_starter = 60
                 state_combat = arene1 [3]
-				nbr_Dracochoc = arene1 [4]
-				nbr_Lame_Air = arene1 [5]
-				nbr_Ultralaser = arene1 [6]
-				nbr_Flammèche = arene1 [7]
-				nbr_LanceFlammes = arene1 [8]
-				nbr_Rebondifeu = arene1 [9]
-				nbr_Pistolet_à_O = arene1 [10]
-				nbr_Siphon = arene1 [11]
-				nbr_Hydrocanon = arene1 [12]
-				nbr_Désherbaffe = arene1 [13]
-				nbr_FouetsLiannes =	arene1 [14]
-				nbr_LammeFeuille = arene1 [15]
+                nbr_Dracochoc = arene1 [4]
+                nbr_Lame_Air = arene1 [5]
+                nbr_Ultralaser = arene1 [6]
+                nbr_Flammèche = arene1 [7]
+                nbr_LanceFlammes = arene1 [8]
+                nbr_Rebondifeu = arene1 [9]
+                nbr_Pistolet_à_O = arene1 [10]
+                nbr_Siphon = arene1 [11]
+                nbr_Hydrocanon = arene1 [12]
+                nbr_Désherbaffe = arene1 [13]
+                nbr_FouetsLiannes =	arene1 [14]
+                nbr_LammeFeuille = arene1 [15]
                 if state_combat == True:
                         print("Bravo, vous passez au dresseur suivant !")
                         print(f"votre deucième combat commence !")
@@ -2749,18 +2748,18 @@ def arènes_pokémons ():
                         hp_starter = arene2 [2]
                         hp_starter = 60
                         state_combat = arene2 [3]
-						nbr_Dracochoc = arene2 [4]
-						nbr_Lame_Air = arene2 [5]
-						nbr_Ultralaser = arene2 [6]
-						nbr_Flammèche = arene2 [7]
-						nbr_LanceFlammes = arene2 [8]
-						nbr_Rebondifeu = arene2 [9]
-						nbr_Pistolet_à_O = arene2 [10]
-						nbr_Siphon = arene2[11]
-						nbr_Hydrocanon = arene2 [12]
-						nbr_Désherbaffe = arene2 [13]
-						nbr_FouetsLiannes =	arene2 [14]
-						nbr_LammeFeuille = arene2 [15]
+                        nbr_Dracochoc = arene2 [4]
+                        nbr_Lame_Air = arene2 [5]
+                        nbr_Ultralaser = arene2 [6]
+                        nbr_Flammèche = arene2 [7]
+                        nbr_LanceFlammes = arene2 [8]
+                        nbr_Rebondifeu = arene2 [9]
+                        nbr_Pistolet_à_O = arene2 [10]
+                        nbr_Siphon = arene2[11]
+                        nbr_Hydrocanon = arene2 [12]
+                        nbr_Désherbaffe = arene2 [13]
+                        nbr_FouetsLiannes =	arene2 [14]
+                        nbr_LammeFeuille = arene2 [15]
                         if state_combat == True:
                                 print("Bravo, vous passez au dresseur suivant !")
                                 print(f"votre premier combat commence !")
@@ -2771,18 +2770,18 @@ def arènes_pokémons ():
                                 hp_starter = arene3 [2]
                                 hp_starter = 60
                                 state_combat = arene3 [3]
-								nbr_Dracochoc = arene3 [4]
-								nbr_Lame_Air = arene3 [5]
-								nbr_Ultralaser = arene3 [6]
-								nbr_Flammèche = arene3 [7]
-								nbr_LanceFlammes = arene3 [8]
-								nbr_Rebondifeu = arene3 [9]
-								nbr_Pistolet_à_O = arene3 [10]
-								nbr_Siphon = arene3 [11]
-								nbr_Hydrocanon = arene3 [12]
-								nbr_Désherbaffe = arene3 [13]
-								nbr_FouetsLiannes =	arene3 [14]
-								nbr_LammeFeuille = arene3 [15]
+                                nbr_Dracochoc = arene3 [4]
+                                nbr_Lame_Air = arene3 [5]
+                                nbr_Ultralaser = arene3 [6]
+                                nbr_Flammèche = arene3 [7]
+                                nbr_LanceFlammes = arene3 [8]
+                                nbr_Rebondifeu = arene3 [9]
+                                nbr_Pistolet_à_O = arene3 [10]
+                                nbr_Siphon = arene3 [11]
+                                nbr_Hydrocanon = arene3 [12]
+                                nbr_Désherbaffe = arene3 [13]
+                                nbr_FouetsLiannes =	arene3 [14]
+                                nbr_LammeFeuille = arene3 [15]
                                 if state_combat == True:
                                         print("Bravo, vous passez au dresseur suivant !")
                                         print(f"votre premier combat commence !")
@@ -2793,30 +2792,30 @@ def arènes_pokémons ():
                                         hp_starter = arene4 [2]
                                         hp_starter = 60
                                         state_combat = arene4 [3]
-										nbr_Dracochoc = arene4 [4]
-										nbr_Lame_Air = arene4 [5]
-										nbr_Ultralaser = arene4 [6]
-										nbr_Flammèche = arene4 [7]
-										nbr_LanceFlammes = arene4 [8]
-										nbr_Rebondifeu = arene4 [9]
-										nbr_Pistolet_à_O = arene4 [10]
-										nbr_Siphon = arene4 [11]
-										nbr_Hydrocanon = arene4 [12]
-										nbr_Désherbaffe = arene4 [13]
-										nbr_FouetsLiannes =	arene4 [14]
-										nbr_LammeFeuille = arene4 [15]
-										nbr_Dracochoc = 15
-										nbr_Lame_Air = 20
-										nbr_Ultralaser = 10
-										nbr_Flammèche = 15
-										nbr_LanceFlammes = 20
-										nbr_Rebondifeu = 10
-										nbr_Pistolet_à_O = 15
-										nbr_Siphon = 20
-										nbr_Hydrocanon = 10
-										nbr_Désherbaffe = 15
-										nbr_FouetsLiannes =	20
-										nbr_LammeFeuille = 10
+                                        nbr_Dracochoc = arene4 [4]
+                                        nbr_Lame_Air = arene4 [5]
+                                        nbr_Ultralaser = arene4 [6]
+                                        nbr_Flammèche = arene4 [7]
+                                        nbr_LanceFlammes = arene4 [8]
+                                        nbr_Rebondifeu = arene4 [9]
+                                        nbr_Pistolet_à_O = arene4 [10]
+                                        nbr_Siphon = arene4 [11]
+                                        nbr_Hydrocanon = arene4 [12]
+                                        nbr_Désherbaffe = arene4 [13]
+                                        nbr_FouetsLiannes =	arene4 [14]
+                                        nbr_LammeFeuille = arene4 [15]
+                                        nbr_Dracochoc = 15
+                                        nbr_Lame_Air = 20
+                                        nbr_Ultralaser = 10
+                                        nbr_Flammèche = 15
+                                        nbr_LanceFlammes = 20
+                                        nbr_Rebondifeu = 10
+                                        nbr_Pistolet_à_O = 15
+                                        nbr_Siphon = 20
+                                        nbr_Hydrocanon = 10
+                                        nbr_Désherbaffe = 15
+                                        nbr_FouetsLiannes =	20
+                                        nbr_LammeFeuille = 10
                                         if state_combat == True:
                                                 print("Bravo, tu es le nouveau maitre de cette arènes Pokémon ! ")
                                                 boutique()
@@ -2881,30 +2880,30 @@ def forêt_pangorn ():
                                 starter = combat10 [1]
                                 hp_starter = combat10 [2]
                                 hp_starter = 60
-								nbr_Dracochoc = combat10 [4]
-								nbr_Lame_Air = combat10 [5]
-								nbr_Ultralaser = combat10 [6]
-								nbr_Flammèche = combat10 [7]
-								nbr_LanceFlammes = combat10 [8]
-								nbr_Rebondifeu = combat10 [9]
-								nbr_Pistolet_à_O = combat10 [10]
-								nbr_Siphon = combat10 [11]
-								nbr_Hydrocanon = combat10 [12]
-								nbr_Désherbaffe = combat10 [13]
-								nbr_FouetsLiannes =	combat10 [14]
-								nbr_LammeFeuille = combat10 [15]
-								nbr_Dracochoc = 15
-								nbr_Lame_Air = 20
-								nbr_Ultralaser = 10
-								nbr_Flammèche = 15
-								nbr_LanceFlammes = 20
-								nbr_Rebondifeu = 10
-								nbr_Pistolet_à_O = 15
-								nbr_Siphon = 20
-								nbr_Hydrocanon = 10
-								nbr_Désherbaffe = 15
-								nbr_FouetsLiannes =	20
-								nbr_LammeFeuille = 10
+                                nbr_Dracochoc = combat10 [4]
+                                nbr_Lame_Air = combat10 [5]
+                                nbr_Ultralaser = combat10 [6]
+                                nbr_Flammèche = combat10 [7]
+                                nbr_LanceFlammes = combat10 [8]
+                                nbr_Rebondifeu = combat10 [9]
+                                nbr_Pistolet_à_O = combat10 [10]
+                                nbr_Siphon = combat10 [11]
+                                nbr_Hydrocanon = combat10 [12]
+                                nbr_Désherbaffe = combat10 [13]
+                                nbr_FouetsLiannes = combat10 [14]
+                                nbr_LammeFeuille = combat10 [15]
+                                nbr_Dracochoc = 15
+                                nbr_Lame_Air = 20
+                                nbr_Ultralaser = 10
+                                nbr_Flammèche = 15
+                                nbr_LanceFlammes = 20
+                                nbr_Rebondifeu = 10
+                                nbr_Pistolet_à_O = 15
+                                nbr_Siphon = 20
+                                nbr_Hydrocanon = 10
+                                nbr_Désherbaffe = 15
+                                nbr_FouetsLiannes =20
+                                nbr_LammeFeuille = 10
                                 boutique ()
                         else:
                                 print(f"vous avez esquivé de justesse, préparez vous au combat !")
@@ -2923,30 +2922,30 @@ def forêt_pangorn ():
                 starter = combat5 [1]
                 hp_starter = combat5 [2]
                 hp_starter = 60
-				nbr_Dracochoc = combat5 [4]
-				nbr_Lame_Air = combat5 [5]
-				nbr_Ultralaser = combat5 [6]
-				nbr_Flammèche = combat5 [7]
-				nbr_LanceFlammes = combat5 [8]
-				nbr_Rebondifeu = combat5 [9]
-				nbr_Pistolet_à_O = combat5 [10]
-				nbr_Siphon = combat5 [11]
-				nbr_Hydrocanon = combat5 [12]
-				nbr_Désherbaffe = combat5 [13]
-				nbr_FouetsLiannes =	combat5 [14]
-				nbr_LammeFeuille = combat5 [15]
-				nbr_Dracochoc = 15
-				nbr_Lame_Air = 20
-				nbr_Ultralaser = 10
-				nbr_Flammèche = 15
-				nbr_LanceFlammes = 20
-				nbr_Rebondifeu = 10
-				nbr_Pistolet_à_O = 15
-				nbr_Siphon = 20
-				nbr_Hydrocanon = 10
-				nbr_Désherbaffe = 15
-				nbr_FouetsLiannes =	20
-				nbr_LammeFeuille = 10
+                nbr_Dracochoc = combat5 [4]
+                nbr_Lame_Air = combat5 [5]
+                nbr_Ultralaser = combat5 [6]
+                nbr_Flammèche = combat5 [7]
+                nbr_LanceFlammes = combat5 [8]
+                nbr_Rebondifeu = combat5 [9]
+                nbr_Pistolet_à_O = combat5 [10]
+                nbr_Siphon = combat5 [11]
+                nbr_Hydrocanon = combat5 [12]
+                nbr_Désherbaffe = combat5 [13]
+                nbr_FouetsLiannes = combat5 [14]
+                nbr_LammeFeuille = combat5 [15]
+                nbr_Dracochoc = 15
+                nbr_Lame_Air = 20
+                nbr_Ultralaser = 10
+                nbr_Flammèche = 15
+                nbr_LanceFlammes = 20
+                nbr_Rebondifeu = 10
+                nbr_Pistolet_à_O = 15
+                nbr_Siphon = 20
+                nbr_Hydrocanon = 10
+                nbr_Désherbaffe = 15
+                nbr_FouetsLiannes = 20
+                nbr_LammeFeuille = 10
                 boutique ()
         elif response_9 == 3 :
                 print(f"Vous vous rapprochez des tremblements de terre, et vous apercevez un onix mais il n'a pas l'air dans son état normal, il se tape contre une falaise...")
@@ -2984,30 +2983,30 @@ def onix_secret ():
         starter = combat6 [1]
         hp_starter = combat6 [2]
         hp_starter = 60
-		nbr_Dracochoc = combat6 [4]
-		nbr_Lame_Air = combat6 [5]
-		nbr_Ultralaser = combat6 [6]
-		nbr_Flammèche = combat6 [7]
-		nbr_LanceFlammes = combat6 [8]
-		nbr_Rebondifeu = combat6 [9]
-		nbr_Pistolet_à_O = combat6 [10]
-		nbr_Siphon = combat6 [11]
-		nbr_Hydrocanon = combat6 [12]
-		nbr_Désherbaffe = combat6 [13]
-		nbr_FouetsLiannes =	combat6 [14]
-		nbr_LammeFeuille = combat6 [15]
-		nbr_Dracochoc = 15
-		nbr_Lame_Air = 20
-		nbr_Ultralaser = 10
-		nbr_Flammèche = 15
-		nbr_LanceFlammes = 20
-		nbr_Rebondifeu = 10
-		nbr_Pistolet_à_O = 15
-		nbr_Siphon = 20
-		nbr_Hydrocanon = 10
-		nbr_Désherbaffe = 15
-		nbr_FouetsLiannes =	20
-		nbr_LammeFeuille = 10
+        nbr_Dracochoc = combat6 [4]
+        nbr_Lame_Air = combat6 [5]
+        nbr_Ultralaser = combat6 [6]
+        nbr_Flammèche = combat6 [7]
+        nbr_LanceFlammes = combat6 [8]
+        nbr_Rebondifeu = combat6 [9]
+        nbr_Pistolet_à_O = combat6 [10]
+        nbr_Siphon = combat6 [11]
+        nbr_Hydrocanon = combat6 [12]
+        nbr_Désherbaffe = combat6 [13]
+        nbr_FouetsLiannes = combat6 [14]
+        nbr_LammeFeuille = combat6 [15]
+        nbr_Dracochoc = 15
+        nbr_Lame_Air = 20
+        nbr_Ultralaser = 10
+        nbr_Flammèche = 15
+        nbr_LanceFlammes = 20
+        nbr_Rebondifeu = 10
+        nbr_Pistolet_à_O = 15
+        nbr_Siphon = 20
+        nbr_Hydrocanon = 10
+        nbr_Désherbaffe = 15
+        nbr_FouetsLiannes = 20
+        nbr_LammeFeuille = 10
         boutique()
         print(f" Pfiou, ce combat n'était pas facile mais que cache cette falaise ? Je n'ai d'autre choix que d'escalader mais c'est risqué !")
         input("↓")
