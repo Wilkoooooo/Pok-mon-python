@@ -131,8 +131,8 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
-			elif starter == 13: 
-				VAR_COMBAT = menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball)
+            elif starter == 13:
+                VAR_COMBAT = menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball)
                 hp_ennemi = VAR_COMBAT[0]
                 hp_starter = VAR_COMBAT[1]
                 attraper = VAR_COMBAT[2]
@@ -183,7 +183,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                     XP += XP_gagne
                     monnaie_gagne = random.randint(50,60)
                     monnaie += monnaie_gagne
-				    state_combat = True 
+                    state_combat = True 
                     if XP >= 500:
                         XP = 0
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs !\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
@@ -2084,8 +2084,8 @@ def menu_combat_mega_jungko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille
 #fonction boutique
 def boutique ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
-        print(f" accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
-        print(f"\n1)acheter des Pokéballs\n2)acheter des potions\n3)Quitter")
+        print(f" Accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
+        print(f"\n1)Acheter des Pokéballs\n2)Acheter des potions\n3)Quitter")
         achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : "))
         while not achat_boutique in (1,2,3):
                 print(f"Veuillez saisir un nombre correct")
@@ -2343,14 +2343,14 @@ def ville_donjon ():
                                         print(f"Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
                                         input("↓")
                                         fossile += 1
-									    if fossile == 2: 
-											print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
-											ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
-											if ray == 1:
-												print(f"Rayquaza a été ajouté à votre équipe !")
-												starter = 13
-											else:
-												print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
+                                        if fossile == 2:
+                                                print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
+                                                ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
+                                                if ray == 1:
+                                                        print(f"Rayquaza a été ajouté à votre équipe !")
+                                                        starter = 13
+                                                else:
+                                                        print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
                                         print(f"une porte se tient au fond de la pièce pour sortir, vous la prenez et vous tombez directement dans la salle du boss !")
                                         input("↓")
                                         print(f"Un trioxhydre fait son appirition, bonne chance...")
@@ -2572,63 +2572,63 @@ def arènes_pokémons ():
                 response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
         if response_8 == 1:
                 print(f"votre premier combat commence !")
-			    arene1 = boucle_combat(65, "Azurill")
-			    XP = arene1 [0]
-			    starter = arene1 [1]
-			    hp_starter = arene1 [2]
-			    hp_starter = 60
-			    state_combat = arene1 [3]
-			    if state_combat == True:
-					print("Bravo, vous passez au dresseur suivant !")
-					print(f"votre deucième combat commence !")
-					state_combat = False
-			        arene2 = boucle_combat(70, "Malosse")
-			        XP = arene2 [0]
-			        starter = arene2 [1]
-			        hp_starter = arene2 [2]
-			        hp_starter = 60
-			        state_combat = arene2 [3]
-			        if state_combat == True:
-						print("Bravo, vous passez au dresseur suivant !")
-						print(f"votre premier combat commence !")
-						state_combat = False				
-						arene3 = boucle_combat(80, "Mackogneur")
-						XP = arene3 [0]
-						starter = arene3 [1]
-						hp_starter = arene3 [2]
-						hp_starter = 60
-						state_combat = arene3 [3]
-						if state_combat == True:
-							print("Bravo, vous passez au dresseur suivant !")
-							print(f"votre premier combat commence !")
-							state_combat = False
-							arene4 = boucle_combat(90, "Dracofeu")
-							XP = arene4 [0]
-							starter = arene4 [1]
-							hp_starter = arene4 [2]
-							hp_starter = 60
-							state_combat = arene4 [3]
-							if state_combat == True:
-								print("Bravo, tu es le nouveau maitre de cette arènes Pokémon ! ")
-								boutique()
-						else: 
-							print("Dommage… La prochaine fois peut-être.")
-							print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
-							input("↓")
-							print(f"À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
-							game_over ()
-					else: 
-						print("Dommage… La prochaine fois peut-être.")
-						print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
-						input("↓")
-						print(f"À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
-						game_over ()
-			    else: 
-					print("Dommage… La prochaine fois peut-être.")
-					print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
-					input("↓")
-					print(f"À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
-					game_over ()
+                arene1 = boucle_combat(65, "Azurill")
+                XP = arene1 [0]
+                starter = arene1 [1]
+                hp_starter = arene1 [2]
+                hp_starter = 60
+                state_combat = arene1 [3]
+                if state_combat == True:
+                        print("Bravo, vous passez au dresseur suivant !")
+                        print(f"votre deucième combat commence !")
+                        state_combat = False
+                        arene2 = boucle_combat(70, "Malosse")
+                        XP = arene2 [0]
+                        starter = arene2 [1]
+                        hp_starter = arene2 [2]
+                        hp_starter = 60
+                        state_combat = arene2 [3]
+                        if state_combat == True:
+                                print("Bravo, vous passez au dresseur suivant !")
+                                print(f"votre premier combat commence !")
+                                state_combat = False
+                                arene3 = boucle_combat(80, "Mackogneur")
+                                XP = arene3 [0]
+                                starter = arene3 [1]
+                                hp_starter = arene3 [2]
+                                hp_starter = 60
+                                state_combat = arene3 [3]
+                                if state_combat == True:
+                                        print("Bravo, vous passez au dresseur suivant !")
+                                        print(f"votre premier combat commence !")
+                                        state_combat = False
+                                        arene4 = boucle_combat(90, "Dracofeu")
+                                        XP = arene4 [0]
+                                        starter = arene4 [1]
+                                        hp_starter = arene4 [2]
+                                        hp_starter = 60
+                                        state_combat = arene4 [3]
+                                        if state_combat == True:
+                                                print("Bravo, tu es le nouveau maitre de cette arènes Pokémon ! ")
+                                                boutique()
+                                        else:
+                                                print("Dommage… La prochaine fois peut-être.")
+                                                print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
+                                                input("↓")
+                                                print(f"À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
+                                                game_over ()
+                                else:
+                                        print("Dommage… La prochaine fois peut-être.")
+                                        print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
+                                        input("↓")
+                                        print(f"À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
+                                        game_over ()
+                        else:
+                                print("Dommage… La prochaine fois peut-être.")
+                                print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
+                                input("↓")
+                                print(f"À la sortie des arenes Pokémon vous rencontrés votre mère qui a honte de vous. Elle vous ramène alors jusqu'à chez vous et vous finissez votre vie à jouer à LOL comme un gros puant #pasdemeufscommemathruin")
+                                game_over ()
         else:
                 print(f"Vous sortez des arènes pokémons, la queue entre les jambes (#tapette)")
                 input("↓")
@@ -2758,14 +2758,14 @@ def onix_secret ():
                     	input("↓")
                     	print(f"{prenom_1} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
                     	fossile += 1
-						if fossile == 2:
-							print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
-							ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
-							if ray == 1:
-								print(f"Rayquaza a été ajouté à votre équipe !")
-								starter = 13
-							else:
-								print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
+                    	if fossile == 2:
+                                print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
+                                ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
+                                if ray == 1:
+                                        print(f"Rayquaza a été ajouté à votre équipe !")
+                                        starter = 13
+                                else:
+                                        print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
                     else :
                        print(f"vous êtes tombés trop de fois, vous êtes morts de chute")
                        game_over ()
@@ -2965,46 +2965,46 @@ elif int(response_1) == 2:
 			print(f"Homme mystérieux : Tant pis, ça n'est pas fait pour tout le monde. Tu ne me semblais pas avoir les épaules pour ce challenge.")
 			game_over ()
 #le jouer fait son premier combat tutoriel 
-print(f"Homme Mysterieux : Tiens prend ce Pikachu et essaye de vaincre le pokemon adverse ! Si tu réussis à le vaincre je te laisserais prendre un de mes pokémons pour commencer ton aventure !")
+print(f"Homme Mysterieux : Tiens prend ce Pikachu et essaye de vaincre le Pikachu adverse ! Si tu réussis à le vaincre je te laisserais prendre un de mes pokémons pour commencer ton aventure !")
 hppokefightinitial = 50
 hp_fight_ini_joueur = 300
 nbrattaque1 = 15
 nbrattaque2 = 20
 nbrattaque3 = 10
 while hppokefightinitial > 0:
-	print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon")
-	choix=int(input("choisissez le bon numéro "))
+	print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon")
+	choix=int(input("\nchoisissez le bon numéro "))
 	while not choix in (1,2,3):
-		print(f"Veuillez saisir un nombre correct")
-		print(f"le pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon")
-		choix=int(input("choisissez le bon numéro "))
+		print(f"\nVeuillez saisir un nombre correct")
+		print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon")
+		choix=int(input("\nchoisissez le bon numéro "))
 	if choix == 1: 
-		print(f"Quelle attaque voulez vous utiliser ? \n1)Éclair (-15 hp) {nbrattaque1}/15 \n2)Cage-Éclair (-10 hp) {nbrattaque2}/20 \n3)Tonnerre (-20 hp) {nbrattaque3}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
+		print(f"\nQuelle attaque voulez vous utiliser ? \n1)Éclair (-15 hp) {nbrattaque1}/15 \n2)Cage-Éclair (-10 hp) {nbrattaque2}/20 \n3)Tonnerre (-20 hp) {nbrattaque3}/10 ")
+		quelle_attaque=int(input("\nchoisissez le bon numéro "))
 		if quelle_attaque == 1:
 			if nbrattaque1 > 0:
 				hppokefightinitial = hppokefightinitial - 15 
 				nbrattaque1 = nbrattaque1 - 1
 			else:
-				print(f"Vous n'avez plus d'Éclair veuillez en chosir une autre ")
+				print(f"\nVous n'avez plus d'Éclair veuillez en chosir une autre ")
 		elif quelle_attaque == 2: 
 			if nbrattaque2 > 0:
 				hppokefightinitial = hppokefightinitial - 10 
 				nbrattaque2 = nbrattaque2 - 1
 			else:
-				print(f"Vous n'avez plus de Cage-Éclaire veuillez en chosir une autre ")
+				print(f"\nVous n'avez plus de Cage-Éclaire veuillez en chosir une autre ")
 		elif quelle_attaque == 3: 
 			if nbrattaque3 > 0:
 				hppokefightinitial = hppokefightinitial - 20 
 				nbrattaque3 = nbrattaque3 - 1
 			else:
-				print(f"Vous n'avez plus de Tonerre veuillez en chosir une autre ")
-	elif choix == 2: 
-		print(f"Quelle objet pour se soigner ? \n1)super potion \n2)hyper potion ")
+				print(f"\nVous n'avez plus de Tonerre veuillez en chosir une autre ")
+	elif choix == 2:
+		print(f"\nQuelle objet pour se soigner ? \n1)super potion \n2)hyper potion ")
 		choixsoin=int(input("Quel objet choisissez vous ?"))
 		while not choixsoin in (1,2):
-			print(f"Veuillez saisir un nombre correct")
-			print(f"Quelle objet pour se soigner ? \n1)super potion \n2)hyper potion ")
+			print(f"\nVeuillez saisir un nombre correct")
+			print(f"\nQuelle objet pour se soigner ? \n1)super potion \n2)hyper potion ")
 			choixsoin=int(input("Quel objet choisissez vous ?"))
 		if choixsoin == 1: 
 			hp_fight_ini_joueur += 20
@@ -3013,34 +3013,34 @@ while hppokefightinitial > 0:
 			hp_fight_ini_joueur = 60 
 			nbr_hyperpotion -= 1
 	else: 
-		print(f"tu n'as pas le droit")
+		print(f"\ntu n'as pas le droit")
 	if hppokefightinitial < 10:
 		proba_soin=random.randint(1,3)
 		if proba_soin == 1:
-			print(f"le pokemon adverse se soigne ! Il regénère 10 hp")
+			print(f"\nle pokemon adverse se soigne ! Il regénère 10 hp")
 			hppokefightinitial = hppokefightinitial + 1 
 		else: 
 			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
-				print(f"il utilise l'attaque 1")
+				print(f"il utilise Éclair")
 				hp_fight_ini_joueur -= 2 
 			elif proba_attaque == 2:
-				print(f"il utilise l'attaque 2")
+				print(f"il utilise Cage-Éclair")
 				hp_fight_ini_joueur -= 1
 			elif proba_attaque == 3:
-				print(f"il utilise l'attaque 3")
+				print(f"il utilise Tonnerre")
 				hp_fight_ini_joueur -= 5
 
 	else: 
 			proba_attaque=random.randint(1,2)
 			if proba_attaque == 1:
-				print(f"il utilise l'attaque 1")
+				print(f"il utilise Éclair")
 				hp_fight_ini_joueur -= 2 
 			elif proba_attaque == 2:
-				print(f"il utilise l'attaque 2")
+				print(f"il utilise Cage-Éclair")
 				hp_fight_ini_joueur -= 1
 			elif proba_attaque == 3:
-				print(f"il utilise l'attaque 3")
+				print(f"il utilise Tonnerre")
 				hp_fight_ini_joueur -= 5
 print(f"Bravo ! Tu as gagné ton premier combat (tu ne pouvais pas perdre donc prend pas trop la confiance sale merde")
 input("↓")
@@ -3099,4 +3099,3 @@ while chemins:
         print(f"Choix invalide, fais un effort !")
 
 print(f"\n Game Over ! ")
- 
