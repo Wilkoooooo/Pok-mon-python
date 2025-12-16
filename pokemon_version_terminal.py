@@ -56,7 +56,7 @@ def game_over ():
 	print(game_over_art)
 	quit()
 #Fonction combat
-def boucle_combat(hp_ennemi, nom_poke_ennemi):
+def boucle_combat(hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3):
         global XP, starter, nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter, fuir, attraper, attraper, prenom, state_combat
         if starter in (4,5,6):
                 hp_starter += 40
@@ -181,14 +181,14 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
             if hp_ennemi > 0 : 
                 attaque_ennemi = random.randint(1,4)
                 if attaque_ennemi == 1:
-                    hp_starter -= 20
-                    print(f"\n{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+                    hp_starter -= degat1
+                    print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
                 elif attaque_ennemi == 2:
-                    hp_starter -= 15
-                    print(f"\n{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+                    hp_starter -= degat2
+                    print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
                 elif attaque_ennemi == 3:
-                    hp_starter -= 10
-                    print(f"\n{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+                    hp_starter -= degat3
+                    print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
                 else:
                     attaque_ou_soin = random.randint(1,4) 
                     if attaque_ou_soin == 1:
@@ -197,14 +197,14 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                     else:
                         attaque_ennemi_2 = random.randint(1,4)
                         if attaque_ennemi_2 == 1:
-                            hp_starter -= 20
-                            print(f"\n{nom_poke_ennemi} vous a infligé 20 dégats. Vous avez {hp_starter} points de vie.")
+                            hp_starter -= degat1
+                            print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
                         elif attaque_ennemi_2 == 2:
-                            hp_starter -= 15
-                            print(f"\n{nom_poke_ennemi} vous a infligé 15 dégats. Vous avez {hp_starter} points de vie.")
+                            hp_starter -= degat2
+                            print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
                         else:
-                            hp_starter -= 10
-                            print(f"\n{nom_poke_ennemi} vous a infligé 10 dégats. Vous avez {hp_starter} points de vie.")
+                            hp_starter -= degat3
+                            print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
             else:
                     print(f"\n{nom_poke_ennemi} est mort ! Félicitation ! ")
             if attraper == True:
@@ -225,7 +225,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                     state_combat = True 
                     if XP >= 500:
                         XP = 0
-                        print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs !\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
+                        print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs. Vous avez maintenant {XP} XPs!\n Que ce passe-t-il ?\n\n\n Le Pokémon évolue !")
                         if starter in (1,2,3,4,5,6,7,8,9):
                                 if starter == 1:
                                         print(f"Arcko devient Massko ! ")
@@ -251,7 +251,7 @@ def boucle_combat(hp_ennemi, nom_poke_ennemi):
                         else:
                                 print("\n")
                     else:
-                        print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs !")
+                        print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {monnaie} pièces. Vous avez gagné(e) {XP_gagne} XPs ! Vous avez maintenant {XP} XPs")
                         return (XP, starter, hp_starter, state_combat, nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille)
 
 def menu_combat_rayquaza (nbr_Dracochoc, nbr_Lame_Air, nbr_Ultralaser, hp_ennemi, hp_starter, nbr_superpotion, nbr_hyperpotion, nbr_pokeball, nbr_superball, nbr_hyperball):
@@ -2137,7 +2137,7 @@ def ville_donjon ():
         input("↓")
         print(f"Que le combat commence")
         #combat ténéfix
-        combat1 = boucle_combat(65, "Ténéfix")
+        combat1 = boucle_combat(65, "Ténéfix", 15, 10, 20)
         XP = combat1 [0]
         starter = combat1 [1]
         hp_starter = combat1 [2]
@@ -2189,7 +2189,7 @@ def ville_donjon ():
                 input("↓")
                 print(f"Que le combat commence !")
                 #combat absol
-                combat2 = boucle_combat(60, "Absol")
+                combat2 = boucle_combat(60, "Absol", 15, 10, 20)
                 XP = combat2 [0]
                 starter = combat2 [1]
                 hp_starter = combat2 [2]
@@ -2236,7 +2236,7 @@ def ville_donjon ():
                 input("↓")
                 print(f"Que le combat commence !")
                 #combat spectrum
-                combat3 = boucle_combat(75, "Spectrum")
+                combat3 = boucle_combat(75, "Spectrum", 15, 10, 20)
                 XP = combat3 [0]
                 starter = combat3 [1]
                 hp_starter = combat3 [2]
@@ -2411,7 +2411,7 @@ def ville_donjon ():
 def boss_donjon ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
         #combat trioxhydre
-        combat7 = boucle_combat(100, "Trioxhydre", 80, starter, XP)
+        combat7 = boucle_combat(100, "Trioxhydre", 15, 10, 20)
         XP = combat7 [0]
         starter = combat7 [1]
         hp_starter = combat7 [2]
@@ -2630,7 +2630,7 @@ def arènes_pokémons ():
                 response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
         if response_8 == 1:
                 print(f"votre premier combat commence !")
-                arene1 = boucle_combat(65, "Azurill")
+                arene1 = boucle_combat(65, "Azurill", 15, 10, 20)
                 XP = arene1 [0]
                 starter = arene1 [1]
                 hp_starter = arene1 [2]
@@ -2652,7 +2652,7 @@ def arènes_pokémons ():
                         print("Bravo, vous passez au dresseur suivant !")
                         print(f"votre deucième combat commence !")
                         state_combat = False
-                        arene2 = boucle_combat(70, "Malosse")
+                        arene2 = boucle_combat(70, "Malosse", 15, 10, 20)
                         XP = arene2 [0]
                         starter = arene2 [1]
                         hp_starter = arene2 [2]
@@ -2674,7 +2674,7 @@ def arènes_pokémons ():
                                 print("Bravo, vous passez au dresseur suivant !")
                                 print(f"votre premier combat commence !")
                                 state_combat = False
-                                arene3 = boucle_combat(80, "Mackogneur")
+                                arene3 = boucle_combat(80, "Mackogneur", 25, 20, 30)
                                 XP = arene3 [0]
                                 starter = arene3 [1]
                                 hp_starter = arene3 [2]
@@ -2696,7 +2696,7 @@ def arènes_pokémons ():
                                         print("Bravo, vous passez au dresseur suivant !")
                                         print(f"votre premier combat commence !")
                                         state_combat = False
-                                        arene4 = boucle_combat(90, "Dracofeu")
+                                        arene4 = boucle_combat(90, "Dracofeu", 25, 20, 30)
                                         XP = arene4 [0]
                                         starter = arene4 [1]
                                         hp_starter = arene4 [2]
@@ -2785,7 +2785,7 @@ def forêt_pangorn ():
                                 medecin ()
                                 input("↓")
                                 print(f"Le Crocodil se dresse devant vous, préparez vous au combat !")
-                                combat10 = boucle_combat(65, "Crocodil")
+                                combat10 = boucle_combat(65, "Crocodil", 15, 10, 20)
                                 XP = combat10 [0]
                                 starter = combat10 [1]
                                 hp_starter = combat10 [2]
@@ -2827,7 +2827,7 @@ def forêt_pangorn ():
                 input("↓")
                 print(f"En vous retournant vous vous retrouvez face à un Ouisticram qui vous bloque le passage. Préparez-vous au combat !")
                 #combat
-                combat5 = boucle_combat(65, "Ouisticram")
+                combat5 = boucle_combat(65, "Ouisticram", 15, 10, 20)
                 XP = combat5 [0]
                 starter = combat5 [1]
                 hp_starter = combat5 [2]
@@ -2888,7 +2888,7 @@ def onix_secret ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
         print(f"Il va falloir combattre pour savoir ce qui intrigue ce onix !")
         #combat onix
-        combat6 = boucle_combat(70, "Onix")
+        combat6 = boucle_combat(70, "Onix", 15, 10, 20)
         XP = combat6 [0]
         starter = combat6 [1]
         hp_starter = combat6 [2]
