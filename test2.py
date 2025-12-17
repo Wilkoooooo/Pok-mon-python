@@ -104,7 +104,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 	while hp_ennemi > 0 and pokemon_stats["hp_starter"] > 0 and not pokemon_stats["fuir"] and not pokemon_stats["attraper"]:
 		print(f"\n À Vous de Jouer ! \n")
 		if pokemon_stats["starter"] == 1:
-			VAR_COMBAT = menu_combat_arcko (pokemon_stats)
+			VAR_COMBAT = menu_combat_arcko (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -112,7 +112,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 2:
-			VAR_COMBAT = menu_combat_poussifeu (pokemon_stats)
+			VAR_COMBAT = menu_combat_poussifeu (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -120,7 +120,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 3:
-			VAR_COMBAT = menu_combat_gobou (pokemon_stats)
+			VAR_COMBAT = menu_combat_gobou (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -128,7 +128,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 4:
-			VAR_COMBAT = menu_combat_massko (pokemon_stats)
+			VAR_COMBAT = menu_combat_massko (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -136,7 +136,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 5:
-			VAR_COMBAT = menu_combat_galifeu (pokemon_stats)
+			VAR_COMBAT = menu_combat_galifeu (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -144,7 +144,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]   
 		elif pokemon_stats["starter"] == 6:
-			VAR_COMBAT = menu_combat_flobio (pokemon_stats)
+			VAR_COMBAT = menu_combat_flobio (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -152,7 +152,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 7:
-			VAR_COMBAT = menu_combat_jungko (pokemon_stats)
+			VAR_COMBAT = menu_combat_jungko (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -160,7 +160,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 8:
-			VAR_COMBAT = menu_combat_brasegali (pokemon_stats)
+			VAR_COMBAT = menu_combat_brasegali (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -168,7 +168,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 9:
-			VAR_COMBAT = menu_combat_laggron (pokemon_stats)
+			VAR_COMBAT = menu_combat_laggron (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -176,7 +176,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 10:
-			VAR_COMBAT = menu_combat_mega_jungko (pokemon_stats)
+			VAR_COMBAT = menu_combat_mega_jungko (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -184,7 +184,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 11:
-			VAR_COMBAT = menu_combat_mega_brasegali (pokemon_stats)
+			VAR_COMBAT = menu_combat_mega_brasegali (pokemon_stats), hp_ennemi
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -192,7 +192,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 12:
-			VAR_COMBAT = menu_combat_mega_laggron (pokemon_stats)
+			VAR_COMBAT = menu_combat_mega_laggron (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -200,7 +200,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
 			pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
 		elif pokemon_stats["starter"] == 13:
-			VAR_COMBAT = menu_combat_rayquaza (pokemon_stats)
+			VAR_COMBAT = menu_combat_rayquaza (pokemon_stats, hp_ennemi)
 			hp_ennemi = VAR_COMBAT[0]
 			pokemon_stats["hp_starter"] = VAR_COMBAT[1]
 			pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -291,7 +291,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
         while hp_ennemi > 0 and pokemon_stats["hp_starter"] > 0 and not pokemon_stats["fuir"] and not pokemon_stats["attraper"]:
             print(f"\n À Vous de Jouer ! \n")
             if pokemon_stats["starter"] == 1:
-                VAR_COMBAT = menu_combat_arcko (pokemon_stats)
+                VAR_COMBAT = menu_combat_arcko (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -299,7 +299,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 2:
-                VAR_COMBAT = menu_combat_poussifeu (pokemon_stats)
+                VAR_COMBAT = menu_combat_poussifeu (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -307,7 +307,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 3:
-                VAR_COMBAT = menu_combat_gobou (pokemon_stats)
+                VAR_COMBAT = menu_combat_gobou (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -315,7 +315,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 4:
-                VAR_COMBAT = menu_combat_massko (pokemon_stats)
+                VAR_COMBAT = menu_combat_massko (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -323,7 +323,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 5:
-                VAR_COMBAT = menu_combat_galifeu (pokemon_stats)
+                VAR_COMBAT = menu_combat_galifeu (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -331,7 +331,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 6:
-                VAR_COMBAT = menu_combat_flobio (pokemon_stats)
+                VAR_COMBAT = menu_combat_flobio (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -339,7 +339,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 7:
-                VAR_COMBAT = menu_combat_jungko (pokemon_stats)
+                VAR_COMBAT = menu_combat_jungko (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -347,7 +347,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 8:
-                VAR_COMBAT = menu_combat_brasegali (pokemon_stats)
+                VAR_COMBAT = menu_combat_brasegali (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -355,7 +355,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 9:
-                VAR_COMBAT = menu_combat_laggron (pokemon_stats)
+                VAR_COMBAT = menu_combat_laggron (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -363,7 +363,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 10:
-                VAR_COMBAT = menu_combat_mega_jungko (pokemon_stats)
+                VAR_COMBAT = menu_combat_mega_jungko (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -371,7 +371,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 11:
-                VAR_COMBAT = menu_combat_mega_brasegali (pokemon_stats)
+                VAR_COMBAT = menu_combat_mega_brasegali (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -379,7 +379,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 12:
-                VAR_COMBAT = menu_combat_mega_laggron (pokemon_stats)
+                VAR_COMBAT = menu_combat_mega_laggron (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -387,7 +387,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[4]
                 pokemon_stats["nbr_attaque3"] = VAR_COMBAT[5]
             elif pokemon_stats["starter"] == 13:
-                VAR_COMBAT = menu_combat_rayquaza (pokemon_stats)
+                VAR_COMBAT = menu_combat_rayquaza (pokemon_stats, hp_ennemi)
                 hp_ennemi = VAR_COMBAT[0]
                 pokemon_stats["hp_starter"] = VAR_COMBAT[1]
                 pokemon_stats["attraper"] = VAR_COMBAT[2]
@@ -473,7 +473,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {pokemon_stats["monnaie"]} pièces. Vous avez gagné(e) {pokemon_stats["XP"]} XPs !")
                         return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
 
-def menu_combat_rayquaza (pokemon_stats):
+def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4)fuir")
@@ -617,7 +617,7 @@ def menu_combat_rayquaza (pokemon_stats):
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
 
 
-def menu_combat_gobou (pokemon_stats):
+def menu_combat_gobou (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -751,10 +751,10 @@ def menu_combat_gobou (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_flobio (pokemon_stats):
+def menu_combat_flobio (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
-	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) pokemon_stats["fuir"]")
+	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4)fuir")
 	choix=int(input("choisissez le bon numéro "))
 	while not  choix in (1,2,3,4):
 		print(f"Veuillez saisir un nombre correct")
@@ -884,7 +884,7 @@ def menu_combat_flobio (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_laggron (pokemon_stats):
+def menu_combat_laggron (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1018,7 +1018,7 @@ def menu_combat_laggron (pokemon_stats):
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
 
-def menu_combat_mega_laggron (pokemon_stats):
+def menu_combat_mega_laggron (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1152,7 +1152,7 @@ def menu_combat_mega_laggron (pokemon_stats):
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
 	
-def menu_combat_poussifeu (pokemon_stats):
+def menu_combat_poussifeu (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1287,7 +1287,7 @@ def menu_combat_poussifeu (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_galifeu (pokemon_stats):
+def menu_combat_galifeu (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1423,7 +1423,7 @@ def menu_combat_galifeu (pokemon_stats):
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
 
-def menu_combat_brasegali (pokemon_stats):
+def menu_combat_brasegali (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1558,7 +1558,7 @@ def menu_combat_brasegali (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_mega_brasegali (pokemon_stats):
+def menu_combat_mega_brasegali (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1693,7 +1693,7 @@ def menu_combat_mega_brasegali (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_arcko (pokemon_stats):
+def menu_combat_arcko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1828,7 +1828,7 @@ def menu_combat_arcko (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])	
-def menu_combat_massko (pokemon_stats):
+def menu_combat_massko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -1974,7 +1974,7 @@ def menu_combat_massko (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_jungko (pokemon_stats):
+def menu_combat_jungko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -2120,7 +2120,7 @@ def menu_combat_jungko (pokemon_stats):
             print(f"Vous ne voullez pas combattre car vous êtes une énorme tapette et décidez de fuir le combat !")
             pokemon_stats["fuir"] = True 
 	return (hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque3"], pokemon_stats["nbr_attaque3"])
-def menu_combat_mega_jungko (pokemon_stats):
+def menu_combat_mega_jungko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
@@ -2332,7 +2332,7 @@ def boutique (pokemon_stats):
 
 def medecin (pokemon_stats):
         pokemon_stats["monnaie"] -= 5
-        print(f"Vous devez payer 5 pièces de pokemon_stats["monnaie"] pour frais de consultation,")
+        print(f"Vous devez payer 5 pièces de monnaie pour frais de consultation,")
         input("↓")
         print(f"Faites attention à ne pas vous blesser la prochaine fois !")
 				
@@ -2594,11 +2594,11 @@ def ville_donjon (pokemon_stats):
                                         input("↓")
                                         print(f"Vous êtes arrivés dans la salle au trésor caché et un objet mystérieux est placé au centre de la pièce...")
                                         input("↓")
-                                        print(f"Vous vous rapprochez et prenez l'objet. C'est une partie d'un pokemon_stats["fossile"] mâchoire !")
+                                        print(f"Vous vous rapprochez et prenez l'objet. C'est une partie d'un fossile mâchoire !")
                                         input("↓")
                                         pokemon_stats["fossile"] += 1
-                                        if pokemon_stats["fossile"]1 and pokemon_stats["fossile"]2 == 1:
-                                                print(f"\n Vos pokemon_stats["fossile"]s semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
+                                        if pokemon_stats["fossile"] == 2:
+                                                print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
                                                 ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
                                                 if ray == 1:
                                                         print(f"Rayquaza a été ajouté à votre équipe !")
@@ -2682,7 +2682,7 @@ def grotte_boss (pokemon_stats):
 def arènes_pokémons (pokemon_stats):
         print(f"Vous arrivez à présent aux arènes pokémons espérant gagner de nombreuses récompenses et faire évoluer vos pokémons")
         input("↓")
-        print(f"quelqu'un à l'entrée de l'arène vous attend pour vous epokemon_stats["XP"]liquer les règles de l'arène pokémon")
+        print(f"quelqu'un à l'entrée de l'arène vous attend pour vous expliquer les règles de l'arène pokémon")
         input("↓")
         print(f"organisateur : Bonjour jeune homme, vous êtes arrivé à l'arène pokémon, ici de nombreux dresseurs s'affrontent en espérant atteindre la finale du tournoi pour gagner un pokémon rarissime !")
         input("↓")
@@ -3022,7 +3022,7 @@ def onix_secret (pokemon_stats):
                     	print(f"{prenom} : Quel incroyable trésor ! Il est peut-être temps de partir maitenant")
                     	pokemon_stats["fossile"] += 1
                     	if pokemon_stats["fossile"] == 2:
-                                print(f"\n Vos pokemon_stats["fossile"]s semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
+                                print(f"\n Vos fossiles semble s'agiter ! \n\n Vous remarquez qu'il s'assemblent parfaitement.\nQue se passe-t-il, un rayquaza apparait !")
                                 ray=int(input("\nVoulez vous mettre Rayquaza comme Pokémon principal de votre équipe ? \n\n1) Oui\n2) Non"))
                                 if ray == 1:
                                         print(f"Rayquaza a été ajouté à votre équipe !")
@@ -3314,7 +3314,7 @@ print(f"homme mystérieux : tu peux aussi partir pour la forêt pangorn à proxi
 input("↓")
 print(f"homme mystérieux : il existe de nombreuses villes à proximité si l'envie t'ne prends de faire du tourisme")
 input("↓")
-print(f"homme mystérieux : Tu peux même si tu le souhaites epokemon_stats["XP"]lorer les environs")
+print(f"homme mystérieux : Tu peux même si tu le souhaites explorer les environs")
 input("↓")
 print(f"mais d'abord choisis un de mes pokémons : ")
 input("↓")
@@ -3327,7 +3327,7 @@ while not starter in {1,2,3} :
 if starter == 1:
     print(f"Arcko a été ajouté à ton Pokédex !")
     print(f"Arcko est un pokémon de type Plante, cela veut dire qu'il sera très éfficace face aux Pokémons de type Eau, Roche et Sol !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
-	pokemon_stats["starter"] = 1
+    pokemon_stats["starter"] = 1
 elif starter == 2:
     print(f"Poussifeu a été ajouté à ton Pokédex !")
     print(f"Poussifeu est un pokémon de type Feu, cela veut dire qu'il sera très éfficace face aux Pokémons de type Plante et Glace !\nIl faut donc que tu sois attentif au type du Pokémon adverse afin de gagner tes combats plus facilement")
@@ -3338,7 +3338,7 @@ elif starter == 3:
     pokemon_stats["starter"] = 3
 print(f"homme mystérieux : très bon choix, je te conseille avant de partir de passer par la boutique pour te munir de gadgets très utiles lors de tes combats")
 print(f"homme mystérieux : Combien d'argent as tu sur toi ?")
-print(f"{prenom} : j'ai {pokemon_stats["monnaie"]} pokemon_stats["monnaie"] sur moi actuellement")
+print(f"{prenom} : j'ai {pokemon_stats["monnaie"]} monnaie sur moi actuellement")
 boutique (pokemon_stats)
 print(f"Maintenant tu es prêt à visiter l'île, profite de ton aventure.")
 chemins = {
