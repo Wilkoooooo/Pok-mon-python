@@ -224,36 +224,37 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3):
 			nbr_Lame_Air = VAR_COMBAT[4]
 			nbr_Ultralaser = VAR_COMBAT[5]
 		print(f"\nle pokemon ennemie a {hp_ennemi} pv ")
-		print(f"\nAu tour du pokémon adverse de jouer ! ")
-		if hp_ennemi > 0 :
-                        attaque_ennemi = random.randint(1,4)
-                        if attaque_ennemi == 1:
-                                hp_starter -= degat1
-                                print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
-                        elif attaque_ennemi == 2:
-                                hp_starter -= degat2
-                                print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
-                        elif attaque_ennemi == 3:
-                                hp_starter -= degat3
-                                print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
-                        else:
-                            attaque_ou_soin = random.randint(1,4) 
-                            if attaque_ou_soin == 1:
-                                hp_ennemi += 15
-                                print(f"\n{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
-                            else:
-                                attaque_ennemi_2 = random.randint(1,4)
-                                if attaque_ennemi_2 == 1:
-                                    hp_starter -= degat1
-                                    print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
-                                elif attaque_ennemi_2 == 2:
-                                    hp_starter -= degat2
-                                    print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
+		if not attraper:
+                        if hp_ennemi > 0 :
+                                print(f"\nAu tour du pokémon adverse de jouer ! ")
+                                attaque_ennemi = random.randint(1,4)
+                                if attaque_ennemi == 1:
+                                        hp_starter -= degat1
+                                        print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
+                                elif attaque_ennemi == 2:
+                                        hp_starter -= degat2
+                                        print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
+                                elif attaque_ennemi == 3:
+                                        hp_starter -= degat3
+                                        print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
                                 else:
-                                    hp_starter -= degat3
-                                    print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
-		else:
-                        print(f"\n{nom_poke_ennemi} est mort ! Félicitation ! ")
+                                    attaque_ou_soin = random.randint(1,4) 
+                                    if attaque_ou_soin == 1:
+                                        hp_ennemi += 15
+                                        print(f"\n{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
+                                    else:
+                                        attaque_ennemi_2 = random.randint(1,4)
+                                        if attaque_ennemi_2 == 1:
+                                            hp_starter -= degat1
+                                            print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {hp_starter} points de vie.")
+                                        elif attaque_ennemi_2 == 2:
+                                            hp_starter -= degat2
+                                            print(f"\n{nom_poke_ennemi} vous a infligé {degat2} dégats. Vous avez {hp_starter} points de vie.")
+                                        else:
+                                            hp_starter -= degat3
+                                            print(f"\n{nom_poke_ennemi} vous a infligé {degat3} dégats. Vous avez {hp_starter} points de vie.")
+                        else:
+                                print(f"\n{nom_poke_ennemi} est mort ! Félicitation ! ")
                         if attraper == True:
                                 print(f"\nTu as attrapé le Pokémon ! Bravo. Ça veut dire que je peux gagner tous mes combats en attrapant les pokémons adverses ? Imagine attraper un Pokémon destabiliserait l'île et tuerait tous les habitants. Nan je rigole mais imagine. ")
                                 #faire texte manquant !!!!! si pokemon attraper = mort aussi 
@@ -1832,10 +1833,10 @@ def menu_combat_arcko (nbr_Désherbaffe,nbr_FouetsLiannes,nbr_LammeFeuille,hp_en
                         else:
                             print(f"La Hyperball n'a pas pop à la secousse numéro {i+1}!")
                             poké_pop_compteur += 1
-                        if poké_pop_compteur == 3:
+                    if poké_pop_compteur == 3:
                             print(f"le pokémon a été capturé. Bravo !")
                             attraper = True
-                        else:
+                    else:
                             print(f"dommage")
                 else:
                     print(f"Vous n'avez plus de Hyperball c'était pourtant écrit... veuillez faire attention la prochaine fois !")
