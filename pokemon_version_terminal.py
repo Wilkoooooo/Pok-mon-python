@@ -1,5 +1,4 @@
 import random 
-from math import * 
 #variables de tout le programme : 
 monnaie = 50
 XP = 0
