@@ -434,15 +434,14 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                     monnaie_gagne = random.randint(20,30)
                     pokemon_stats["monnaie"] += monnaie_gagne
                     print(f"\nVous gagnez quand même {monnaie_gagne} pièces. Vous avez maintenant {pokemon_stats["monnaie"]} pièces.")
-                    return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"]
-                    
+                    return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"])           
             if hp_ennemi <= 0:
                     XP_gagne=random.randint(100,200)
                     pokemon_stats["XP"] += XP_gagne
                     monnaie_gagne = random.randint(50,60)
                     pokemon_stats["monnaie"] += monnaie_gagne
                     pokemon_stats["state_combat"] = True 
-                    if pokemon_stats["XP"] >= 500:
+                    if pokemon_stats["XP"] >= 100:
                         pokemon_stats["XP"] = 0
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}.")
                         if pokemon_stats["starter"] in (1,2,3,4,5,6,7,8,9):
@@ -466,12 +465,12 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                                         print(f"Laggron devient Méga-Laggron !")
                                 pokemon_stats["starter"]+= 3
                                 pokemon_stats["XP"] -= 500
-                                return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"]
+                                return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"])
                         else:
                                 print("\n")
                     else:
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {pokemon_stats["monnaie"]} pièces. Vous avez gagné(e) {pokemon_stats["XP"]} XPs !")
-                        return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"]
+                        return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"])
 
 def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
@@ -673,7 +672,7 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
                     reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
-                    while not response_pp in (1,2,3):
+                    while not reponse_pp in (1,2,3):
                         print(f"Veuillez saisir un nombre correct")
                         print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
                         reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
@@ -2627,7 +2626,7 @@ def arènes_pokémons (pokemon_stats):
                 response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
         if response_8 == 1:
                 print(f"votre premier combat commence !")
-                arene1 = boucle_combat(65, "Azurill", 15, 10, 20, pokemon_stats)
+                arene1 = boucle_combat(45, "Azurill", 15, 10, 20, pokemon_stats)
                 pokemon_stats["XP"] = arene1 [0]
                 pokemon_stats["starter"]= arene1 [1]
                 pokemon_stats["hp_starter"] = arene1 [2]
