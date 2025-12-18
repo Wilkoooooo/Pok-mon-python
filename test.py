@@ -693,8 +693,8 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
         	print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
         	choix_pokeball = verif(pokemon_stats, 1)
         	if choix_pokeball is not None:
-                        print("tu as choisi :", choix_pokeball)
-            if choix_pokeball == 1:
+				print("tu as choisi :", choix_pokeball)
+			if choix_pokeball == 1:
                 if pokemon_stats["nbr_pokeball"] > 0: 
                     pokemon_stats["nbr_pokeball"] -= 1
                     print(f"Vous lancez une Pokéball !")
