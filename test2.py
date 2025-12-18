@@ -16,8 +16,38 @@ pokemon_stats = {
 	"amitié" : 0,
 	"fuir" : False,
 	"attraper" : False,
-	"state_combat" : False
+	"state_combat" : False,
+	choix_possible = [
+	[1, 2]
+	[1, 2, 3]
+	[1, 2, 3, 4]
+]
 }
+def verif(pokemon_stats, i):
+    while True:
+        choix = input("Que chosis-tu ? (q ou Q pour quitter) : ")
+
+        # Si l'utilisateur tape q ou Q → on sort
+        if choix.lower() == "q":
+            print("Tu as quitté.")
+            return None
+
+        # Vérifie si c'est un nombre
+        if choix.isdigit():
+            choix = int(choix)
+            if choix in pokemon_stats["choix_possible"][i]:
+                return choix
+            else:
+                print("⚠️ Choix invalide, recommence.")
+        else:
+            print("⚠️ Ce n'est pas un nombre valide.")
+
+# Exemple d'utilisation
+print("1 ou 2 ou 3 ou 4")
+reponse1 = verif(pokemon_stats, 2)
+if reponse1 is not None:
+    print("Bien joué, tu as choisi :", reponse1)
+
 def game_over (pokemon_stats):
 	print(f"{prenom}, l'aventure s'arrête ici pour vous.")
 	game_over_art = """⠀⠀
@@ -3075,11 +3105,11 @@ nbrattaque1 = 15
 nbrattaque2 = 20
 nbrattaque3 = 10
 while hppokefightinitial > 0:
-	print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon")
+	print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner")
 	choix=int(input("\nchoisissez le bon numéro "))
-	while not choix in (1,2,3):
+	while not choix in (1,2):
 		print(f"\nVeuillez saisir un nombre correct")
-		print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Changer de pokémon")
+		print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner")
 		choix=int(input("\nchoisissez le bon numéro "))
 	if choix == 1: 
 		print(f"\nQuelle attaque voulez vous utiliser ? \n1)Éclair (-15 hp) {nbrattaque1}/15 \n2)Cage-Éclair (-10 hp) {nbrattaque2}/20 \n3)Tonnerre (-20 hp) {nbrattaque3}/10 ")
@@ -3115,8 +3145,6 @@ while hppokefightinitial > 0:
 		elif choixsoin == 2: 
 			hp_fight_ini_joueur = 60 
 			pokemon_stats["nbr_hyperpotion"] -= 1
-	else: 
-		print(f"\ntu n'as pas le droit")
 	if hppokefightinitial < 10:
 		proba_soin=random.randint(1,3)
 		if proba_soin == 1:
