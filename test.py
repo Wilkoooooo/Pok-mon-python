@@ -17,7 +17,7 @@ pokemon_stats = {
 	"fuir" : False,
 	"attraper" : False,
 	"state_combat" : False,
-	choix_possible = [
+	"choix_possible" : [
 	[1, 2]
 	[1, 2, 3]
 	[1, 2, 3, 4]
@@ -554,9 +554,9 @@ def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n1)Dracochoc (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Lame d'Air (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Ultralaser (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
                     reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
-					reponse_pp = verif(pokemon_stats, 1)
-					if reponse_pp is not None:
-						print("tu as choisi :", reponse_pp)
+                    reponse_pp = verif(pokemon_stats, 1)
+                    if reponse_pp is not None:
+                            print("tu as choisi :", reponse_pp)
                     if reponse_pp == 1:
                         pokemon_stats["nbr_attaque1"] = 15
                         return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
@@ -569,9 +569,9 @@ def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
             choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
-			choix_pokeball = verif(pokemon_stats, 1)
-			if choix_pokeball is not None:
-				print("tu as choisi :", choix_pokeball)
+            choix_pokeball = verif(pokemon_stats, 1)
+            if choix_pokeball is not None:
+                    print("tu as choisi :", choix_pokeball)
             if choix_pokeball == 1:
                 if pokemon_stats["nbr_pokeball"] > 0: 
                     pokemon_stats["nbr_pokeball"] -= 1
@@ -688,9 +688,9 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
                     reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
-					reponse_pp = verif(pokemon_stats, 1)
-					if reponse_pp is not None:
-						print("tu as choisi :", reponse_pp)
+                    reponse_pp = verif(pokemon_stats, 1)
+                    if reponse_pp is not None:
+                            print("tu as choisi :", reponse_pp)
                     if reponse_pp == 1:
                         pokemon_stats["nbr_attaque1"] = 15
                     elif reponse_pp == 2:
@@ -699,10 +699,9 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
                         pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
         	print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
-			choix_pokeball = verif(pokemon_stats, 1)
-			if choix_pokeball is not None:
-				print("tu as choisi :", choix_pokeball)
+        	choix_pokeball = verif(pokemon_stats, 1)
+        	if choix_pokeball is not None:
+                        print("tu as choisi :", choix_pokeball)
             if choix_pokeball == 1:
                 if pokemon_stats["nbr_pokeball"] > 0: 
                     pokemon_stats["nbr_pokeball"] -= 1
