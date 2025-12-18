@@ -3214,7 +3214,7 @@ chemins = {
     "3": ("Les arênes Pokémon", arènes_pokémons),
     "4": ("Le Volcan instable de l'île", grotte_boss)
 }
-while chemins:
+while chemins: 
     print(f"\nChemins disponibles :")
     for numero, (nom, _) in chemins.items():
         print(f"{numero} - {nom}")
