@@ -506,7 +506,6 @@ def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Dracochoc  (-75 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Lame d'Air (-70 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Ultralaser (-80 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("Tu as choisi :", quelle_attaque)
@@ -533,7 +532,6 @@ def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("tu as choisi :", choixsoin)
@@ -553,7 +551,6 @@ def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n1)Dracochoc (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Lame d'Air (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Ultralaser (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
                     reponse_pp = verif(pokemon_stats, 1)
                     if reponse_pp is not None:
                             print("tu as choisi :", reponse_pp)
@@ -568,7 +565,6 @@ def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
                         return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
             choix_pokeball = verif(pokemon_stats, 1)
             if choix_pokeball is not None:
                     print("tu as choisi :", choix_pokeball)
@@ -639,13 +635,11 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -669,7 +663,6 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -687,7 +680,6 @@ def menu_combat_gobou (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n1)Pistolet à O  (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
                     reponse_pp = verif(pokemon_stats, 1)
                     if reponse_pp is not None:
                             print("tu as choisi :", reponse_pp)
@@ -767,13 +759,11 @@ def menu_combat_flobio (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4)fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-25 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-20 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-30 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -797,7 +787,6 @@ def menu_combat_flobio (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -815,7 +804,6 @@ def menu_combat_flobio (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n 1)Pistolet à O  (-25 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-20 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-30 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 					reponse_pp = verif(pokemon_stats, 1)
 					if reponse_pp is not None:
 						print("tu as choisi :", reponse_pp)
@@ -827,7 +815,6 @@ def menu_combat_flobio (pokemon_stats, hp_ennemi):
                         pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -895,13 +882,11 @@ def menu_combat_laggron (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-35 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-30 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-40 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -925,7 +910,6 @@ def menu_combat_laggron (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -943,7 +927,6 @@ def menu_combat_laggron (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n 1)Pistolet à O  (-35 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-30 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-40 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 					reponse_pp = verif(pokemon_stats, 1)
 					if reponse_pp is not None:
 						print("tu as choisi :", reponse_pp)
@@ -955,7 +938,6 @@ def menu_combat_laggron (pokemon_stats, hp_ennemi):
                         pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)	
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1024,13 +1006,11 @@ def menu_combat_mega_laggron (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Pistolet à O  (-45 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-40 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-50 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -1054,7 +1034,6 @@ def menu_combat_mega_laggron (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Hydrocanon, faites attention la prochaine fois ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3)Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1072,7 +1051,6 @@ def menu_combat_mega_laggron (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus d'hyper potion...")
 		elif choixsoin == 3:
                     print(f"Sur quelle attaque : \n 1)Pistolet à O  (-45 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Siphon (-40 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Hydrocanon (-50 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-                    reponse_pp=int(input(f"Quel attaque choisissez vous ?"))
 					reponse_pp = verif(pokemon_stats, 1)
 					if reponse_pp is not None:
 						print("tu as choisi :", reponse_pp)
@@ -1084,7 +1062,6 @@ def menu_combat_mega_laggron (pokemon_stats, hp_ennemi):
                         pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1153,13 +1130,11 @@ def menu_combat_poussifeu (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)LanceFlammes (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Rebondifeu (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -1183,7 +1158,6 @@ def menu_combat_poussifeu (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1212,7 +1186,6 @@ def menu_combat_poussifeu (pokemon_stats, hp_ennemi):
                             pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1284,13 +1257,11 @@ def menu_combat_galifeu (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-25 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)LanceFlammes (-20 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Rebondifeu (-30 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -1314,7 +1285,6 @@ def menu_combat_galifeu (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1343,7 +1313,6 @@ def menu_combat_galifeu (pokemon_stats, hp_ennemi):
 				pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1416,13 +1385,11 @@ def menu_combat_brasegali (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-35 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)LanceFlammes (-30 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Rebondifeu (-40 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("tu as choisi :", quelle_attaque)
@@ -1446,7 +1413,6 @@ def menu_combat_brasegali (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1475,7 +1441,6 @@ def menu_combat_brasegali (pokemon_stats, hp_ennemi):
 				pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1547,13 +1512,11 @@ def menu_combat_mega_brasegali (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Flammèche (-45 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)LanceFlammes (-40 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Rebondifeu (-50 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("Tu as choisi :", quelle_attaque)
@@ -1577,7 +1540,6 @@ def menu_combat_mega_brasegali (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Rebondifeu, veuillez en chosir une autre ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1606,7 +1568,6 @@ def menu_combat_mega_brasegali (pokemon_stats, hp_ennemi):
 				pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1678,13 +1639,11 @@ def menu_combat_arcko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Désherbaffe (-15 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Fouets-Lianness (-10 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Lamme-Feuille (-20 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1)
 		if quelle_attaque is not None:
 			print("Tu as choisi :", quelle_attaque)
@@ -1708,7 +1667,6 @@ def menu_combat_arcko (pokemon_stats, hp_ennemi):
 				print(f"Vous n'avez plus de Lamme-Feuille, veuillez en chosir une autre ")
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1737,7 +1695,6 @@ def menu_combat_arcko (pokemon_stats, hp_ennemi):
 				pokemon_stats["nbr_attaque3"] = 10
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1809,13 +1766,11 @@ def menu_combat_massko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Désherbaffe (-25 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Fouets-Liannes (-20 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Lamme-Feuille (-30 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1) 		
 		if quelle_attaque is not None: 			
 			print("Tu as choisi :", quelle_attaque))
@@ -1843,7 +1798,6 @@ def menu_combat_massko (pokemon_stats, hp_ennemi):
 				return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -1879,7 +1833,6 @@ def menu_combat_massko (pokemon_stats, hp_ennemi):
 				return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -1951,13 +1904,11 @@ def menu_combat_jungko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Désherbaffe (-35 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Fouets-Liannes (-30 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Lamme-Feuille (-40 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1) 		
 		if quelle_attaque is not None: 			
 			print("Tu as choisi :", quelle_attaque))
@@ -1985,7 +1936,6 @@ def menu_combat_jungko (pokemon_stats, hp_ennemi):
 				return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -2021,7 +1971,6 @@ def menu_combat_jungko (pokemon_stats, hp_ennemi):
 				return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -2093,13 +2042,11 @@ def menu_combat_mega_jungko (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
 	pokemon_stats["attraper"] = False
 	print(f"Que voulez vous faire ? \n1) Attaquer \n2) Se soigner \n3) Pokéballs \n4) fuir")
-	choix=int(input("choisissez le bon numéro "))
 	choix = verif(pokemon_stats, 2)
 	if choix is not None:
 		print("Tu as choisi :", choix)
 	if choix == 1: 
 		print(f"Quelle attaque voulez vous utiliser ? \n 1)Désherbaffe (-45 hp) {pokemon_stats["nbr_attaque1"]}/15 \n 2)Fouets-Liannes (-40 hp) {pokemon_stats["nbr_attaque2"]}/20 \n 3)Lamme-Feuille (-50 hp) {pokemon_stats["nbr_attaque3"]}/10 ")
-		quelle_attaque=int(input("choisissez le bon numéro "))
 		quelle_attaque = verif(pokemon_stats, 1) 		
 		if quelle_attaque is not None: 			
 			print("Tu as choisi :", quelle_attaque))
@@ -2127,7 +2074,6 @@ def menu_combat_mega_jungko (pokemon_stats, hp_ennemi):
 				return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 2: 
 		print(f"Quelle objet pour se soigner ? \n 1)Super Potion \n 2)Hyper potion \n 3) Remplir vos PPs ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 1)
 		if choixsoin is not None:
 			print("Tu as choisi :", choixsoin)
@@ -2163,7 +2109,6 @@ def menu_combat_mega_jungko (pokemon_stats, hp_ennemi):
 				return hp_ennemi, pokemon_stats["hp_starter"], pokemon_stats["attraper"]
 	elif choix == 3: 
             print(f"Quel Pokeball veux-tu utiliser ?\n1) Pokéball ({pokemon_stats["nbr_pokeball"]})\n2) Superball ({pokemon_stats["nbr_superball"]})\n3) Hyperball ({pokemon_stats["nbr_hyperball"]})")
-            choix_pokeball = int(input("Choisis le bon numéro (1,2,3)"))
 			choix_pokeball = verif(pokemon_stats, 1)
 			if choix_pokeball is not None:
 				print("tu as choisi :", choix_pokeball)
@@ -2235,14 +2180,12 @@ def menu_combat_mega_jungko (pokemon_stats, hp_ennemi):
 def boutique (pokemon_stats):
         print(f" Accueil : Bienvenue à la boutique que souhaitez vous acheter ?")
         print(f"\n1)Acheter des Pokéballs\n2)Acheter des potions\n3)Quitter")
-        achat_boutique = int(input("\nQue choisissez vous ? (sélectionnez le bon numéro) : "))
 		achat_boutique = verif(pokemon_stats, 1)
 		if achat_boutique is not None:
 			print("tu as choisi :", achat_boutique)
         if achat_boutique == 1:
                 print(f"Quelle type de pokéball voulez-vous acheter ?")
                 print(f"\n1)Pokéball\n2)Superball\n3)Hyperball")
-                achat_poke = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 				achat_poke = verif(pokemon_stats, 1)
 				if achat_poke is not None:
 					print("tu as choisi :", achat_poke)
@@ -2270,7 +2213,6 @@ def boutique (pokemon_stats):
         elif achat_boutique == 2:
                 print(f"Quelle potion voulez-vous acheter ?")
                 print(f"\n1)super potion\n2)hyper potion")
-                achat_potion = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 				achat_potion = verif(pokemon_stats, 0)
 				if achat_potion is not None:
 					print("tu as choisi :", achat_potion)
@@ -2334,7 +2276,6 @@ def ville_donjon (pokemon_stats):
         input("↓")
         print(f"Que voulez vous faire :")
         print(f"1)porte de gauche \n2)porte de droite")
-        choix_porte = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		choix_porte = verif(pokemon_stats, 0)
 		if choix_porte is not None:
 			print("tu as choisi :", choix_porte)
@@ -2395,7 +2336,6 @@ def ville_donjon (pokemon_stats):
                 print(f"Après ce rude combat vous vous dirigez vers le la porte au fond de la salle, et, juste avant de la franchir vous êtes intrigués par une trappe dans un coin de la salle")
                 print(f"Que voulez vous faire :")
                 print(f"1)porte\n2)trappe")
-                choix_trappe = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 				choix_trappe = verif(pokemon_stats, 0)
 				if choix_trappe is not None:
 					print("tu as choisi :", choix_trappe)
@@ -2530,8 +2470,8 @@ def ville_donjon (pokemon_stats):
                                         if choix not in chemin:
                                                 print(f"Direction invalide.\n")
                                                 continue
-                                        position = chemin[choix]
-                                        print()
+                                position = chemin[choix]
+                                print()
 
 def boss_donjon (pokemon_stats):
         #combat trioxhydre
@@ -2556,7 +2496,6 @@ def grotte_boss (pokemon_stats):
         input("↓")
         print(f"Que voulez vous faire :")
         print(f"1)rentrer dans la grotte\n2)faire demi-tour")
-        response_17 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		response_17 = verif(pokemon_stats, 0)
 		if response_17 is not None:
 			print("tu as choisi :", response_17)
@@ -2583,7 +2522,6 @@ def arènes_pokémons (pokemon_stats):
         input("↓")
         print(f"Que voulez vous faire :")
         print(f"1)S'inscrire au tournoi\n2)partir de l'arène pokémon")
-        response_8 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		response_8 = verif(pokemon_stats, 0)
 		if response_8 is not None:
 			print("tu as choisi :", response_8)
@@ -2678,7 +2616,6 @@ def forêt_pangorn (pokemon_stats):
         input("↓")
         print(f"Que voulez vous faire :")
         print(f"1)Se diriger vers les bruits de l'eau\n2)S'approcher de la lueur\n3)Se rendre aux lieux des tremblements de terre")
-        response_9 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		response_9 = verif(pokemon_stats, 1)
 		if response_9 is not None:
 			print("tu as choisi :", response_9)
@@ -2689,7 +2626,6 @@ def forêt_pangorn (pokemon_stats):
                 input("↓")
                 print(f"que voulez vous faire ?")
                 print(f"1)esquiver en se baissant\n2)esquiver en sautant vers la rivière")
-                response_10 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 				response_10 = verif(pokemon_stats, 0)
 				if response_10 is not None:
 					print("tu as choisi :", response_10)
@@ -2747,7 +2683,6 @@ def forêt_pangorn (pokemon_stats):
                 input("↓")
                 print(f"Que voulez vous faire ?")
                 print(f"1)se cacher derrière un arbre\n 2)plonger en avant")
-                response_13 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
                 response_13 = verif(pokemon_stats, 0)
 				if response_13 is not None:
 					print("tu as choisi :", response_13)
@@ -2784,7 +2719,6 @@ def onix_secret (pokemon_stats):
         input("↓")
         print(f"Que voulez-vous faire ?")
         print(f"1) Grimper la falaise\n2)Rebrousser chemin")
-        response_14 = int(input("que choisissez vous ? (sélectionnez le numéro) : "))
 		response_14 = verif(pokemon_stats, 0)
 		if response_14 is not None:
 			print("tu as choisi :", response_14)
@@ -2843,7 +2777,6 @@ input("↓")
 #Premier choix 
 print(f"Que voulez vous faire :")
 print(f"1)Aller voir la foule de plus près\n2)Partir dans le sens opposé") 
-response_1 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 response_1 = verif(pokemon_stats, 0)
 if response_1 is not None:
 	print("tu as choisi :", response_1)
@@ -2871,7 +2804,6 @@ if int(response_1) == 1:
 	input("↓")
 	print(f"Que voulez vous faire :")
 	print(f"1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
-	response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	response_2 = verif(pokemon_stats, 0)
 	if response_2 is not None:
 		print("tu as choisi :", response_2)
@@ -2892,7 +2824,6 @@ elif int(response_1) == 2:
 	input("↓")
 	print(f"Que voulez vous faire :")
 	print(f"1)Faire connaissance\n2)L'ignorer") 
-	response_3 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 	response_3 = verif(pokemon_stats, 0)
 	if response_3 is not None:
 		print("tu as choisi :", response_3)
@@ -2903,7 +2834,6 @@ elif int(response_1) == 2:
 		input("↓")
 		print(f"Que voulez vous faire :")
 		print(f"1)devenir amis\n2)Le repousser")
-		response_4 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 		response_4 = verif(pokemon_stats, 0)
 		if response_4 is not None:
 			print("tu as choisi :", response_4)
@@ -2933,7 +2863,6 @@ elif int(response_1) == 2:
 			print(f"Homme mystérieux : C'est une ligue connue à l'internationale où tout les combattants pokémon s'affrontent pour savoir qui est le meilleur dresseur, ça t'intéresse ?")
 			print(f"Que voulez vous faire :")
 			print(f"1)Oui je veux me lancer dans le monde Pokémon!\n2)Non merci ça ne m'intéresse pas") 
-			response_2 = int(input("Que choisissez vous ? (sélectionnez le numéro) : "))
 			response_2 = verif(pokemon_stats, 0)
 			if response_2 is not None:
 				print("Tu as choisi :", response_2)
@@ -3026,7 +2955,6 @@ nbrattaque2 = 20
 nbrattaque3 = 10
 while hppokefightinitial > 0:
 	print(f"\nle pokemon adverse a {hppokefightinitial} points de vie, quel voulez vous faire ? \n1) Attaquer \n2) Se soigner")
-	choix1=int(input("\nchoisissez le bon numéro "))
 	choix1 = verif(pokemon_stats, 0)
 	if choix1 is not None:
 		print("tu as choisi :", choix1)
@@ -3053,7 +2981,6 @@ while hppokefightinitial > 0:
 				print(f"\nVous n'avez plus de Tonerre veuillez en chosir une autre ")
 	elif choix == 2:
 		print(f"\nQuelle objet pour se soigner ? \n1)super potion \n2)hyper potion ")
-		choixsoin=int(input("Quel objet choisissez vous ?"))
 		choixsoin = verif(pokemon_stats, 0)
 		if choixsoin is not None:
 			print("tu as choisi :", choixsoin)
@@ -3104,7 +3031,6 @@ input("↓")
 print(f"mais d'abord choisis un de mes pokémons : ")
 input("↓")
 print(f"Homme mystérieux : Alors, quel Pokémon t'acompagneras dans ton aventure vers la ligue Pokémon ?\n1) Arcko (Type Plante)\n2) Poussifeu (Type Feu)\n3) Gobou (Type Eau)")
-starter = int(input("Quel Pokémon choisissez vous ? (sélectionnez le numéro correspondant) : "))
 starter = verif(pokemon_stats, 1)
 if starter is not None:
 	print("tu as choisi :", starter)
