@@ -42,11 +42,6 @@ def verif(pokemon_stats, i):
         else:
             print("⚠️ Ce n'est pas un nombre valide.")
 
-# Exemple d'utilisation
-print("1 ou 2 ou 3 ou 4")
-reponse1 = verif(pokemon_stats, 2)
-if reponse1 is not None:
-    print("Bien joué, tu as choisi :", reponse1)
 
 def game_over (pokemon_stats):
 	print(f"{prenom}, l'aventure s'arrête ici pour vous.")
