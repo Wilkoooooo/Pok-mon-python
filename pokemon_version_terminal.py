@@ -2639,8 +2639,8 @@ def ville_donjon ():
                                         if choix not in chemins:
                                                 print(f"Direction invalide.\n")
                                                 continue
-                                        position = chemins[choix]
-                                        print()
+                                position = chemins[choix]
+                                print()
 
 def boss_donjon ():
         global XP, starter, nbr_Flammèche, nbr_LanceFlammes, nbr_Rebondifeu, nbr_Pistolet_à_O, nbr_Siphon, nbr_Hydrocanon, nbr_Désherbaffe, nbr_FouetsLiannes, nbr_LammeFeuille, nbr_pokeball, nbr_superball, nbr_hyperball, nbr_superpotion, nbr_hyperpotion, monnaie, hp_starter
