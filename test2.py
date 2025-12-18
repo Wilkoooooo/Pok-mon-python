@@ -2569,8 +2569,8 @@ def ville_donjon (pokemon_stats):
                                         if choix not in chemin:
                                                 print(f"Direction invalide.\n")
                                                 continue
-                                        position = chemin[choix]
-                                        print()
+                                position = chemin[choix]
+                                print()
 
 def boss_donjon (pokemon_stats):
         #combat trioxhydre
