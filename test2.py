@@ -227,7 +227,7 @@ def combat_boss_final (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokem
                                         hp_ennemi += 15
                                         print(f"\n{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
                                     else:
-                                        attaque_ennemi_2 = random.randint(1,4)
+                                        attaque_ennemi_2 = random.randint(1,3)
                                         if attaque_ennemi_2 == 1:
                                             pokemon_stats["hp_starter"] -= degat1
                                             print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {pokemon_stats["hp_starter"]} points de vie.")
@@ -414,7 +414,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                         hp_ennemi += 15
                         print(f"\n{nom_poke_ennemi} s'est soigné et a {hp_ennemi} points de vie.")
                     else:
-                        attaque_ennemi_2 = random.randint(1,4)
+                        attaque_ennemi_2 = random.randint(1,3)
                         if attaque_ennemi_2 == 1:
                             pokemon_stats["hp_starter"] -= degat1
                             print(f"\n{nom_poke_ennemi} vous a infligé {degat1} dégats. Vous avez {pokemon_stats["hp_starter"]} points de vie.")
@@ -434,7 +434,7 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                     monnaie_gagne = random.randint(20,30)
                     pokemon_stats["monnaie"] += monnaie_gagne
                     print(f"\nVous gagnez quand même {monnaie_gagne} pièces. Vous avez maintenant {pokemon_stats["monnaie"]} pièces.")
-                    return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"])           
+                    return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"], pokemon_stats["starter"])           
             if hp_ennemi <= 0:
                     XP_gagne=random.randint(100,200)
                     pokemon_stats["XP"] += XP_gagne
@@ -465,12 +465,12 @@ def boucle_combat (hp_ennemi, nom_poke_ennemi, degat1, degat2, degat3, pokemon_s
                                         print(f"Laggron devient Méga-Laggron !")
                                 pokemon_stats["starter"]+= 3
                                 pokemon_stats["XP"] -= 500
-                                return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"])
+                                return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"], pokemon_stats["starter"])
                         else:
                                 print("\n")
                     else:
                         print(f"\nFélicitation, vous avez gagné(e) votre combat face à {nom_poke_ennemi}. Vous gagnez {monnaie_gagne} pièces. Vous avez maintenant {pokemon_stats["monnaie"]} pièces. Vous avez gagné(e) {pokemon_stats["XP"]} XPs !")
-                        return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"])
+                        return (pokemon_stats["XP"], starter, pokemon_stats["hp_starter"], pokemon_stats["state_combat"], pokemon_stats["nbr_attaque1"], pokemon_stats["nbr_attaque2"], pokemon_stats["nbr_attaque3"], pokemon_stats["starter"])
 
 def menu_combat_rayquaza (pokemon_stats, hp_ennemi):
 	pokemon_stats["fuir"] = False
@@ -2360,6 +2360,7 @@ def ville_donjon (pokemon_stats):
         pokemon_stats["nbr_attaque1"] = combat1 [4]
         pokemon_stats["nbr_attaque2"] = combat1 [5]
         pokemon_stats["nbr_attaque3"] = combat1 [6]
+		pokemon_stats["starter"] = combat1 [7]
         pokemon_stats["nbr_attaque1"] = 15
         pokemon_stats["nbr_attaque2"] = 20
         pokemon_stats["nbr_attaque3"] = 10
@@ -2394,6 +2395,7 @@ def ville_donjon (pokemon_stats):
                 pokemon_stats["nbr_attaque1"] = combat2 [4]
                 pokemon_stats["nbr_attaque2"] = combat2 [5]
                 pokemon_stats["nbr_attaque3"] = combat2 [6]
+				pokemon_stats["starter"] = combat2 [7]
                 pokemon_stats["nbr_attaque1"] = 15
                 pokemon_stats["nbr_attaque2"] = 20
                 pokemon_stats["nbr_attaque3"] = 10
@@ -2423,6 +2425,7 @@ def ville_donjon (pokemon_stats):
                 pokemon_stats["nbr_attaque1"] = combat3 [4]
                 pokemon_stats["nbr_attaque2"] = combat3 [5]
                 pokemon_stats["nbr_attaque3"] = combat3 [6]
+				pokemon_stats["starter"] = combat3 [7]
                 pokemon_stats["nbr_attaque1"] = 15
                 pokemon_stats["nbr_attaque2"] = 20
                 pokemon_stats["nbr_attaque3"] = 10
@@ -2579,6 +2582,7 @@ def boss_donjon (pokemon_stats):
         pokemon_stats["nbr_attaque1"] = combat7 [4]
         pokemon_stats["nbr_attaque2"] = combat7 [5]
         pokemon_stats["nbr_attaque3"] = combat7 [6]
+		pokemon_stats["starter"] = combat7 [7]
         pokemon_stats["nbr_attaque1"] = 15
         pokemon_stats["nbr_attaque2"] = 20
         pokemon_stats["nbr_attaque3"] = 10
@@ -2635,6 +2639,7 @@ def arènes_pokémons (pokemon_stats):
                 pokemon_stats["nbr_attaque1"] = arene1 [4]
                 pokemon_stats["nbr_attaque2"] = arene1 [5]
                 pokemon_stats["nbr_attaque3"] = arene1 [6]
+				pokemon_stats["starter"] = arene1 [7]
                 if pokemon_stats["state_combat"] == True:
                         print("Bravo, vous passez au dresseur suivant !")
                         print(f"votre deucième combat commence !")
@@ -2648,6 +2653,7 @@ def arènes_pokémons (pokemon_stats):
                         pokemon_stats["nbr_attaque1"] = arene2 [4]
                         pokemon_stats["nbr_attaque2"] = arene2 [5]
                         pokemon_stats["nbr_attaque3"] = arene2 [6]
+						pokemon_stats["starter"] = arene2 [7]
                         if pokemon_stats["state_combat"] == True:
                                 print("Bravo, vous passez au dresseur suivant !")
                                 print(f"votre premier combat commence !")
@@ -2661,6 +2667,7 @@ def arènes_pokémons (pokemon_stats):
                                 pokemon_stats["nbr_attaque1"] = arene3 [4]
                                 pokemon_stats["nbr_attaque2"] = arene3 [5]
                                 pokemon_stats["nbr_attaque3"] = arene3 [6]
+								pokemon_stats["starter"] = arene3 [7]
                                 if pokemon_stats["state_combat"] == True:
                                         print("Bravo, vous passez au dresseur suivant !")
                                         print(f"votre premier combat commence !")
@@ -2674,6 +2681,7 @@ def arènes_pokémons (pokemon_stats):
                                         pokemon_stats["nbr_attaque1"] = arene4 [4]
                                         pokemon_stats["nbr_attaque2"] = arene4 [5]
                                         pokemon_stats["nbr_attaque3"] = arene4 [6]
+										pokemon_stats["starter"] = arene4 [7]
                                         pokemon_stats["nbr_attaque1"] = 15
                                         pokemon_stats["nbr_attaque2"] = 20
                                         pokemon_stats["nbr_attaque3"] = 10
@@ -2743,6 +2751,7 @@ def forêt_pangorn (pokemon_stats):
                                 pokemon_stats["nbr_attaque1"] = combat10 [4]
                                 pokemon_stats["nbr_attaque2"] = combat10 [5]
                                 pokemon_stats["nbr_attaque3"] = combat10 [6]
+								pokemon_stats["starter"] = combat10 [7]
                                 pokemon_stats["nbr_attaque1"] = 15
                                 pokemon_stats["nbr_attaque2"] = 20
                                 pokemon_stats["nbr_attaque3"] = 10
@@ -2767,6 +2776,7 @@ def forêt_pangorn (pokemon_stats):
                 pokemon_stats["nbr_attaque1"] = combat5 [4]
                 pokemon_stats["nbr_attaque2"] = combat5 [5]
                 pokemon_stats["nbr_attaque3"] = combat5 [6]
+				pokemon_stats["starter"] = combat5 [7]
                 pokemon_stats["nbr_attaque1"] = 15
                 pokemon_stats["nbr_attaque2"] = 20
                 pokemon_stats["nbr_attaque3"] = 10
@@ -2809,6 +2819,7 @@ def onix_secret (pokemon_stats):
         pokemon_stats["nbr_attaque1"] = combat6 [4]
         pokemon_stats["nbr_attaque2"] = combat6 [5]
         pokemon_stats["nbr_attaque3"] = combat6 [6]
+		pokemon_stats["starter"] = combat6 [7]
         pokemon_stats["nbr_attaque1"] = 15
         pokemon_stats["nbr_attaque2"] = 20
         pokemon_stats["nbr_attaque3"] = 10
