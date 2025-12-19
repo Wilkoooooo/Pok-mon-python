@@ -2566,10 +2566,10 @@ def ville_donjon (pokemon_stats):
                                 print(f"Options disponibles :")
                                 for direction, destination in chemin.items():
                                         print(f"  - {direction} -> {destination}")
-                                        choix = input("Choissisez une direction entre : (gauche, face, droite) : ")
-                                        if choix not in chemin:
-                                                print(f"Direction invalide.\n")
-                                                continue
+                                choix = input("Choissisez une direction entre : (gauche, face, droite) : ")
+                                if choix not in chemin:
+                                        print(f"Direction invalide.\n")
+                                        continue
                                 position = chemin[choix]
                                 print()
 
