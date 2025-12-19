@@ -2869,7 +2869,7 @@ def onix_secret (pokemon_stats):
                                         pokemon_stats["starter"]= 13
                                 else:
                                         print(f"Rayquaza n'a pas été ajouté à votre équipe et disparait ! ")
-                    else :
+					elif chutes == 5: 
                        print(f"vous êtes tombés trop de fois, vous êtes morts de chute")
                        game_over (pokemon_stats)
         else:
