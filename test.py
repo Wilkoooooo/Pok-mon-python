@@ -7,7 +7,7 @@ pokemon_stats = {
 	"nbr_pokeball" : 0,
 	"nbr_superball" : 0,
 	"nbr_hyperball" : 0,
-	"nbr_superpotion" : 0, 
+	"nbr_superpotion" : 0,  
 	"nbr_hyperpotion" : 0,
 	"hp_starter" : 60,
 	"monnaie" : 50,
