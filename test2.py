@@ -16,37 +16,8 @@ pokemon_stats = {
 	"amitié" : 0,
 	"fuir" : False,
 	"attraper" : False,
-	"state_combat" : False,
-	choix_possible = [
-	[1, 2]
-	[1, 2, 3]
-	[1, 2, 3, 4]
-]
+	"state_combat" : False
 }
-def verif(pokemon_stats, i):
-    while True:
-        choix = input("Que chosis-tu ? (q ou Q pour quitter) : ")
-
-        # Si l'utilisateur tape q ou Q → on sort
-        if choix.lower() == "q":
-            print("Tu as quitté.")
-            return None
-
-        # Vérifie si c'est un nombre
-        if choix.isdigit():
-            choix = int(choix)
-            if choix in pokemon_stats["choix_possible"][i]:
-                return choix
-            else:
-                print("⚠️ Choix invalide, recommence.")
-        else:
-            print("⚠️ Ce n'est pas un nombre valide.")
-
-# Exemple d'utilisation
-print("1 ou 2 ou 3 ou 4")
-reponse1 = verif(pokemon_stats, 2)
-if reponse1 is not None:
-    print("Bien joué, tu as choisi :", reponse1)
 
 def game_over (pokemon_stats):
 	print(f"{prenom}, l'aventure s'arrête ici pour vous.")
